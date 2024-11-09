@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import '../header/Navbar.scss';
+import './Navbar.scss';
 
 const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,15 +24,15 @@ const Navbar = () => {
         <div className="navbar__right">
           {isLoggedIn ? (
             <>
-              <span className="navbar__link">Orarul meu</span>
-              <span className="navbar__link" onClick={handleLoginClick}>
+              <button className="navbar__link">Orarul meu</button>
+              <button className="navbar__link" onClick={handleLoginClick}>
                 Log Out <div className="navbar__icon logout-icon" title="Log Out"></div>
-              </span>
+              </button>
             </>
           ) : (
-            <span className="navbar__link" onClick={handleLoginClick}>
+            <button className="navbar__link" onClick={handleLoginClick}>
               Log In <div className="navbar__icon login-icon" title="Log In"></div>
-            </span>
+            </button>
           )}
         </div>
       </nav>

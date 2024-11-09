@@ -59,6 +59,15 @@
         align-items: center;
         cursor: pointer;
         position: relative;
+
+        padding: 0;
+        border: none; 
+        background: none; 
+        outline: none; 
+
+        background-color: transparent;
+        color: #1A4977;
+        font-family: inherit;
     }
 
     &__language {
@@ -93,5 +102,9 @@
         width: 20px;
         height: 26px;
     }
+}
+
+button:focus {
+    outline: none;
 }
   
