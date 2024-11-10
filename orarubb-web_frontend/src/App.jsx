@@ -1,21 +1,20 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './App.scss'
-import MainPage from './pages/MainPage/MainPage'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.scss";
+import MainPage from "./pages/MainPage/MainPage";
+import LandingPage from "./pages/LandingPage/LandingPage";
 
 const AppContent = () => {
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<MainPage />} />
-    </Routes>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+      </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
 
 function App() {
-  return (
-    <AppContent></AppContent>
-  )
+  return <AppContent></AppContent>;
 }
 
-export default App
+export default App;
