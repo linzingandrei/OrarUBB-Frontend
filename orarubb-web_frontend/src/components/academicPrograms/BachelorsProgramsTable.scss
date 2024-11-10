@@ -1,0 +1,48 @@
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .table {
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    color: #333;
+    
+    thead {
+      color: black;
+      th {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: #E1F0FF;
+        }
+        &:nth-child(odd) {
+          background-color: #FFFFFF;
+        }
+  
+        td {
+          border-bottom: 1px solid #ddd;
+          text-align: center;
+  
+          a {
+            color: black;
+            text-decoration: underline;
+            margin-right: 15px;
+            font-weight: bold;
+  
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  
