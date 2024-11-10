@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from '../components/Card';
 import './CardsPage.scss'
 import { getAllRooms } from '../services/roomsService';

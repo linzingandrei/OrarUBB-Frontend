@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Card from '../components/Card';
 import './CardsPage.scss';
 import './AllTeachersPage.scss';
@@ -31,6 +31,10 @@ const AllTeachersPage = () => {
         setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     };
 
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
+
     return (
         <div className="page">
             <div className="header">
@@ -47,7 +51,7 @@ const AllTeachersPage = () => {
                         type="text"
                         placeholder="Search"
                         value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)} 
+                        onChange={handleSearchChange} 
                         className="search-input"
                     />
                 </div>
