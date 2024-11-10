@@ -28,6 +28,7 @@ const LandingPage = () => {
             color="primary"
             label="Informatii sali"
             className="medium rounded"
+            to="/informatii-sali"
           />
         </div>
         <div className="footer">
