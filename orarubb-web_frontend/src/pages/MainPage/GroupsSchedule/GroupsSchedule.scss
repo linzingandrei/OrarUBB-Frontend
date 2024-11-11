@@ -1,161 +1,84 @@
-.groups-schedule {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    margin-top: 60px; /* Adjust based on navbar height */
-  }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif; // Apply Montserrat font
   
   .view-toggle {
-    margin-bottom: 10px;
     display: flex;
-    justify-content: center;
-  }
-  
-  .schedule-container {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 10px; /* Close the gap between the tables */
-    width: 100%;
-    max-width: 1200px; /* Maximum width for large screens */
-    margin: 0 auto; /* Center the container */
+    width: 90%;
+    max-width: 1800px;
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 25px;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #1A4977;
+        transition: 0.4s;
+        border-radius: 25px;
+
+        &:before {
+          position: absolute;
+          content: "";
+          height: 17px;
+          width: 17px;
+          left: 4px;
+          bottom: 4px;
+          background-color: #fff;
+          transition: 0.4s;
+          border-radius: 50%;
+        }
+      }
+
+      input:checked + .slider {
+        background-color: #c0c0c0;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(24px);
+      }
+    }
+
+    p {
+      text-decoration:underline;
+      font-size: 1rem;
+      color: #000000;
+      margin-left: 10px;
+    }
   }
-  
-  .schedule-group {
-    width: 100%;
-    max-width: 960px; /* Max width for tables */
-    text-align: center;
-    position: relative; /* Make sure button is inside */
-    margin-bottom: 0px; /* Remove margin between tables */
-  }
-  
-  .schedule {
-    margin-bottom: 0px; /* Remove space below the table */
-  }
-  
-  .mark-personal-btn {
-    position: absolute;
-    top: 5px; /* Close the button to the top */
-    left: 5px; /* Close the button to the left */
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .mark-personal-btn:hover {
-    background-color: #45a049;
-  }
-  
-  /* Toggle switch styling */
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 34px;
-    height: 20px;
-  }
-  
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 50px;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: 0.4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(14px);
-  }
-  
-  /* Table styling */
+
   .table-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    width: 100%;
+    max-width: 1800px;
+    min-height: 10vh;
   }
-  
-  .table-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
+
   .table {
-    width: 100%; /* Full width within the container */
-    max-width: 960px; /* Max width for each table */
-    border-collapse: collapse;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    color: #333;
-    margin-bottom: 0px; /* Remove space between tables */
-  
-    thead {
-      color: black;
-  
-      th {
-        padding: 16px;
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-        background-color: transparent;
-      }
-    }
-  
-    tbody {
-      tr {
-        &:nth-child(even) {
-          background-color: #E1F0FF;
-        }
-  
-        &:nth-child(odd) {
-          background-color: #FFFFFF;
-        }
-  
-        td {
-          padding: 8px;
-          border-bottom: 1px solid #ddd;
-          text-align: center;
-  
-          .link {
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-    }
+    width: 90%;
+    max-width: 1800px;
+    margin: 0 auto;
   }
-  
+}

@@ -16,6 +16,42 @@ const scheduleForGroup931 = [
     class_type: "Seminar",
     course_instance_code: "MLM0009",
     teacher: "Lect. Darabant Sergiu-Adrian",
+  },  
+  {
+    class_id: "0842c56a-7c4a-4331-a0c4-4e432940e83b",
+    class_day: "Luni",
+    start_hour: 8,
+    end_hour: 10,
+    frequency: 0,
+    room: "2/I",
+    formation: "931",
+    class_type: "Seminar",
+    course_instance_code: "MLM0009",
+    teacher: "Lect. Darabant Sergiu-Adrian",
+  },
+  {
+    class_id: "0842c56a-7c4a-4331-a0c4-4e432940e83b",
+    class_day: "Luni",
+    start_hour: 8,
+    end_hour: 10,
+    frequency: 0,
+    room: "2/I",
+    formation: "931",
+    class_type: "Seminar",
+    course_instance_code: "MLM0009",
+    teacher: "Lect. Darabant Sergiu-Adrian",
+  },
+  {
+    class_id: "0842c56a-7c4a-4331-a0c4-4e432940e83b",
+    class_day: "Luni",
+    start_hour: 8,
+    end_hour: 10,
+    frequency: 0,
+    room: "2/I",
+    formation: "931",
+    class_type: "Seminar",
+    course_instance_code: "MLM0009",
+    teacher: "Lect. Darabant Sergiu-Adrian",
   },
 ];
 
@@ -34,52 +70,46 @@ const scheduleForGroup932 = [
   },
 ];
 
-const GroupsSchedule = ({ isLoggedIn }) => {
-  const [view, setView] = useState('tabelar'); // Default view is 'tabelar'
+const schedules = [
+  { group: 931, scheduleData: scheduleForGroup931 },
+  { group: 932, scheduleData: scheduleForGroup932 },
+];
+const GroupsSchedule = () => {
+  const [view, setView] = useState('tabelar');
 
   const handleViewToggle = () => {
     setView((prevView) => (prevView === 'tabelar' ? 'grafic' : 'tabelar'));
   };
 
-  return (
-    <Layout>
-      <div className="groups-schedule">
-        <div className="view-toggle">
-          <label className="switch">
-            <input
-              type="checkbox"
-              checked={view === 'grafic'}
-              onChange={handleViewToggle}
-            />
-            <span className="slider"></span>
-          </label>
-        </div>
-
-        <div className="schedule-container">
-          <div className="schedule-group">
-            {view === 'tabelar' ? (
-              <GroupsScheduleTabelar scheduleData={scheduleForGroup931} group={931} />
-            ) : (
-              <GroupsScheduleGrafic scheduleData={scheduleForGroup931} group={931} />
-            )}
-            {isLoggedIn && (
-              <button className="mark-personal-btn">Marchează ca orar personal</button>
-            )}
-          </div>
-
-          <div className="schedule-group">
-            {view === 'tabelar' ? (
-              <GroupsScheduleTabelar scheduleData={scheduleForGroup932} group={932} />
-            ) : (
-              <GroupsScheduleGrafic scheduleData={scheduleForGroup932} group={932} />
-            )}
-            {isLoggedIn && (
-              <button className="mark-personal-btn">Marchează ca orar personal</button>
-            )}
-          </div>
-        </div>
+  return ( 
+    <div className="page-container">
+      <div className="view-toggle">
+        <label className="switch">
+          <input
+            type="checkbox"
+            checked={view === 'grafic'}
+            onChange={handleViewToggle}
+          />
+          <span className="slider"></span>
+        </label>
+        <p>{view === 'tabelar' ? 'Format Tabelar' : 'Format Grafic'}</p>
       </div>
-    </Layout>
+      {schedules.map((schedule) => (
+        view === 'tabelar' ? (
+          <GroupsScheduleTabelar
+            key={schedule.group}
+            scheduleData={schedule.scheduleData}
+            group={schedule.group}
+          />
+        ) : (
+          <GroupsScheduleGrafic
+            key={schedule.group}
+            scheduleData={schedule.scheduleData}
+            group={schedule.group}
+          />
+        )
+      ))}
+    </div>
   );
 };
 
