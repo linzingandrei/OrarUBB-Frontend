@@ -5,6 +5,7 @@ import InformatiiSaliPage from "./pages/InformatiiSaliPage/InformatiiSali";
 import AllTeachersPage from "./pages/AllTeachersPage/AllTeachersPage";
 import AllRoomsPage from "./pages/AllRoomsPage/AllRoomsPage";
 import AllCoursesPage from "./pages/AllCoursesPage/AllCoursesPage";
+import ProfessorsSchedule from "./pages/ProfessorsSchedule/ProfessorsSchedule";
 
 const AppContent = () => {
   return (
@@ -16,6 +17,7 @@ const AppContent = () => {
         <Route path="/teachers" element={<AllTeachersPage />} />
         <Route path="/rooms" element={<AllRoomsPage />} />
         <Route path="/courses" element={<AllCoursesPage />} />
+        <Route path="/cadru-didactic" element={<ProfessorsSchedule />} />
       </Routes>
     </BrowserRouter>
   );
