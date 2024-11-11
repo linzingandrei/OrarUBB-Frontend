@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+$colors: (
+  primary: #ffffff,
+  secondary: #e67e22,
+  success: #2ecc71,
+  danger: #e74c3c,
+  warning: #f1c40f,
+);
+
+@mixin button-color($color) {
+  background-color: map-get($colors, $color);
+  &:hover {
+    background-color: darken(map-get($colors, $color), 10%);
+  }
+}
+
+.rounded {
+  border-radius: 1rem;
+}
+
+.square {
+  border-radius: 0;
+}
+
+.circle {
+  border-radius: 50%;
+  padding: 0;
+}
+
+.small {
+  font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
+  width: 10rem;
+}
+
+.medium {
+  font-size: 1.3rem;
+  padding: 0.8rem 0.5rem;
+  width: 20rem;
+}
+
+.large {
+  font-size: 2rem;
+  padding: 0.875rem 1.25rem;
+  width: 25rem;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  color: #003f70;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+
+  &.shadow-none {
+    box-shadow: none;
+  }
+
+  &.hover\:shadow:hover {
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
+
+  @each $name, $color in $colors {
+    &.background-light-#{$name} {
+      @include button-color($name);
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.main-content {
+  background-image: url("../../assets/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 0rem;
+  margin-top: 1.5rem;
+}
+
+.subtitle {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.footer {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
