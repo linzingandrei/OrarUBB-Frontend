@@ -19,7 +19,7 @@ const ProfessorSchedule = ({ scheduleData, professor }) => {
           </thead>
           <tbody>
             {scheduleData.map((item, index) => (
-              <tr key={index}>
+              <tr key={index}> {/*this key has to be modified after working with real data to be unique*/}
                 <td>{item.class_day}</td>
                 <td>{item.start_hour} - {item.end_hour}</td>
                 <td>{item.frequency === 0 ? "Săptămânal" : item.frequency === 1 ? "Săptămâna impară" : "Săptămâna pară"}</td>
