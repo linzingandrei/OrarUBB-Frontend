@@ -82,6 +82,7 @@ const ProfessorsSchedule = () => {
     return (
         <Layout>
           <div className="professors-schedule">
+              {/*<p> hey</p>*/}
               <div className="schedule-professor">
                   <ProfessorSchedule scheduleData={scheduleForProfANDREICAAnca} professor={"ANDREICA Anca"} />
               </div>

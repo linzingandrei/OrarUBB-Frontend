@@ -2,7 +2,7 @@ import './ProfessorSchedule.scss'
 
 const ProfessorSchedule = ({ scheduleData, professor }) => {
     return (
-      <div className="table-container">
+      <div className="professor-schedule-table-container">
         <h2 className="table-title">Orar Prof. {professor}</h2>
         <table className="table">
           <thead>

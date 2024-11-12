@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e6d11cb-6cdf-400a-8554-2157c5ee5ce7" name="Changes" comment="Made navbar responsive, made LandingPage.jsx and InformatiiSali.jsx responsive w.r.t. navbar." />
+    <list default="true" id="2e6d11cb-6cdf-400a-8554-2157c5ee5ce7" name="Changes" comment="Routed StudyProgramsPage.jsx, GroupsSchedule.jsx and made them responsive (ish)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/academicPrograms/BachelorsProgramsTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/academicPrograms/BachelorsProgramsTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/LandingPage/LandingPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/LandingPage/LandingPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/GroupsSchedule/GroupsSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/GroupsSchedule/GroupsSchedule.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/GroupsSchedule/GroupsSchedule.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/GroupsSchedule/GroupsSchedule.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/StudyProgramsPage/StudyProgramsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/StudyProgramsPage/StudyProgramsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/StudyProgramsPage/StudyProgramsPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/StudyProgramsPage/StudyProgramsPage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/ProfessorsSchedule/ProfessorsSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/ProfessorsSchedule/ProfessorsSchedule.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/ProfessorsSchedule/ProfessorsSchedule.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/ProfessorsSchedule/ProfessorsSchedule.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +57,7 @@
     &quot;Node.js.Navbar.jsx.executor&quot;: &quot;Run&quot;,
     &quot;Node.js.main.jsx.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;card-component&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/Alex/Developer/orar/OrarUBB-Frontend/orarubb-web_frontend/src/components/header&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -118,6 +131,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Made navbar responsive, made LandingPage.jsx and InformatiiSali.jsx responsive w.r.t. navbar." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made navbar responsive, made LandingPage.jsx and InformatiiSali.jsx responsive w.r.t. navbar." />
+    <MESSAGE value="Routed StudyProgramsPage.jsx, GroupsSchedule.jsx and made them responsive (ish)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Routed StudyProgramsPage.jsx, GroupsSchedule.jsx and made them responsive (ish)" />
   </component>
 </project>
