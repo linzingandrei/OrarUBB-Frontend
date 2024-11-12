@@ -1,0 +1,34 @@
+@use '../utils/colors.scss';
+
+.card {
+    background-color: colors.$primary-dark-blue;
+    color: colors.$text-white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.1s;
+    text-decoration: none;
+    width: 180px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 19px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.card-subtitle {
+    font-size: 17px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
