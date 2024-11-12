@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2e6d11cb-6cdf-400a-8554-2157c5ee5ce7" name="Changes" comment="Routed StudyProgramsPage.jsx, GroupsSchedule.jsx and made them responsive (ish)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/academicPrograms/BachelorsProgramsTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/academicPrograms/BachelorsProgramsTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/LandingPage/LandingPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/LandingPage/LandingPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/GroupsSchedule/GroupsSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/GroupsSchedule/GroupsSchedule.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/GroupsSchedule/GroupsSchedule.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/GroupsSchedule/GroupsSchedule.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/StudyProgramsPage/StudyProgramsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/StudyProgramsPage/StudyProgramsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/StudyProgramsPage/StudyProgramsPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/MainPage/StudyProgramsPage/StudyProgramsPage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/ProfessorsSchedule/ProfessorsSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/ProfessorsSchedule/ProfessorsSchedule.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/ProfessorsSchedule/ProfessorsSchedule.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/ProfessorsSchedule/ProfessorsSchedule.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sindrila&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/linzingandrei/OrarUBB-Frontend.git&quot;,
+    &quot;accountId&quot;: &quot;d29ba472-51fb-4680-b5a6-b0508606f0bd&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2oiihawh3HGFozRADy6oSfCgg5A" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.App.jsx.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.Navbar.jsx.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.main.jsx.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/Alex/Developer/orar/OrarUBB-Frontend/orarubb-web_frontend/src/components/header&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/Alex/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/orarubb-web_frontend/src/components/header" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="Navbar.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/orarubb-web_frontend/src/components/header/Navbar.jsx" working-dir="$PROJECT_DIR$/orarubb-web_frontend/src/components/header">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/orarubb-web_frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="Node.js.Navbar.jsx" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="Node.js.Navbar.jsx" />
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2e6d11cb-6cdf-400a-8554-2157c5ee5ce7" name="Changes" comment="" />
+      <created>1731358916299</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731358916299</updated>
+      <workItem from="1731358917475" duration="12242000" />
+    </task>
+    <task id="LOCAL-00001" summary="Made navbar responsive, made LandingPage.jsx and InformatiiSali.jsx responsive w.r.t. navbar.">
+      <option name="closed" value="true" />
+      <created>1731370021702</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731370021702</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Made navbar responsive, made LandingPage.jsx and InformatiiSali.jsx responsive w.r.t. navbar." />
+    <MESSAGE value="Routed StudyProgramsPage.jsx, GroupsSchedule.jsx and made them responsive (ish)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Routed StudyProgramsPage.jsx, GroupsSchedule.jsx and made them responsive (ish)" />
+  </component>
+</project>

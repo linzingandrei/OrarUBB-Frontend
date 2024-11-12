@@ -14,16 +14,19 @@ const LandingPage = () => {
                         color="primary"
                         label="Orarul Studentilor"
                         className="medium rounded"
+                        to="/study-programs"
                     />
                     <Button
                         color="primary"
                         label="Orarul Cadrelor Didactice"
                         className="medium rounded"
+                        to="/teachers"
                     />
                     <Button
                         color="primary"
                         label="Orarul Disciplinelor"
                         className="medium rounded"
+                        to="/courses"
                     />
                     <Button
                         color="primary"

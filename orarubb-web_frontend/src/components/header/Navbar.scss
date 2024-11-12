@@ -78,6 +78,7 @@
     // and make the top padding of child pages automatic
     width: 9rem;
     height: 9rem;
+    cursor: pointer;
 
     z-index: 2;
     @media (max-width: 1200px) {
