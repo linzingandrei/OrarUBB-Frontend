@@ -17,7 +17,7 @@ const AppContent = () => {
         <Route path="/teachers" element={<AllTeachersPage />} />
         <Route path="/rooms" element={<AllRoomsPage />} />
         <Route path="/courses" element={<AllCoursesPage />} />
-        <Route path="/cadru-didactic" element={<ProfessorsSchedule />} />
+        <Route path="/teacher/1b2a3c45-678d-4f0a-bcde-f234567890ab" element={<ProfessorsSchedule />} />
       </Routes>
     </BrowserRouter>
   );

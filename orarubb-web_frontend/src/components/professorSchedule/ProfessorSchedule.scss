@@ -1,67 +1,84 @@
 .body {
-    margin: 0;
-    padding: 0;
-    background-color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
 }
 
 .table-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-  
-  .table-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 11rem;
+  align-items: center;
+
+  @media (max-height: 1200px) {
+    padding-top: 10rem;
   }
-  
-  .table {
-    width: 60%;
-    border-collapse: collapse;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    color: #333;
-  
-    thead {
-      color: black;
-  
-      th {
-        padding: 16px;
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-        background-color: transparent;
-      }
+
+  @media (max-height: 900px) {
+    padding-top: 6rem;
+  }
+
+  @media (max-height: 812px) {
+    padding-top: 5rem;
+  }
+
+  @media(max-height: 667px) {
+    padding-top: 4rem;
+  }
+}
+
+.table-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.table {
+  width: 60%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #333;
+
+  thead {
+    color: black;
+
+    th {
+      padding: 16px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background-color: transparent;
     }
-  
-    tbody {
-      tr {
-        &:nth-child(even) {
-          background-color: #E1F0FF;
-        }
-  
-        &:nth-child(odd) {
-          background-color: #FFFFFF;
-        }
-  
-        td {
-          padding: 8px;
-          border-bottom: 1px solid #ddd;
-          text-align: center;
-  
-          .link {
-            &:hover {
-              text-decoration: underline;
-            }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: #E1F0FF;
+      }
+
+      &:nth-child(odd) {
+        background-color: #FFFFFF;
+      }
+
+      td {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+
+        .link {
+          &:hover {
+            text-decoration: underline;
           }
         }
       }
     }
   }
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
