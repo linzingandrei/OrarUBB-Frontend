@@ -1,33 +1,29 @@
-.body {
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
+.rooms-schedule {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.professor-schedule-table-container {
+.schedule-room {
+  width: 100%;
+  max-width: 960px;
+  text-align: center;
+  position: relative;
+  user-select: none;
+}
+
+.table-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (max-height: 1200px) {
-    padding-top: 10rem;
-  }
-
-  @media (max-height: 900px) {
-    padding-top: 10rem;
-  }
-
-  @media (max-height: 812px) {
-    padding-top: 9rem;
-  }
-
-  @media (max-height: 667px) {
-    padding-top: 8rem;
-  }
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .table-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
@@ -35,11 +31,13 @@
 }
 
 .table {
-  width: 60%;
+  width: 100%;
+  max-width: 960px;
   border-collapse: collapse;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
   color: #333;
+  margin-bottom: 0;
 
   thead {
     color: black;
@@ -47,7 +45,7 @@
     th {
       padding: 16px;
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: bold;
       background-color: transparent;
     }
@@ -78,6 +76,7 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
+a {
+  color: inherit;
+  text-decoration: none;
 }
