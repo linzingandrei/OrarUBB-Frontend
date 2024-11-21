@@ -1,4 +1,3 @@
-import React from "react";
 import "./CrudScheduleTable.scss";
 
 const CrudScheduleTable = ({ scheduleData, onEdit, onDelete }) => {

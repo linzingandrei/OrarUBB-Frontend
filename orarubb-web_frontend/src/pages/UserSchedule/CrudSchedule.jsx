@@ -136,6 +136,25 @@ const CrudSchedule = () => {
     setForm({ ...form, [name]: value });
   };
 
+  const scrollToForm = () => {
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const resetForm = () => {
+    setEditingIndex(null);
+    setForm({
+      class_day: "",
+      start_hour: "",
+      end_hour: "",
+      room: "",
+      class_type: "",
+      course_instance_code: "",
+      teacher: "",
+    });
+  };
+
   const handleAddOrUpdate = () => {
     if (editingIndex !== null) {
       const updatedSchedule = [...schedule];
@@ -170,25 +189,6 @@ const CrudSchedule = () => {
     if (confirmDelete) {
       setSchedule([]);
     }
-  };
-
-  const scrollToForm = () => {
-    if (formRef.current) {
-      formRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const resetForm = () => {
-    setEditingIndex(null);
-    setForm({
-      class_day: "",
-      start_hour: "",
-      end_hour: "",
-      room: "",
-      class_type: "",
-      course_instance_code: "",
-      teacher: "",
-    });
   };
 
   return (
