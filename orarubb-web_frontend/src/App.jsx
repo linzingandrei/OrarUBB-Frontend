@@ -22,7 +22,7 @@ const AppContent = () => {
         <Route path="/rooms" element={<AllRoomsPage />} />
         <Route path="/courses" element={<AllCoursesPage />} />
         <Route
-          path="/teacher/1b2a3c45-678d-4f0a-bcde-f234567890ab"
+          path="/teacher/c2c03206-4e5d-589c-91ac-40cd86665ca1"
           element={<ProfessorsSchedule />}
         />
         <Route path="/" element={<MainPage />} />
