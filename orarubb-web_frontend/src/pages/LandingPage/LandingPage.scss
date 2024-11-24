@@ -3,50 +3,45 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 }
-.content-wrapper {
-  padding-top: 2rem;
-}
+
 .main-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-top: 10rem;
   align-items: center;
+  padding-top: clamp(8rem, 10vh, 10rem); // Adjust top padding based on viewport height
 
-  @media (max-height: 1200px) {
-    padding-top: 10rem;
+  @media (max-width: 768px) {
+    padding-top: 6rem; // Reduce padding for tablets
   }
 
-  @media (max-height: 900px) {
-    padding-top: 10rem;
+  @media (max-width: 576px) {
+    padding-top: 4rem; // Further reduce padding for small screens
   }
-
-  @media (max-height: 812px) {
-    padding-top: 9rem;
-  }
-
-  @media(max-height: 667px) {
-    padding-top: 8rem;
-  }
-
 }
 
 .buttons-container {
+  gap: clamp(0.8rem, 1.5vw, 1.2rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
 }
-
+@media(max-width: 450px){
+  .buttons-container button {
+      width: 90%; // Make buttons span most of the width on mobile
+      max-width: 400px; // Add a max width to prevent oversized buttons on larger screens
+    }
+}
 .title {
   color: #ffffff;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
   text-align: center;
   margin-bottom: 0;
   margin-top: 1.5rem;
@@ -57,13 +52,17 @@
   text-align: center;
   margin-top: 0.5rem;
   margin-bottom: 2rem;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .footer {
   color: #ffffff;
   text-align: center;
   margin-top: 1rem;
-  font-size: 0.8rem;
+  font-size: clamp(0.7rem, 1.5vw, 1rem);
   font-weight: 300;
+}
+button {
+  font-size: clamp(0.8rem, 1.5vw, 1rem); // Adjust button font size
+  padding: clamp(0.5rem, 1vw, 0.8rem) clamp(1rem, 2vw, 2rem); // Dynamically adjust padding
 }
