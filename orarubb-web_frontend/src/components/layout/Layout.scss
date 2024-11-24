@@ -1,15 +1,17 @@
-html, body {
-    height: 100%;
-    margin: 0;
+.main-content {
+    flex: 1;
+    width: 100%;
+    height: fit-content;
+    padding-top: 14rem; // Align with the navbar + logo height
 
-    color: #003F70;
-    overflow-x: hidden;
+    @media (max-width: 1200px) {
+        padding-top: 12rem; // Adjust padding for smaller screens
+    }
+
+    @media (max-width: 576px) {
+        padding-top: 10rem; // Further adjustment for very small screens
+    }
 }
-
-body {
-    background: white;
-}
-
 .layout-container {
     flex: 1;
     display: flex;
@@ -18,10 +20,9 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-}
 
-.main-content {
-    flex: 1;
-    width: 100%;
-    height: fit-content;
+    overflow-x: hidden;
+}
+.content-wrapper {
+    padding-top: 5rem; 
 }

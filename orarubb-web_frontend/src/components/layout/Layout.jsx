@@ -1,13 +1,15 @@
-import Navbar from '../header/Navbar'
-import './Layout.scss'
+import Navbar from '../header/Navbar';
+import './Layout.scss';
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
     return (
         <div className="layout-container">
-            <Navbar/>
-            {children}
+            <Navbar />
+            <div className="content-wrapper">
+                {children}
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default Layout
+export default Layout;

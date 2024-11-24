@@ -9,7 +9,9 @@
   align-items: center;
   flex-direction: column;
 }
-
+.content-wrapper {
+  padding-top: 2rem;
+}
 .main-content {
   display: flex;
   flex-direction: column;
