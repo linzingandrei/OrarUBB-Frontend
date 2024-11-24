@@ -19,16 +19,21 @@ const Navbar = () => {
                     <div className="navbar__language navbar__english_lang" title="English Lang Icon"></div>
                 </div>
 
-
                 <div className="navbar__right">
-                    {isLoggedIn ? (<>
-                        <button className="navbar__link">Orarul meu</button>
+                    {isLoggedIn ? (
+                        <>
+                            <button className="navbar__link">Orarul meu</button>
+                            <button className="navbar__link" onClick={handleLoginClick}>
+                                <span className="navbar__link-text">Log Out</span>
+                                <div className="navbar__icon logout-icon" title="Log Out"></div>
+                            </button>
+                        </>
+                    ) : (
                         <button className="navbar__link" onClick={handleLoginClick}>
-                            Log Out <div className="navbar__icon logout-icon" title="Log Out"></div>
+                            <span className="navbar__link-text">Log In</span>
+                            <div className="navbar__icon login-icon" title="Log In"></div>
                         </button>
-                    </>) : (<button className="navbar__link" onClick={handleLoginClick}>
-                        Log In <div className="navbar__icon login-icon" title="Log In"></div>
-                    </button>)}
+                    )}
                 </div>
             </nav>
         </div>

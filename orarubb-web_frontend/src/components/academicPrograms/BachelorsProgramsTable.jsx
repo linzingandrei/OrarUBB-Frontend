@@ -88,29 +88,44 @@ const bachelorSpecializations = [{
 }];
 
 const BachelorsProgramsTable = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    return (
-        <table className="table">
-            <thead>
-            <tr>
-                <th>Studii Licenta</th>
-                <th>Anul</th>
-            </tr>
-            </thead>
-            <tbody>
-            {bachelorSpecializations.map((specialization) => {
-                const years = specialization.years.split(";").filter(year => year);
-                return (<tr key={specialization.academic_specialization_id}>
-                    <td>{specialization.name}</td>
-                    <td onClick={() => {navigate("/group/ie3")}}>
-                        {years.map((year, i) => (<a key={i} href="#">{`Anul ${year}`}</a>))}
-                    </td>
-                </tr>);
-            })}
-            </tbody>
-        </table>
-    )
-}
+  return (
+    <div className="table-container">
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Studii Licență</th>
+            <th>Anul</th>
+          </tr>
+        </thead>
+        <tbody>
+          {bachelorSpecializations.map((specialization) => {
+            const years = specialization.years.split(';').filter((year) => year);
+            return (
+              <tr key={specialization.academic_specialization_id}>
+                <td>{specialization.name}</td>
+                <td>
+                  {years.map((year, i) => (
+                    <a
+                      key={i}
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault(); // Prevent default navigation
+                        navigate(`/group/ie${year}`); // Navigate dynamically
+                      }}
+                    >
+                      {`Anul ${year}`}
+                    </a>
+                  ))}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
 export default BachelorsProgramsTable;

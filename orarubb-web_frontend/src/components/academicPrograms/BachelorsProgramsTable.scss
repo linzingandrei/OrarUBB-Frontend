@@ -1,48 +1,83 @@
 .table-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .table {
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    color: #333;
-    
-    thead {
-      color: black;
-      th {
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow-x: auto; // Enable horizontal scrolling for small screens
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%; // Make the table take the full width of the container
+  max-width: 1200px; // Add a max width for larger screens
+  font-family: Arial, sans-serif;
+  color: #333;
+
+  thead {
+    color: black;
+
+    th {
+      text-align: center;
+      font-size: clamp(1rem, 2.5vw, 1.5rem); // Use clamp for responsive font sizes
+      font-weight: bold;
+      padding: 0.5rem;
     }
-  
-    tbody {
-      tr {
-        &:nth-child(even) {
-          background-color: #E1F0FF;
-        }
-        &:nth-child(odd) {
-          background-color: #FFFFFF;
-        }
-  
-        td {
-          border-bottom: 1px solid #ddd;
-          text-align: center;
-  
-          a {
-            color: black;
-            text-decoration: underline;
-            margin-right: 15px;
-            font-weight: bold;
-  
-            &:hover {
-              text-decoration: underline;
-            }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: #E1F0FF;
+      }
+
+      &:nth-child(odd) {
+        background-color: #FFFFFF;
+      }
+
+      td {
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+        padding: 0.5rem;
+        font-size: clamp(0.9rem, 2vw, 1rem); // Use clamp for responsive font sizes
+
+        a {
+          color: black;
+          text-decoration: underline;
+          margin-right: 15px;
+          font-weight: bold;
+          font-size: clamp(0.8rem, 1.8vw, 1rem); // Adjust link size
+          white-space: nowrap; // Prevent wrapping of links
+
+          &:hover {
+            text-decoration: none;
           }
         }
       }
     }
   }
-  
+}
+
+/* Media queries for smaller devices */
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.9rem; // Reduce font size for smaller screens
+  }
+
+  thead th {
+    font-size: 1rem; // Adjust header size
+  }
+
+  tbody td {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .table {
+    font-size: 0.8rem;
+  }
+
+  tbody td a {
+    font-size: 0.8rem; // Further reduce link size
+  }
+}
