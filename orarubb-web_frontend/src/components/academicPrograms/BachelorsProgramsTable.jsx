@@ -86,7 +86,6 @@ const bachelorSpecializations = [{
     name_abbreviated: "Psihologie",
     years: "1;",
 }];
-
 const BachelorsProgramsTable = () => {
   const navigate = useNavigate();
 
@@ -101,23 +100,25 @@ const BachelorsProgramsTable = () => {
         </thead>
         <tbody>
           {bachelorSpecializations.map((specialization) => {
-            const years = specialization.years.split(';').filter((year) => year);
+            const years = specialization.years.split(";").filter((year) => year);
             return (
               <tr key={specialization.academic_specialization_id}>
                 <td>{specialization.name}</td>
                 <td>
-                  {years.map((year, i) => (
-                    <a
-                      key={i}
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault(); // Prevent default navigation
-                        navigate(`/group/ie${year}`); // Navigate dynamically
-                      }}
-                    >
-                      {`Anul ${year}`}
-                    </a>
-                  ))}
+                  <div className="year-links">
+                    {years.map((year, i) => (
+                      <a
+                        key={i}
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate(`/group/ie${year}`);
+                        }}
+                      >
+                        {`Anul ${year}`}
+                      </a>
+                    ))}
+                  </div>
                 </td>
               </tr>
             );

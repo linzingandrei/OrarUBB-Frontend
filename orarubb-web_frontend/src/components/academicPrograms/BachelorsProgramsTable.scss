@@ -2,14 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
   width: 100%;
-  overflow-x: auto; // Enable horizontal scrolling for small screens
+  overflow-x: auto;
 }
 
 .table {
   border-collapse: collapse;
-  width: 100%; // Make the table take the full width of the container
-  max-width: 1200px; // Add a max width for larger screens
+  width: 100%;
+  max-width: 1200px;
   font-family: Arial, sans-serif;
   color: #333;
 
@@ -18,7 +19,7 @@
 
     th {
       text-align: center;
-      font-size: clamp(1rem, 2.5vw, 1.5rem); // Use clamp for responsive font sizes
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
       font-weight: bold;
       padding: 0.5rem;
     }
@@ -38,15 +39,22 @@
         border-bottom: 1px solid #ddd;
         text-align: center;
         padding: 0.5rem;
-        font-size: clamp(0.9rem, 2vw, 1rem); // Use clamp for responsive font sizes
+        font-size: clamp(0.9rem, 2vw, 1rem);
+
+        .year-links {
+          display: inline-flex;
+          justify-content: center;
+          gap: 10px;
+          flex-wrap: nowrap;
+          padding: 0;
+        }
 
         a {
           color: black;
           text-decoration: underline;
-          margin-right: 15px;
           font-weight: bold;
-          font-size: clamp(0.8rem, 1.8vw, 1rem); // Adjust link size
-          white-space: nowrap; // Prevent wrapping of links
+          font-size: clamp(0.8rem, 1.8vw, 1rem);
+          white-space: nowrap;
 
           &:hover {
             text-decoration: none;
@@ -57,18 +65,59 @@
   }
 }
 
-/* Media queries for smaller devices */
-@media (max-width: 768px) {
+@media (max-width: 1123px) {
   .table {
-    font-size: 0.9rem; // Reduce font size for smaller screens
+    font-size: 0.9rem;
   }
 
   thead th {
-    font-size: 1rem; // Adjust header size
+    font-size: 1rem;
   }
 
   tbody td {
     padding: 0.5rem;
+  }
+
+  tbody td .year-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 770px) {
+.table-container {
+    margin-top: 20px;
+  }
+  .table {
+    font-size: 0.9rem;
+  }
+
+  thead th {
+    display: none;
+  }
+
+  tbody td {
+    display: block;
+    border: none;
+  }
+
+  tbody td .year-links {
+    display: block;
+    text-align: left;
+    margin-top: 5px;
+    gap: 2px;
+  }
+
+  tbody td .year-links a {
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: left;
+  }
+
+  tbody tr {
+    display: block;
+    margin-bottom: 1rem;
   }
 }
 
@@ -78,6 +127,6 @@
   }
 
   tbody td a {
-    font-size: 0.8rem; // Further reduce link size
+    font-size: 0.8rem;
   }
 }
