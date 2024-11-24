@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Card from '../../components/Card';
-import '../AllCoursesPage/CardsPage.scss'
+import '../AllCoursesPage/CardsPage.scss';
 import './AllTeachersPage.scss';
 import { getAllTeachers } from '../../services/teachersService';
 import searchIcon from '../../assets/search_icon.svg';
