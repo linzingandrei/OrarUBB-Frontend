@@ -20,6 +20,8 @@
   width: 100%;
   padding: 1rem;
   box-sizing: border-box;
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
 }
 
 .table-title {
@@ -28,6 +30,14 @@
   color: #333;
   margin-bottom: 20px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.4rem;
+  }
 }
 
 .table {
@@ -37,46 +47,82 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
   color: #333;
-  margin-bottom: 0;
+  overflow-x: auto;
+  /* Allow scrolling */
 
-  thead {
-    color: black;
-
-    th {
-      padding: 16px;
-      text-align: center;
-      font-size: 1.3rem;
-      font-weight: bold;
-      background-color: transparent;
-    }
+  thead th {
+    padding: 16px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
   }
 
-  tbody {
-    tr {
-      &:nth-child(even) {
-        background-color: #E1F0FF;
-      }
+  tbody tr {
+    &:nth-child(even) {
+      background-color: #E1F0FF;
+    }
 
-      &:nth-child(odd) {
-        background-color: #FFFFFF;
-      }
+    &:nth-child(odd) {
+      background-color: #FFFFFF;
+    }
 
-      td {
-        padding: 8px;
-        border-bottom: 1px solid #ddd;
-        text-align: center;
+    td {
+      padding: 8px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
 
-        .link {
-          &:hover {
-            text-decoration: underline;
-          }
+      .link {
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
   }
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+
+    thead th {
+      font-size: 1rem;
+      padding: 12px;
+    }
+
+    tbody td {
+      padding: 6px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+
+    thead {
+      display: none;
+      /* Hide table header */
+    }
+
+    tbody tr {
+      display: block;
+      margin-bottom: 1rem;
+      /* Add spacing between rows */
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+    }
+
+    tbody td {
+      display: block;
+      text-align: left;
+      padding: 4px;
+      border: none;
+      font-size: 0.9rem;
+
+      &:before {
+        content: attr(data-label);
+        /* Add the column name as a label */
+        font-weight: bold;
+        margin-right: 0.5rem;
+        display: inline-block;
+        width: 40%;
+      }
+    }
+  }
 }

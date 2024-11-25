@@ -79,16 +79,22 @@ const scheduleForProfANDREICAAnca = [
   ];
   
 const ProfessorsSchedule = () => {
+    const scheduleData = scheduleForProfANDREICAAnca;
+
     return (
         <Layout>
-          <div className="professors-schedule">
-              {/*<p> hey</p>*/}
-              <div className="schedule-professor">
-                  <ProfessorSchedule scheduleData={scheduleForProfANDREICAAnca} professor={"ANDREICA Anca"} />
-              </div>
-          </div>
+            <div className="professors-schedule">
+                {scheduleData ? (
+                    <div className="schedule-professor">
+                        <ProfessorSchedule scheduleData={scheduleData} professor={"ANDREICA Anca"} />
+                    </div>
+                ) : (
+                    <p>Loading schedule...</p>
+                )}
+            </div>
         </Layout>
-      );
-}
+    );
+};
+
       
 export default ProfessorsSchedule;
