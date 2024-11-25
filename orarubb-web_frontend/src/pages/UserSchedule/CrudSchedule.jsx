@@ -119,6 +119,7 @@ const CrudSchedule = () => {
   const navigate = useNavigate();
   const [schedule, setSchedule] = useState(initialSchedule);
   const [editingIndex, setEditingIndex] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [form, setForm] = useState({
     class_day: "",
     start_hour: "",
@@ -129,17 +130,9 @@ const CrudSchedule = () => {
     teacher: "",
   });
 
-  const formRef = useRef(null);
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
-  };
-
-  const scrollToForm = () => {
-    if (formRef.current) {
-      formRef.current.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   const resetForm = () => {
@@ -167,13 +160,13 @@ const CrudSchedule = () => {
       ]);
     }
     resetForm();
+    setIsModalOpen(false);
   };
 
   const handleEdit = (index) => {
     setEditingIndex(index);
     setForm(schedule[index]);
-
-    scrollToForm();
+    setIsModalOpen(true);
   };
 
   const handleDelete = (index) => {
@@ -198,7 +191,7 @@ const CrudSchedule = () => {
           <button className="back-button" onClick={() => navigate(-1)}>
               Înapoi
           </button>
-          <button className="add-button" onClick={scrollToForm}>
+          <button className="add-button" onClick={() => setIsModalOpen(true)}>
             Adaugă
         </button>
         </div>
@@ -217,97 +210,104 @@ const CrudSchedule = () => {
         onEdit={handleEdit}
         onDelete={handleDelete}
         />
-        <div ref={formRef} className="form-container">
-          <h2>{editingIndex !== null ? "Editează" : "Adaugă"} Orar</h2>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleAddOrUpdate();
-            }}
-          >
-            <div className="form-group">
-              <label>Ziua</label>
-              <input
-                type="text"
-                name="class_day"
-                value={form.class_day}
-                onChange={handleInputChange}
-                required
-              />
+        {isModalOpen && (
+          <div className="modal-overlay">
+            <div className="modal">
+              <h2>{editingIndex !== null ? "Editează" : "Adaugă"} Orar</h2>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleAddOrUpdate();
+                }}
+              >
+                <div className="form-group">
+                  <label>Ziua</label>
+                  <input
+                    type="text"
+                    name="class_day"
+                    value={form.class_day}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Ora Început</label>
+                  <input
+                    type="number"
+                    name="start_hour"
+                    value={form.start_hour}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Ora Sfârșit</label>
+                  <input
+                    type="number"
+                    name="end_hour"
+                    value={form.end_hour}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Sală</label>
+                  <input
+                    type="text"
+                    name="room"
+                    value={form.room}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Tip Curs</label>
+                  <input
+                    type="text"
+                    name="class_type"
+                    value={form.class_type}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Cod Curs</label>
+                  <input
+                    type="text"
+                    name="course_instance_code"
+                    value={form.course_instance_code}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Profesor</label>
+                  <input
+                    type="text"
+                    name="teacher"
+                    value={form.teacher}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <button type="submit" className="submit-button">
+                  {editingIndex !== null ? "Actualizează" : "Adaugă"}
+                </button>
+                <button
+                  type="button"
+                  className="cancel-button"
+                  onClick={() => {
+                    resetForm();
+                    setIsModalOpen(false);
+                  }}
+                >
+                  Anulează
+                </button>
+              </form>
             </div>
-            <div className="form-group">
-              <label>Ora Început</label>
-              <input
-                type="number"
-                name="start_hour"
-                value={form.start_hour}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label>Ora Sfârșit</label>
-              <input
-                type="number"
-                name="end_hour"
-                value={form.end_hour}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label>Sală</label>
-              <input
-                type="text"
-                name="room"
-                value={form.room}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label>Tip Curs</label>
-              <input
-                type="text"
-                name="class_type"
-                value={form.class_type}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label>Cod Curs</label>
-              <input
-                type="text"
-                name="course_instance_code"
-                value={form.course_instance_code}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label>Profesor</label>
-              <input
-                type="text"
-                name="teacher"
-                value={form.teacher}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <button type="submit" className="submit-button">
-              {editingIndex !== null ? "Actualizează" : "Adaugă"}
-            </button>
-            <button
-              type="button"
-              className="cancel-button"
-              onClick={resetForm}
-            >
-              Anulează
-            </button>
-          </form>
+          </div>
+        )}
         </div>
-      </div>
     </Layout>
   );
 };

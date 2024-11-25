@@ -51,90 +51,76 @@
     background-color: #163c63;
   }
   
-  .form-container {
-    max-width: 500px; 
-    margin: 2rem auto; 
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 5rem;
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
   }
   
-  .form-container h2 {
-    font-size: 1.25rem;
+  .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal h2 {
+    margin-top: 0;
     text-align: center;
-    margin-bottom: 20px;
   }
   
-  .form-group {
+  .modal .form-group {
     margin-bottom: 15px;
   }
   
-  .form-group label {
+  .modal .form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
   }
   
-  .form-group input {
+  .modal .form-group input {
     width: 95%;
-    padding: 10px;
-    font-size: 1rem;
+    padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
     background-color: #f9f9f9;
     color: black;
   }
-  
-  .form-group input:focus {
+
+  .modal .form-group input:focus {
     outline: none;
     border-color: #1A4977;
   }
   
+  .submit-button,
+  .cancel-button {
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
   .submit-button {
-    width: 100%;
-    padding: 12px;
     background-color: #1A4977;
     color: white;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    width: 45%;
   }
   
-  .submit-button:hover {
-    background-color: #163c63;
-  }
-
   .cancel-button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    background-color: #949ba1;
+    background-color: #dc3545;
     color: white;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .cancel-button:hover {
-    background-color: #8f9194;
-  }
-  
-  .table-container {
-    margin-top: 0 auto;
-    padding-top: 2rem;
-    display: table;
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    overflow: hidden;
-    position: relative;
+    width: 45%;
   }
   
   .edit-button, .delete-button {
