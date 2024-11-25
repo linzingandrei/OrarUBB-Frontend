@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./CrudSchedule.scss";
 import Layout from "../../components/layout/Layout";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import CrudScheduleTable from "../../components/crudSchedule/CrudScheduleTable";
 
 const initialSchedule = [
