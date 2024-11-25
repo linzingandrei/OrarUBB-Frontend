@@ -10,6 +10,8 @@ import MainPage from "./pages/MainPage/MainPage";
 import StudyProgramsPage from "./pages/MainPage/StudyProgramsPage/StudyProgramsPage";
 import GroupsSchedule from "./pages/MainPage/GroupsSchedule/GroupsSchedule";
 import RoomsSchedule from "./pages/RoomsSchedule/RoomsSchedule";
+import UserSchedule from "./pages/UserSchedule/UserSchedule";
+import CrudSchedule from "./pages/UserSchedule/CrudSchedule";
 
 const AppContent = () => {
   return (
@@ -29,6 +31,8 @@ const AppContent = () => {
         <Route path="/study-programs" element={<StudyProgramsPage />} />
         <Route path="/group/ie3" element={<GroupsSchedule />} />
         <Route path="/room/1" element={<RoomsSchedule />} />
+        <Route path="/crud-schedule" element={<CrudSchedule />} />
+        <Route path="/my-schedule" element={<UserSchedule />} />
       </Routes>
     </BrowserRouter>
   );
