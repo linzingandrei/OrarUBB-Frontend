@@ -1,5 +1,4 @@
 @use '../utils/colors.scss';
-
 .card {
     background-color: colors.$primary-dark-blue;
     color: colors.$text-white;
@@ -9,26 +8,36 @@
     cursor: pointer;
     transition: transform 0.1s;
     text-decoration: none;
-    width: 180px;
-    
+    width: 50%;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .card-title {
-    font-size: 19px;
+    font-size: 13px;
     margin: 0;
     font-weight: 500;
 }
 
 .card-subtitle {
-    font-size: 17px;
+    font-size: 12px;
     margin-top: 5px;
     margin-bottom: 0px;
 }
 
 .card:hover {
     transform: scale(1.05);
+}
+
+.cards-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Cards will adjust based on screen size */
+    gap: 10px;
+    margin-top: 20px;
+    /* Ensure that each card gets enough space but remains flexible */
 }

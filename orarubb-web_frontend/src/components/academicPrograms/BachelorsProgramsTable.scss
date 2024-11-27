@@ -19,7 +19,10 @@
 
     th {
       text-align: center;
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      vertical-align: middle;
+      /* Centers text vertically */
+      font-size: 32px;
+      /* Corrected to proper pixel value */
       font-weight: bold;
       padding: 0.5rem;
     }
@@ -38,6 +41,8 @@
       td {
         border-bottom: 1px solid #ddd;
         text-align: center;
+        vertical-align: middle;
+        /* Centers text vertically */
         padding: 0.5rem;
         font-size: clamp(0.9rem, 2vw, 1rem);
 
@@ -85,20 +90,24 @@
 }
 
 @media (max-width: 770px) {
-.table-container {
+  .table-container {
     margin-top: 20px;
   }
+
   .table {
     font-size: 0.9rem;
   }
 
   thead th {
-    display: none;
+    font-size: 2rem;
   }
 
   tbody td {
-    display: block;
+    display: flex;
     border: none;
+    text-align: center;
+    align-items: center;
+    padding: 0.5rem;
   }
 
   tbody td .year-links {
@@ -121,12 +130,16 @@
   }
 }
 
-@media (max-width: 576px) {
-  .table {
-    font-size: 0.8rem;
-  }
-
-  tbody td a {
-    font-size: 0.8rem;
+@media (max-width: 480px) {
+.table tbody tr td {
+    width: 80%;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.5rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

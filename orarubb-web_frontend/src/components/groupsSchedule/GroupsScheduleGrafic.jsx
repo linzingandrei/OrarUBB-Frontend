@@ -1,5 +1,4 @@
 import React from 'react';
-import './GroupsScheduleTabelar.scss';
 
 const GroupsScheduleGrafic = ({ scheduleData, group }) => {
   return (

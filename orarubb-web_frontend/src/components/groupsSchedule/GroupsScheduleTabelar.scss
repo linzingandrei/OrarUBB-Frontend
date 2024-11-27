@@ -35,28 +35,6 @@
       }
     }
   
-    tbody {
-      tr {
-        &:nth-child(even) {
-          background-color: #E1F0FF;
-        }
-  
-        &:nth-child(odd) {
-          background-color: #FFFFFF;
-        }
-  
-        td {
-          padding: 8px;
-          border-bottom: 1px solid #ddd;
-          text-align: center;
-  
-          .link {
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-    }
+    
   }
   
