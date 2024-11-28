@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import Card from '../../components/Card';
 import '../AllCoursesPage/CardsPage.scss'
 import './AllTeachersPage.scss';
-import { getAllTeachers } from '../../services/teachersService';
 import searchIcon from '../../assets/search_icon.svg';
 import orderIcon from '../../assets/order_alph.svg';
 import Layout from '../../components/layout/Layout';
@@ -10,8 +9,27 @@ import Layout from '../../components/layout/Layout';
 const AllTeachersPage = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [sortOrder, setSortOrder] = useState('asc');
-    
-    const mockTeachers = getAllTeachers();
+    const [mockTeachers, setMockTeachers] = useState([]);
+
+    useEffect(() => {
+        const fetchTeachers = async () => {
+            try {
+                const response = await fetch('http://localhost:8080/teachers/ro-RO');
+                const data = await response.json();
+                console.log(data);
+                console.log(data);
+                setMockTeachers(data);
+
+                // If using axios, replace the above with:
+                // const response = await axios.get('http://localhost:8080/api/teachers');
+                // setMockTeachers(response.data);
+            } catch (error) {
+                console.error('Error fetching teachers:', error);
+            }
+        };
+
+        fetchTeachers();
+    }, []);
 
     const filteredTeachers = mockTeachers
         .filter((teacher) =>
@@ -62,9 +80,9 @@ const AllTeachersPage = () => {
                 <div className="cards-list">
                     {filteredTeachers.map((teacher) => ( 
                         <Card
-                            key={teacher.teacher_id}
+                            key={teacher.teacherId}
                             title={teacher.name}
-                            link={`/teacher/${teacher.teacher_id}`}
+                            link={`/teacher/${teacher.teacherId}`}
                         />
                     ))}
                 </div>

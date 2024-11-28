@@ -22,7 +22,7 @@ const Navbar = () => {
 
                 <div className="navbar__right">
                     {isLoggedIn ? (<>
-                        <button className="navbar__link">Orarul meu</button>
+                        <button className="navbar__link" onClick={() => navigate("/my-schedule")}>Orarul meu</button>
                         <button className="navbar__link" onClick={handleLoginClick}>
                             Log Out <div className="navbar__icon logout-icon" title="Log Out"></div>
                         </button>
