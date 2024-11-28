@@ -9,6 +9,7 @@ import ProfessorsSchedule from "./pages/ProfessorsSchedule/ProfessorsSchedule";
 import MainPage from './pages/MainPage/MainPage'
 import StudyProgramsPage from './pages/MainPage/StudyProgramsPage/StudyProgramsPage'
 import GroupsSchedule from './pages/MainPage/GroupsSchedule/GroupsSchedule'
+import LegendaSalilorPage from "./pages/LegendaSalilorPage/LegendaSalilorPage";
 
 const AppContent = () => {
     return (
@@ -24,6 +25,7 @@ const AppContent = () => {
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="/study-programs" element={<StudyProgramsPage/>}/>
                 <Route path="/group/ie3" element={<GroupsSchedule/>}/>
+                <Route path="informatii-sali/legenda" element={<LegendaSalilorPage/>}/>
             </Routes>
         </BrowserRouter>
     );

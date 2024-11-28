@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "sass:map";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 $colors: (
   primary: #ffffff,
@@ -8,9 +10,10 @@ $colors: (
 );
 
 @mixin button-color($color) {
-  background-color: map-get($colors, $color);
+  $color-value: map.get($colors, $color);
+  background-color: $color-value;
   &:hover {
-    background-color: darken(map-get($colors, $color), 10%);
+    background-color: color.adjust($color-value, $lightness: -10%);
   }
 }
 
