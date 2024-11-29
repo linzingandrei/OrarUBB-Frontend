@@ -25,6 +25,7 @@ const InformatiiSaliPage = () => {
                             color="primary"
                             label="Ocuparea Salilor"
                             className="medium rounded"
+                            to="/rooms/rooms-schedule"
                         />
                         <Button
                             color="primary"

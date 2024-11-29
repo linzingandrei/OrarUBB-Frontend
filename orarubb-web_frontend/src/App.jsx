@@ -12,6 +12,7 @@ import GroupsSchedule from "./pages/MainPage/GroupsSchedule/GroupsSchedule";
 import RoomsSchedule from "./pages/RoomsSchedule/RoomsSchedule";
 import UserSchedule from "./pages/UserSchedule/UserSchedule";
 import CrudSchedule from "./pages/UserSchedule/CrudSchedule";
+import RoomsAvailabilityPage from "./pages/RoomsAvailabilityPage/RoomsAvailabilityPage";
 
 const AppContent = () => {
   return (
@@ -33,6 +34,7 @@ const AppContent = () => {
         <Route path="/room/1" element={<RoomsSchedule />} />
         <Route path="/crud-schedule" element={<CrudSchedule />} />
         <Route path="/my-schedule" element={<UserSchedule />} />
+        <Route path="/rooms/rooms-schedule" element={<RoomsAvailabilityPage />} />
       </Routes>
     </BrowserRouter>
   );
