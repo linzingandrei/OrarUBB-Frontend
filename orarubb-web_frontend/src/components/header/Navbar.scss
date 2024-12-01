@@ -173,3 +173,40 @@
 button:focus {
   outline: none;
 }
+
+.path{
+  font-style: oblique;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.navbar__navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+      opacity: 1;
+  }
+}
+
+.navbar__back-button {
+  background-image: url(https://cdn-icons-png.flaticon.com/128/3114/3114883.png); // Replace with your back icon
+  margin-right: 10px;
+}
+
+.navbar__forward-button {
+  background-image: url(https://cdn-icons-png.flaticon.com/128/9125/9125994.png); // Replace with your forward icon
+}

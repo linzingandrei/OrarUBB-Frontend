@@ -46,6 +46,7 @@ const AllTeachersPage = () => {
                         className="icon order-icon" 
                         onClick={handleSortToggle} 
                         style={{ cursor: 'pointer' }}
+                        title="Sort alphabetically by name"
                     />
                     <div className="search-container">
                         <img src={searchIcon} alt="Search Icon" className="icon search-icon" />
