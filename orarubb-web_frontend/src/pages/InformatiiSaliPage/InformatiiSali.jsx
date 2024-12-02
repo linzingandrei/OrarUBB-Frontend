@@ -20,6 +20,7 @@ const InformatiiSaliPage = () => {
                             color="primary"
                             label="Legenda Salilor"
                             className="medium rounded"
+                            to="/informatii-sali/legenda"
                         />
                         <Button
                             color="primary"

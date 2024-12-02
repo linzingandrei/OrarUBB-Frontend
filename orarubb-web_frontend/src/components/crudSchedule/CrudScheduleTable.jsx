@@ -33,19 +33,19 @@ const CrudScheduleTable = ({ scheduleData, onEdit, onDelete }) => {
                   : "Săptămâna pară"}
               </td>
               <td>
-                <a href={`#${item.room}`} className="link">
+                <a href={`/${item.room}`} className="link">
                   {item.room}
                 </a>
               </td>
               <td>{item.formation}</td>
               <td>{item.class_type}</td>
               <td>
-                <a href={`#${item.course_instance_code}`} className="link">
+                <a href={`/${item.course_instance_code}`} className="link">
                   {item.course_instance_code}
                 </a>
               </td>
               <td>
-                <a href={`#${item.teacher}`} className="link">
+                <a href={`/${item.teacher}`} className="link">
                   {item.teacher}
                 </a>
               </td>
