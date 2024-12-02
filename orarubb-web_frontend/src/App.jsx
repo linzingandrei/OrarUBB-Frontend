@@ -12,6 +12,7 @@ import GroupsSchedule from "./pages/MainPage/GroupsSchedule/GroupsSchedule";
 import RoomsSchedule from "./pages/RoomsSchedule/RoomsSchedule";
 import UserSchedule from "./pages/UserSchedule/UserSchedule";
 import CrudSchedule from "./pages/UserSchedule/CrudSchedule";
+import RoomsAvailabilityPage from "./pages/RoomsAvailabilityPage/RoomsAvailabilityPage";
 import LegendaSalilorPage from "./pages/LegendaSalilorPage/LegendaSalilorPage";
 
 const AppContent = () => {
@@ -46,6 +47,7 @@ const AppContent = () => {
         <Route path="/course/:courseName" element={<></>} /> {/* TODO - there is no course page yet afaik */}
         <Route path="/crud-schedule" element={<CrudSchedule />} />
         <Route path="/my-schedule" element={<UserSchedule />} />
+        <Route path="/rooms/rooms-schedule" element={<RoomsAvailabilityPage />} />
       </Routes>
     </BrowserRouter>
   );
