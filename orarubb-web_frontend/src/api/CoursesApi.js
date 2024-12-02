@@ -1,0 +1,13 @@
+import { apiSlice } from "./ApiSlice";
+
+export const coursesApi = apiSlice.injectEndpoints({
+  endpoints: (builder) => ({
+    getAllCourseInstancesByLanguage: builder.query({
+      query: (language) => `/course-instances/${language}`,
+      providesTags: ["coursesCache"],
+      keepUnusedDataFor: 1000,
+    }),
+  }),
+});
+
+export const { useGetAllCourseInstancesByLanguageQuery } = coursesApi;
