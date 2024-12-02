@@ -8,7 +8,7 @@ const getRoomsSchedules = (language) => {
         fetch(`/rooms/rooms-schedule/${language}`)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 setRoomsAvailabilities(data);
             })
             .catch((err) => {

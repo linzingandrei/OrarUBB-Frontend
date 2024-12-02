@@ -2,8 +2,8 @@ import React from 'react'
 import './RoomsAvailability.scss'
 
 const RoomsAvailability = ({data, allRooms}) => {
-    console.log(data);
-    console.log(allRooms);
+    // console.log(data);
+    // console.log(allRooms);
     // to make call to backend for days in specified language
     const days = ["Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"]
 
@@ -28,7 +28,9 @@ const RoomsAvailability = ({data, allRooms}) => {
                                     <th className='room'>&nbsp;</th>
                                     <th className='room'>&nbsp;</th>
                                     {allRooms.map((room, roomIndex) => (
-                                        <th className='room' key={roomIndex}>{room.name}</th>
+                                        <th className='room' key={roomIndex}>
+                                            <a href={`/room/${room.roomId}`}>{room.name}</a>
+                                        </th>
                                     ))}
                                 </tr>
 

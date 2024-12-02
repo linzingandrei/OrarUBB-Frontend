@@ -3,13 +3,13 @@ import getRoomsSchedules from '../../services/roomsAvailabilityService'
 import Layout from '../../components/layout/Layout';
 import RoomsAvailability from '../../components/roomsAvailability/RoomsAvailability';
 import { getAllRooms } from '../../services/roomsService';
+import { useGetAllRoomsQuery } from "../../api/RoomsApi";
 
 
 const RoomsAvailabilityPage = () => {
     const roomsSchedule = getRoomsSchedules("ro-RO");
-    const allRooms = getAllRooms();
-
-    // console.log("AICI:", numberOfRooms);
+    // const allRooms = getAllRooms();
+    const { data: allRooms = [], isLoading } = useGetAllRoomsQuery();
 
     return (
         <Layout>
