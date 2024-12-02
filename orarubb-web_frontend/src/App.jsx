@@ -21,20 +21,27 @@ const AppContent = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<LandingPage />} />
         <Route path="/informatii-sali" element={<InformatiiSaliPage />} />
+        <Route
+          path="informatii-sali/legenda"
+          element={<LegendaSalilorPage />}
+        />
         <Route path="/teachers" element={<AllTeachersPage />} />
         <Route path="/rooms" element={<AllRoomsPage />} />
         <Route path="/courses" element={<AllCoursesPage />} />
         <Route
-          path="/teacher/c2c03206-4e5d-589c-91ac-40cd86665ca1"
+          path="/teacher/:teacherName/:teacherId"
           element={<ProfessorsSchedule />}
         />
+        {/* <Route
+          path="/teacher/c2c03206-4e5d-589c-91ac-40cd86665ca1"
+          element={<ProfessorsSchedule />}
+        /> */}
         <Route path="/" element={<MainPage />} />
         <Route path="/study-programs" element={<StudyProgramsPage />} />
-        <Route path="/group/ie3" element={<GroupsSchedule />} />
+        <Route path="/group/ie3" element={<GroupsSchedule />} />  
         <Route path="/room/1" element={<RoomsSchedule />} />
         <Route path="/crud-schedule" element={<CrudSchedule />} />
         <Route path="/my-schedule" element={<UserSchedule />} />
-        <Route path="informatii-sali/legenda" element={<LegendaSalilorPage/>}/>
       </Routes>
     </BrowserRouter>
   );
