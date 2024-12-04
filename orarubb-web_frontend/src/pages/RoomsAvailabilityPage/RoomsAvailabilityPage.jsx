@@ -1,11 +1,10 @@
 import React from 'react';
-import { useGetAllRoomsQuery } from "../../api/RoomsApi";
+import {useGetAllRoomsQuery, useGetRoomsSchedulesQuery} from "../../api/RoomsApi";
 import Layout from '../../components/layout/Layout';
 import RoomsAvailability from '../../components/roomsAvailability/RoomsAvailability';
-import getRoomsSchedules from '../../services/roomsAvailabilityService';
 
 const RoomsAvailabilityPage = () => {
-    const roomsSchedule = getRoomsSchedules("ro-RO");
+    const { data: roomsSchedule = []} = useGetRoomsSchedulesQuery("ro-RO");
     const { data: allRooms = [], isLoading, isError, error } = useGetAllRoomsQuery();
 
     if (isLoading) {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import './RoomsAvailability.scss';
 
 const RoomsAvailability = ({ data, allRooms }) => {
@@ -19,6 +19,7 @@ const RoomsAvailability = ({ data, allRooms }) => {
                 <tbody>
                 {days.map((day, dayIndex) => {
                     // Filter data for the current day
+                    console.log(data);
                     const dayData = data.filter(item => item.classDay === day);
 
                     return (
