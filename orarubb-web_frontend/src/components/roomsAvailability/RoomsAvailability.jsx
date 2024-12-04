@@ -14,7 +14,7 @@ const RoomsAvailability = ({data, allRooms}) => {
     };
 
     return (
-        <div className='scrollable-container'>
+        <div className='rooms-availability-scrollable-container'>
             <table border={"1px solid black"}>
                 <tbody>
                     {days.map((day, dayIndex) => {
