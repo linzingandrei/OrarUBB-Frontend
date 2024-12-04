@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import "./App.scss";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import InformatiiSaliPage from "./pages/InformatiiSaliPage/InformatiiSali";
@@ -14,6 +14,8 @@ import UserSchedule from "./pages/UserSchedule/UserSchedule";
 import CrudSchedule from "./pages/UserSchedule/CrudSchedule";
 import RoomsAvailabilityPage from "./pages/RoomsAvailabilityPage/RoomsAvailabilityPage";
 import LegendaSalilorPage from "./pages/LegendaSalilorPage/LegendaSalilorPage";
+import {useEffect} from "react";
+
 
 const AppContent = () => {
   return (
