@@ -1,3 +1,9 @@
+.navbar__empty_space{
+    height: 5rem;
+    z-index: 0;
+    width: 0.1px;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -11,7 +17,6 @@
   color: #1a4977;
   user-select: none;
   z-index: 1; // to make sure the logo is on top of the navbar
-
   &__left {
     display: flex;
     align-items: center;
