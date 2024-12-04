@@ -3,11 +3,16 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .main-content {
@@ -50,6 +55,14 @@
   margin-top: 1.5rem;
 }
 
+.line-separator {
+  width: 50%;
+  height: 2px;
+  background-color: #ddd; /* Adjust the color as needed */
+  margin: 20px 0; /* Add spacing around the separator */
+  border: none; /* Remove default border if using <hr> */
+}
+
 .subtitle {
   color: #ffffff;
   text-align: center;
@@ -64,4 +77,35 @@
   margin-top: 1rem;
   font-size: 0.8rem;
   font-weight: 300;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.custom-button-like {
+  display: inline-block; /* Mimics the button display */
+  background-color: #fff; /* Same background as buttons */
+  color: #003f70; /* Button text color */
+  padding: 0.8rem 0.5rem;
+  border-radius: 1rem; /* Rounded corners */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline if <a> is used */
+  width: 100%; /* Make it wider */
+  max-width: 400px; /* Optional: set a max width */
+  margin: 0 auto; /* Center align and add spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+a{
+  font-weight: 600;
+}
+
+a:hover{
+  text-decoration: underline;
+  text-underline: #003f70;
+  color: #003f70;
 }
