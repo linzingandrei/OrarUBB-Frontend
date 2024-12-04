@@ -19,9 +19,9 @@ const RoomSchedule = ({ scheduleData, room }) => {
         <tbody>
           {scheduleData.map((item, index) => (
             <tr key={index}>
-              <td>{item.class_day}</td>
+              <td>{item.classDay}</td>
               <td>
-                {item.start_hour} - {item.end_hour}
+                {item.startHour} - {item.endHour}
               </td>
               <td>
                 {item.frequency === 0
@@ -49,5 +49,19 @@ const RoomSchedule = ({ scheduleData, room }) => {
     </div>
   );
 };
+
+/*
+"classId": "d821db2b-ad1a-5483-a9f5-3b0b6009f299",
+        "classDay": "Joi",
+        "startHour": 3,
+        "endHour": 5,
+        "frequency": 0,
+        "room": "7/I",
+        "formation": "MI3",
+        "classType": "Curs",
+        "courseInstanceCode": "MLR5015",
+        "courseInstanceName": "Programare Web",
+        "teacher": "Conf. BUFNEA Darius"
+ */
 
 export default RoomSchedule;

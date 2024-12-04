@@ -11,8 +11,13 @@ export const roomsApi = apiSlice.injectEndpoints({
       query: (language) => `/rooms/rooms-schedule/${language}`,
       providesTags: ["roomsSchedulesCache"],
       keepUnusedDataFor: 1000,
-    })
+    }),
+    getRoomClasses: builder.query({
+      query: ({roomId, languageTag}) => `/classes/room/${roomId}/${languageTag}`,
+      providesTags: ["roomClassesCache"],
+      keepUnusedDataFor: 1000,
+    }),
   }),
 });
 
-export const { useGetAllRoomsQuery, useGetRoomsSchedulesQuery } = roomsApi;
+export const { useGetAllRoomsQuery, useGetRoomsSchedulesQuery, useGetRoomClassesQuery } = roomsApi;

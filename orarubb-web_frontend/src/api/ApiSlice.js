@@ -11,5 +11,6 @@ export const apiSlice = createApi({
     "classesCache",
     "groupsCache",
     "classesForTeacherCache",
+    "roomClassesCache",
   ],
 });
