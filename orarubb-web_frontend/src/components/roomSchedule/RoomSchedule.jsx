@@ -1,28 +1,24 @@
-import "./ProfessorSchedule.scss";
+import "./RoomSchedule.scss";
 
-const ProfessorSchedule = ({ scheduleData, professor }) => {
-  console.log("Data", scheduleData);
+const RoomSchedule = ({ scheduleData, room }) => {
   return (
-    <div className="professor-schedule-table-container">
-      <h2 className="table-title">Orar {professor}</h2>
+    <div className="room-schedule-table-container">
+      <h2 className="table-title">Orar: Sala {room}</h2>
       <table className="table">
         <thead>
           <tr>
             <th>Ziua</th>
             <th>Orele</th>
             <th>Frecventa</th>
-            <th>Sala</th>
-            <th>Anul</th>
             <th>Formatia</th>
             <th>Tipul</th>
             <th>Disciplina</th>
+            <th>Cadru didactic</th>
           </tr>
         </thead>
         <tbody>
           {scheduleData.map((item, index) => (
-            <tr key={item.classId}>
-              {" "}
-              {/*this key has to be modified after working with real data to be unique*/}
+            <tr key={index}>
               <td>{item.classDay}</td>
               <td>
                 {item.startHour} - {item.endHour}
@@ -34,21 +30,16 @@ const ProfessorSchedule = ({ scheduleData, professor }) => {
                   ? "Săptămâna impară"
                   : "Săptămâna pară"}
               </td>
-              <td>
-                <a href={`#${item.room}`} className="link">
-                  {item.room}
-                </a>
-              </td>
-              <td>
-                <a href={`#${item.year}`} className="link">
-                  {item.year}
-                </a>
-              </td>
               <td>{item.formation}</td>
               <td>{item.classType}</td>
               <td>
                 <a href={`#${item.courseInstanceCode}`} className="link">
                   {item.courseInstanceName}
+                </a>
+              </td>
+              <td>
+                <a href={`#${item.teacher}`} className="link">
+                  {item.teacher}
                 </a>
               </td>
             </tr>
@@ -59,4 +50,18 @@ const ProfessorSchedule = ({ scheduleData, professor }) => {
   );
 };
 
-export default ProfessorSchedule;
+/*
+"classId": "d821db2b-ad1a-5483-a9f5-3b0b6009f299",
+        "classDay": "Joi",
+        "startHour": 3,
+        "endHour": 5,
+        "frequency": 0,
+        "room": "7/I",
+        "formation": "MI3",
+        "classType": "Curs",
+        "courseInstanceCode": "MLR5015",
+        "courseInstanceName": "Programare Web",
+        "teacher": "Conf. BUFNEA Darius"
+ */
+
+export default RoomSchedule;
