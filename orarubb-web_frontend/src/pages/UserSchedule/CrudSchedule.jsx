@@ -187,7 +187,7 @@ const CrudSchedule = () => {
   return (
     <Layout>
       <div className="crud-schedule-page">
-        <div className="header-actions">
+        <div className="crud-header-actions">
           <button className="back-button" onClick={() => navigate(-1)}>
               Înapoi
           </button>
@@ -220,7 +220,7 @@ const CrudSchedule = () => {
                   handleAddOrUpdate();
                 }}
               >
-                <div className="form-group">
+                <div className="crud-form-group">
                   <label>Ziua</label>
                   <input
                     type="text"
@@ -230,7 +230,7 @@ const CrudSchedule = () => {
                     required
                   />
                 </div>
-                <div className="form-group">
+                <div className="crud-form-group">
                   <label>Ora Început</label>
                   <input
                     type="number"
@@ -240,7 +240,7 @@ const CrudSchedule = () => {
                     required
                   />
                 </div>
-                <div className="form-group">
+                <div className="crud-form-group">
                   <label>Ora Sfârșit</label>
                   <input
                     type="number"
@@ -250,7 +250,7 @@ const CrudSchedule = () => {
                     required
                   />
                 </div>
-                <div className="form-group">
+                <div className="crud-form-group">
                   <label>Sală</label>
                   <input
                     type="text"
@@ -260,7 +260,7 @@ const CrudSchedule = () => {
                     required
                   />
                 </div>
-                <div className="form-group">
+                <div className="crud-form-group">
                   <label>Tip Curs</label>
                   <input
                     type="text"
@@ -270,7 +270,7 @@ const CrudSchedule = () => {
                     required
                   />
                 </div>
-                <div className="form-group">
+                <div className="crud-form-group">
                   <label>Cod Curs</label>
                   <input
                     type="text"
@@ -280,7 +280,7 @@ const CrudSchedule = () => {
                     required
                   />
                 </div>
-                <div className="form-group">
+                <div className="crud-form-group">
                   <label>Profesor</label>
                   <input
                     type="text"

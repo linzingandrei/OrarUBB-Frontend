@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-.table-container {
+.crud-table-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,7 +9,7 @@
     margin-bottom: 50px;
   }
   
-  .table-title {
+  .crud-table-title {
     font-size: 1.4rem;
     font-weight: bold;
     color: #000000;
@@ -18,7 +18,7 @@
     font-family: 'Montserrat', sans-serif;
   }
   
-  .table {
+  .crud-table {
     width: 90%;
     border-collapse: collapse;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);

@@ -2,9 +2,9 @@ import "./CrudScheduleTable.scss";
 
 const CrudScheduleTable = ({ scheduleData, onEdit, onDelete }) => {
   return (
-    <div className="table-container">
-      <h2 className="table-title">Orarul meu</h2>
-      <table className="table">
+    <div className="crud-table-container">
+      <h2 className="crud-table-title">Orarul meu</h2>
+      <table className="crud-table">
         <thead>
           <tr>
             <th>Ziua</th>
