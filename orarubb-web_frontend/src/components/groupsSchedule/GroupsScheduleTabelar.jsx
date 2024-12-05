@@ -1,6 +1,5 @@
 import React from 'react';
 import './GroupsScheduleTabelar.scss';
-import { Link } from 'react-router-dom';
 
 const GroupsScheduleTabelar = ({ scheduleData, group }) => {
   return (
@@ -26,16 +25,21 @@ const GroupsScheduleTabelar = ({ scheduleData, group }) => {
               <td>{item.start_hour} - {item.end_hour}</td>
               <td>{item.frequency === 0 ? "Săptămânal" : item.frequency === 1 ? "Săptămâna impară" : "Săptămâna pară"}</td>
               <td>
-                <Link to={`/room/${item.room}`} className="link">{item.room}</Link>
+                <a href={`#${item.room}`} className="link">
+                  {item.room}
+                </a>
               </td>
               <td>{item.formation}</td>
               <td>{item.class_type}</td>
               <td>
-                <Link to={`/course/${item.course_instance_code}`} className="link">{item.course_instance_code}</Link>
+                <a href={`#${item.course_instance_code}`} className="link">
+                  {item.course_instance_code}
+                </a>
               </td>
               <td>
-                <Link to={`/teacher/${item.teacher}`} className="link">{item.teacher}</Link>
-                {/*!!! IMPORTANT - need to think of abbreviations and names to not mess up routing*/}
+                <a href={`#${item.teacher}`} className="link">
+                  {item.teacher}
+                </a>
               </td>
             </tr>
           ))}

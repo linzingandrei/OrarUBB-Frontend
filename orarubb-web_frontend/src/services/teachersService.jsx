@@ -1,5 +1,4 @@
 export const getAllTeachers = () => {
-
     return [
         {
             teacher_id: "043fa178-fe00-434a-a79c-c9aed43f8082",
