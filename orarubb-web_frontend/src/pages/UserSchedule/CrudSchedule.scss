@@ -78,17 +78,17 @@
     text-align: center;
   }
   
-  .modal .form-group {
+  .modal .crud-form-group {
     margin-bottom: 15px;
   }
   
-  .modal .form-group label {
+  .modal .crud-form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
   }
   
-  .modal .form-group input {
+  .modal .crud-form-group input {
     width: 95%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -97,7 +97,7 @@
     color: black;
   }
 
-  .modal .form-group input:focus {
+  .modal .crud-form-group input:focus {
     outline: none;
     border-color: #1A4977;
   }
@@ -168,7 +168,7 @@
     }
   }
 
-  .header-actions {
+  .crud-header-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
