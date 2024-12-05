@@ -1,0 +1,47 @@
+.table-container {
+    margin: 20px;
+  }
+  
+  .table-title {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .scheduler-table {
+    width: 90%;
+    border-collapse: collapse;
+  }
+  
+  .scheduler-table th,
+  .scheduler-table td {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+    vertical-align: top;
+  }
+  
+  .scheduler-table th {
+    background-color: #f4f4f4;
+  }
+ .scheduler-cell {
+  text-align: center;
+  vertical-align: top;
+}
+
+.class-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.class-card {
+  background-color: #E1F0FF;
+  padding: 5px;
+  border-radius: 5px;
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+  
+  
+  
