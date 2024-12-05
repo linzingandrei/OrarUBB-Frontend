@@ -13,7 +13,7 @@ export const roomsApi = apiSlice.injectEndpoints({
       keepUnusedDataFor: 1000,
     }),
     getRoomClasses: builder.query({
-      query: ({roomId, languageTag}) => `/classes/room/${roomId}/${languageTag}`,
+      query: ({roomName, languageTag}) => `/classes/room/${roomName}/${languageTag}`,
       providesTags: ["roomClassesCache"],
       keepUnusedDataFor: 1000,
     }),

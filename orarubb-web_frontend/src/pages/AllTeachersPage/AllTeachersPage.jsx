@@ -14,26 +14,6 @@ const AllTeachersPage = () => {
   const { data: teachers = [], isLoading } =
     useGetTeachersByLanguageQuery("ro-RO");
 
-  // useEffect(() => {
-  //     const fetchTeachers = async () => {
-  //         try {
-  //             const response = await fetch('http://localhost:8080/teachers/ro-RO');
-  //             const data = await response.json();
-  //             console.log(data);
-  //             console.log(data);
-  //             setMockTeachers(data);
-
-  //             // If using axios, replace the above with:
-  //             // const response = await axios.get('http://localhost:8080/api/teachers');
-  //             // setMockTeachers(response.data);
-  //         } catch (error) {
-  //             console.error('Error fetching teachers:', error);
-  //         }
-  //     };
-
-  //     fetchTeachers();
-  // }, []);
-
   const filteredTeachers = teachers
     ?.filter((teacher) =>
       teacher.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -92,7 +72,7 @@ const AllTeachersPage = () => {
               <Card
                 key={teacher.teacherId}
                 title={teacher.name}
-                link={`/teacher/${teacher.name}/${teacher.teacherId}`}
+                link={`/teacher/${teacher.codeName}`}
               />
             ))}
           </div>

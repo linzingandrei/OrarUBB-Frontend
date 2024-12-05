@@ -30,19 +30,18 @@ const AppContent = () => {
         <Route path="/rooms" element={<AllRoomsPage />} />
         <Route path="/courses" element={<AllCoursesPage />} />
         <Route
-          path="/teacher/:teacherName/:teacherId"
+          path="/teacher/:teacherCode"
           element={<ProfessorsSchedule />}
         />
         {/* why do we need both the name and the id?*/}
+        {/*update: we don't!*/}
         {/* <Route
           path="/teacher/c2c03206-4e5d-589c-91ac-40cd86665ca1"
           element={<ProfessorsSchedule />}
         /> */}
         <Route path="/" element={<MainPage />} />
         <Route path="/study-programs" element={<StudyProgramsPage />} />
-        {/* <Route path="/group/ie3" element={<GroupsSchedule />} /> */}
         <Route path="/group/:groupName" element={<GroupsSchedule />} />
-        {/* <Route path="/room/1" element={<RoomsSchedule />} /> */}
         <Route path="/room/:roomName" element={<RoomsSchedule />} />
         <Route path="/course/:courseName" element={<></>} /> {/* TODO - there is no course page yet afaik */}
         <Route path="/crud-schedule" element={<CrudSchedule />} />

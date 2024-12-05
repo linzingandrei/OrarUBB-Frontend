@@ -20,7 +20,7 @@ const AllRoomsPage = () => {
             <Card
               key={room.roomId}
               title={room.name}
-              link={`/room/${room.roomId}`} // assuming for now the room schedule page is at `/room/:id`
+              link={`/room/${room.name.replace(/\//g, '-')}`}
             />
           ))}
         </div>

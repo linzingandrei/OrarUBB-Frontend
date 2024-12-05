@@ -8,8 +8,8 @@ export const teachersApi = apiSlice.injectEndpoints({
       keepUnusedDataFor: 1000,
     }),
     getClassesForTeacher: builder.query({
-      query: ({ teacher_id, language }) =>
-        `/classes/teacher/${teacher_id}/${language}`,
+      query: ({ teacher_code, language }) =>
+        `/classes/teacher/${teacher_code}/${language}`,
       providesTags: ["classesForTeacherCache"],
       keepUnusedDataFor: 1000,
     }),

@@ -31,15 +31,15 @@ const RoomSchedule = ({ scheduleData, room }) => {
                   : "Săptămâna pară"}
               </td>
               <td>{item.formation}</td>
-              <td>{item.class_type}</td>
+              <td>{item.classType}</td>
               <td>
-                <a href={`#${item.course_name}`} className="link">
-                  {item.course_name}
+                <a href={`#${item.courseInstanceCode}`} className="link">
+                  {item.courseInstanceName}
                 </a>
               </td>
               <td>
-                <a href={`#${item.professor}`} className="link">
-                  {item.professor}
+                <a href={`#${item.teacher}`} className="link">
+                  {item.teacher}
                 </a>
               </td>
             </tr>

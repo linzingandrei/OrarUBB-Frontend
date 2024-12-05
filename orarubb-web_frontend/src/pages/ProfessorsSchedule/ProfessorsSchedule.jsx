@@ -80,14 +80,14 @@ import { useGetClassesForTeacherQuery } from "../../api/TeachersApi";
 // ];
 
 const ProfessorsSchedule = () => {
-  const { teacherName, teacherId } = useParams();
+  const teacherCode = useParams().teacherCode;
 
   const {
     data: scheduleDataForTeacher,
     isLoading,
     isError,
   } = useGetClassesForTeacherQuery({
-    teacher_id: teacherId,
+    teacher_code: teacherCode,
     language: "ro-RO",
   });
 
@@ -105,7 +105,7 @@ const ProfessorsSchedule = () => {
         <div className="schedule-professor">
           <ProfessorSchedule
             scheduleData={scheduleDataForTeacher}
-            professor={teacherName}
+            professor={teacherCode}
           />
         </div>
       </div>
