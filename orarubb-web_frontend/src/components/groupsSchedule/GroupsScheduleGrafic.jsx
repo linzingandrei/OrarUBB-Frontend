@@ -11,36 +11,34 @@ const GroupsScheduleGrafic = ({ scheduleData, group }) => {
   const renderCellContent = (day, timeSlot) => {
     const matchingClasses = scheduleData.filter(
       (item) =>
-        item.class_day === day &&
-        item.start_hour <= timeSlot.start &&
-        item.end_hour > timeSlot.start
+        item.classDay === day &&
+        item.startHour <= timeSlot.start &&
+        item.endHour > timeSlot.start
     );
-  
+
     const startingClasses = matchingClasses.filter(
-      (item) => item.start_hour === timeSlot.start
+      (item) => item.startHour === timeSlot.start
     );
-  
+
     const ongoingClasses = matchingClasses.filter(
-      (item) => item.start_hour < timeSlot.start && item.end_hour > timeSlot.start
+      (item) => item.startHour < timeSlot.start && item.endHour > timeSlot.start
     );
-  
+
     if (startingClasses.length > 0) {
       return (
         <td
           key={`${day}-${timeSlot.start}`}
           className="scheduler-cell"
-          rowSpan={startingClasses[0].end_hour - startingClasses[0].start_hour}
+          rowSpan={startingClasses[0].endHour - startingClasses[0].startHour}
         >
-          <div
-            className="class-container"
-          >
+          <div className="class-container">
             {startingClasses.map((entry, index) => (
               <div
-                key={`${entry.course_instance_code}-${index}`}
+                key={`${entry.courseInstanceCode}-${index}`}
                 className="class-card"
               >
-                <strong>{entry.class_type}</strong> <br />
-                {entry.course_instance_code} <br />
+                <strong>{entry.classType}</strong> <br />
+                {entry.courseInstanceName} <br />
                 Room: {entry.room} <br />
                 Teacher: {entry.teacher} <br />
                 Formation: {entry.formation}

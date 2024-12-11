@@ -1,6 +1,6 @@
-import React from 'react';
-import './GroupsScheduleTabelar.scss';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./GroupsScheduleTabelar.scss";
+import { Link } from "react-router-dom";
 
 const GroupsScheduleTabelar = ({ scheduleData, group }) => {
   return (
@@ -22,19 +22,39 @@ const GroupsScheduleTabelar = ({ scheduleData, group }) => {
         <tbody>
           {scheduleData.map((item, index) => (
             <tr key={index}>
-              <td>{item.class_day}</td>
-              <td>{item.start_hour} - {item.end_hour}</td>
-              <td>{item.frequency === 0 ? "Săptămânal" : item.frequency === 1 ? "Săptămâna impară" : "Săptămâna pară"}</td>
+              <td>{item.classDay}</td>
               <td>
-                <Link to={`/room/${item.room}`} className="link">{item.room}</Link>
+                {item.startHour} - {item.endHour}
+              </td>
+              <td>
+                {item.frequency === 0
+                  ? "Săptămânal"
+                  : item.frequency === 1
+                  ? "Săptămâna impară"
+                  : "Săptămâna pară"}
+              </td>
+              <td>
+                <Link
+                  to={`/room/${item.room.replace(/\//g, "-")}`}
+                  className="link"
+                >
+                  {item.room}
+                </Link>
               </td>
               <td>{item.formation}</td>
-              <td>{item.class_type}</td>
+              <td>{item.classType}</td>
               <td>
-                <Link to={`/course/${item.course_instance_code}`} className="link">{item.course_instance_code}</Link>
+                <Link
+                  to={`/course/${item.courseInstanceCode}`}
+                  className="link"
+                >
+                  {item.courseInstanceName}
+                </Link>
               </td>
               <td>
-                <Link to={`/teacher/${item.teacher}`} className="link">{item.teacher}</Link>
+                <Link to={`/teacher/${item.teacher}`} className="link">
+                  {item.teacher}
+                </Link>
                 {/*!!! IMPORTANT - need to think of abbreviations and names to not mess up routing*/}
               </td>
             </tr>
