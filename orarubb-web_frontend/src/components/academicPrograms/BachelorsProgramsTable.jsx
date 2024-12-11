@@ -1,4 +1,4 @@
-import "./BachelorsProgramsTable.scss";
+import "./AcademicProgramsTable.scss";
 import { useNavigate } from "react-router-dom";
 import { useGetAcademicSpecializationsBachelorQuery } from "../../api/AcademicSpecializationsApi.js";
 
@@ -8,7 +8,7 @@ const BachelorsProgramsTable = () => {
     useGetAcademicSpecializationsBachelorQuery("ro-RO");
 
   return (
-    <table className="table">
+    <table className="programs-table">
       <thead>
         <tr>
           <th>Studii Licenta</th>

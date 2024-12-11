@@ -3,8 +3,8 @@ import "./RoomSchedule.scss";
 const RoomSchedule = ({ scheduleData, room }) => {
   return (
     <div className="room-schedule-table-container">
-      <h2 className="table-title">Orar: Sala {room}</h2>
-      <table className="table">
+      <h2 className="room-schedule-table-title">Orar: Sala {room}</h2>
+      <table className="room-schedule-table">
         <thead>
           <tr>
             <th>Ziua</th>

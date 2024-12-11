@@ -29,7 +29,7 @@
   }
 }
 
-.table-title {
+.room-schedule-table-title {
   font-size: 2rem;
   font-weight: bold;
   color: #333;
@@ -37,12 +37,11 @@
   text-align: center;
 }
 
-.table {
+.room-schedule-table {
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
   color: #333;
 
   thead {

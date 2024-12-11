@@ -1,7 +1,10 @@
-import React from "react";
-import "./MastersProgramsTable.scss";
-import { useGetAcademicSpecializationsMasterQuery } from "../../api/AcademicSpecializationsApi.js";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import './AcademicProgramsTable.scss';
+import {
+    useGetAcademicSpecializationsMasterQuery
+} from "../../api/AcademicSpecializationsApi.js";
+import {useNavigate} from "react-router-dom";
+
 
 const MastersProgramsTable = () => {
   const navigate = useNavigate();
@@ -9,7 +12,7 @@ const MastersProgramsTable = () => {
     useGetAcademicSpecializationsMasterQuery("ro-RO");
 
   return (
-    <table className="table">
+    <table className="programs-table">
       <thead>
         <tr>
           <th>Studii Master</th>

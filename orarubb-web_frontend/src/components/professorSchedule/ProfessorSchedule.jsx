@@ -4,8 +4,8 @@ const ProfessorSchedule = ({ scheduleData, professor }) => {
   console.log("Data", scheduleData);
   return (
     <div className="professor-schedule-table-container">
-      <h2 className="table-title">Orar {professor}</h2>
-      <table className="table">
+      <h2 className="professor-schedule-table-title">Orar {professor}</h2>
+      <table className="professor-schedule-table">
         <thead>
           <tr>
             <th>Ziua</th>

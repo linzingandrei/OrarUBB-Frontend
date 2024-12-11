@@ -1,7 +1,7 @@
 import './StudyProgramsPage.scss';
-import MastersProgramsTable from '../../../components/academicPrograms/MastersProgramsTable';
-import BachelorsProgramsTable from '../../../components/academicPrograms/BachelorsProgramsTable';
-import Layout from "../../../components/layout/Layout.jsx";
+import MastersProgramsTable from '../../components/academicPrograms/MastersProgramsTable.jsx';
+import BachelorsProgramsTable from '../../components/academicPrograms/BachelorsProgramsTable.jsx';
+import Layout from "../../components/layout/Layout.jsx";
 
 const StudyProgramsPage = () => (
     <Layout>
