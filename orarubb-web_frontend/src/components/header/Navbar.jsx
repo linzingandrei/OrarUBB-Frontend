@@ -1,5 +1,5 @@
-import {useState} from 'react';
-import {useNavigate} from "react-router-dom";
+import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -10,15 +10,37 @@ const Navbar = () => {
         setIsLoggedIn(!isLoggedIn);
     };
 
+    const handleOldVersionClick = () => {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1; // getMonth() returns 0-11, so we add 1
+
+        const semester = (month >= 9 || month <= 2) ? 1 : 2;
+
+        window.open('https://www.cs.ubbcluj.ro/files/orar/' + year + '-' + semester, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <div>
             <nav className="navbar">
                 <div className="navbar__logo" title="Faculty Logo" onClick={() => navigate("/")}></div>
-                <div className="navbar__left">
-                    <div className="navbar__language navbar__romanian-lang" title="Romanian Lang Icon"></div>
-                    <div className="navbar__language navbar__english_lang" title="English Lang Icon"></div>
-                </div>
 
+                <div className="navbar__left">
+                    <button
+                        className="navbar__link navbar__home-link"
+                        onClick={() => navigate("/")}
+                        title="Home"
+                    >
+                        <div className="navbar__icon home-icon" title="Home"></div>
+                    </button>
+                    <button
+                        className="navbar__link navbar__old-version-link"
+                        onClick={handleOldVersionClick}
+                        title="Old Website Version"
+                    >
+                        Original Website <div className="navbar__icon old-version-icon" title="Old Version"></div>
+                    </button>
+                </div>
 
                 <div className="navbar__right">
                     {isLoggedIn ? (<>
