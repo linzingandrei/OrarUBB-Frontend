@@ -3,14 +3,14 @@
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  height: 3rem;
+  height: 4rem;
   width: 100%;
   background-color: white;
   padding: 1rem 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #1a4977;
   user-select: none;
-  z-index: 1; // to make sure the logo is on top of the navbar
+  z-index: 1;
 
   &__left {
     display: flex;
@@ -47,79 +47,55 @@
     }
   }
 
-  &__center {
-    // at the moment, anything will be at the center of the view, not necessarily the center of the navbar
-    // but it works because the navbar takes the whole width
-    // not used, deprecated after logo rework
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60%;
-    position: fixed;
-    top: 7.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
   &__logo {
     position: fixed;
-    top: 5rem;
+    top: 3rem;
     left: 50%;
     transform: translate(-50%, -50%);
     background-image: url("../../assets/Logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    // if you change this, remember in each view you should
-    // also change the padding top of your main content
-    // so don't, it's horrible
-    // but at the same time
-    // TODO: should add better responsiveness
-    // and make the top padding of child pages automatic
-    width: 9rem;
-    height: 9rem;
+    width: 5.5rem;
+    height: 5.5rem;
     cursor: pointer;
-
     z-index: 2;
     @media (max-width: 1200px) {
-      width: 9rem;
-      height: 9rem;
+      width: 5.3rem;
+      height: 5.3rem;
     }
 
     @media (max-width: 576px) {
-      width: 6rem;
-      height: 6rem;
+      width: 4.8rem;
+      height: 4.8rem;
     }
   }
 
   &__link {
     display: flex;
-
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     cursor: pointer;
-
     padding: 0;
     border: none;
     outline: none;
-
     background-color: transparent;
     color: #1a4977;
     font-family: inherit;
 
     @media (max-width: 1200px) {
-      font-size: 1.2rem;
-    }
-
-    @media (max-width: 992px) {
       font-size: 1.1rem;
     }
 
+    @media (max-width: 992px) {
+      font-size: 1.0rem;
+    }
+
     @media (max-width: 768px) {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 576px) {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
 
   }
@@ -127,14 +103,21 @@
   &__language {
     width: 1.8rem;
     height: 1.8rem;
-    // do not cut off the image
     background-size: contain;
-    // do not repeat the image
     background-repeat: no-repeat;
-    // do not shrink the image
     flex-shrink: 0;
     margin-right: 1rem;
     cursor: pointer;
+
+    @media (max-width: 1200px) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    @media (max-width: 576px) {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
   }
 
   &__romanian-lang {
@@ -151,7 +134,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     flex-shrink: 0;
   }
 
@@ -160,6 +143,16 @@
     padding-left: 0;
     width: 24px;
     padding-right: 1rem;
+
+    @media (max-width: 1200px) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    @media (max-width: 576px) {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
   }
 
   .logout-icon {
@@ -167,6 +160,16 @@
     width: 20px;
     height: 26px;
     padding-right: 0;
+
+    @media (max-width: 1200px) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    @media (max-width: 576px) {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
   }
 }
 

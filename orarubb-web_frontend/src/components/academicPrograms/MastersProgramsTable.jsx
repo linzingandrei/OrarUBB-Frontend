@@ -1,5 +1,5 @@
 import React from 'react';
-import './MastersProgramsTable.scss';
+import './AcademicProgramsTable.scss';
 import {
     useGetAcademicSpecializationsMasterQuery
 } from "../../api/AcademicSpecializationsApi.js";
@@ -10,7 +10,7 @@ const MastersProgramsTable = () => {
     const navigate = useNavigate();
     const {data: mastersData = []} = useGetAcademicSpecializationsMasterQuery("ro-RO");
     return (
-        <table className="table">
+        <table className="programs-table">
             <thead>
             <tr>
                 <th>Studii Master</th>

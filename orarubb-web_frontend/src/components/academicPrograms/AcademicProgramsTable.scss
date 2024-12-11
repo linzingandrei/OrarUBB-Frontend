@@ -2,19 +2,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
   }
   
-  .table {
+  .programs-table {
+    width: 80%; 
     border-collapse: collapse;
-    font-family: Arial, sans-serif;
     color: #333;
-    
+  
     thead {
       color: black;
       th {
+        padding: 16px;
         text-align: center;
         font-size: 1.5rem;
         font-weight: bold;
+        background-color: transparent;
       }
     }
   
@@ -27,7 +30,16 @@
           background-color: #FFFFFF;
         }
   
+        &.highlight-background td {
+          font-weight: bold;
+          text-align: center;
+          background-color: #A2D0FF;
+          font-size: 1.25rem;
+          padding: 12px;
+        }
+  
         td {
+          padding: 8px;
           border-bottom: 1px solid #ddd;
           text-align: center;
   

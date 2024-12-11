@@ -7,73 +7,10 @@
 
 .schedule-room {
   width: 100%;
-  max-width: 960px;
+  max-width: 80%;
   text-align: center;
   position: relative;
   user-select: none;
-}
-
-.table-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-.table-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.table {
-  width: 100%;
-  max-width: 960px;
-  border-collapse: collapse;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
-  color: #333;
-  margin-bottom: 0;
-
-  thead {
-    color: black;
-
-    th {
-      padding: 16px;
-      text-align: center;
-      font-size: 1.3rem;
-      font-weight: bold;
-      background-color: transparent;
-    }
-  }
-
-  tbody {
-    tr {
-      &:nth-child(even) {
-        background-color: #e1f0ff;
-      }
-
-      &:nth-child(odd) {
-        background-color: #ffffff;
-      }
-
-      td {
-        padding: 8px;
-        border-bottom: 1px solid #ddd;
-        text-align: center;
-
-        .link {
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
 }
 
 a {

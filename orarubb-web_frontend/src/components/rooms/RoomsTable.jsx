@@ -7,8 +7,8 @@ const RoomsTable = () => {
 
     return (
         <div className="rooms-table-container">
-            <h2 className='table-title'>Legenda Salilor</h2>
-            <table className="table">
+            <h2 className='rooms-table-title'>Legenda Salilor</h2>
+            <table className="rooms-table">
             <thead>
                 <tr>
                     <th>Sala</th>

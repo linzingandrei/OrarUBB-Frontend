@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./GroupsSchedule.scss";
-import GroupsScheduleTabelar from "../../../components/groupsSchedule/GroupsScheduleTabelar";
-import GroupsScheduleGrafic from "../../../components/groupsSchedule/GroupsScheduleGrafic";
-import Layout from "../../../components/layout/Layout";
+import GroupsScheduleTabelar from "../../components/groupsSchedule/GroupsScheduleTabelar";
+import GroupsScheduleGrafic from "../../components/groupsSchedule/GroupsScheduleGrafic";
+import Layout from "../../components/layout/Layout";
 
 const scheduleForGroup931 = [
   {
