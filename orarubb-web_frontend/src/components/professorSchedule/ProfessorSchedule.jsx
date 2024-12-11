@@ -21,8 +21,6 @@ const ProfessorSchedule = ({ scheduleData, professor }) => {
         <tbody>
           {scheduleData.map((item, index) => (
             <tr key={item.classId}>
-              {" "}
-              {/*this key has to be modified after working with real data to be unique*/}
               <td>{item.classDay}</td>
               <td>
                 {item.startHour} - {item.endHour}

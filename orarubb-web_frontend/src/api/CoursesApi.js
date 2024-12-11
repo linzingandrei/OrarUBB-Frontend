@@ -7,7 +7,17 @@ export const coursesApi = apiSlice.injectEndpoints({
       providesTags: ["coursesCache"],
       keepUnusedDataFor: 1000,
     }),
+
+    getClassesForCourse: builder.query({
+      query: ({ course_code, language }) =>
+        `/classes/${course_code}/${language}`,
+      providesTags: ["classesForCourseCache"],
+      keepUnusedDataFor: 1000,
+    }),
   }),
 });
 
-export const { useGetAllCourseInstancesByLanguageQuery } = coursesApi;
+export const {
+  useGetAllCourseInstancesByLanguageQuery,
+  useGetClassesForCourseQuery,
+} = coursesApi;

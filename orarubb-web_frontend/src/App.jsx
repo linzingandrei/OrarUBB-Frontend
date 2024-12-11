@@ -29,10 +29,7 @@ const AppContent = () => {
         <Route path="/teachers" element={<AllTeachersPage />} />
         <Route path="/rooms" element={<AllRoomsPage />} />
         <Route path="/courses" element={<AllCoursesPage />} />
-        <Route
-          path="/teacher/:teacherCode"
-          element={<ProfessorsSchedule />}
-        />
+        <Route path="/teacher/:teacherCode" element={<ProfessorsSchedule />} />
         {/* why do we need both the name and the id?*/}
         {/*update: we don't!*/}
         {/* <Route
@@ -41,12 +38,19 @@ const AppContent = () => {
         /> */}
         <Route path="/" element={<MainPage />} />
         <Route path="/study-programs" element={<StudyProgramsPage />} />
-        <Route path="/group/:groupName" element={<GroupsSchedule />} />
+        <Route
+          path="/group/:abbreviation/:groupYear"
+          element={<GroupsSchedule />}
+        />
         <Route path="/room/:roomName" element={<RoomsSchedule />} />
-        <Route path="/course/:courseName" element={<></>} /> {/* TODO - there is no course page yet afaik */}
+        <Route path="/course/:courseName" element={<></>} />{" "}
+        {/* TODO - there is no course page yet afaik */}
         <Route path="/crud-schedule" element={<CrudSchedule />} />
         <Route path="/my-schedule" element={<UserSchedule />} />
-        <Route path="/rooms/rooms-schedule" element={<RoomsAvailabilityPage />} />
+        <Route
+          path="/rooms/rooms-schedule"
+          element={<RoomsAvailabilityPage />}
+        />
       </Routes>
     </BrowserRouter>
   );

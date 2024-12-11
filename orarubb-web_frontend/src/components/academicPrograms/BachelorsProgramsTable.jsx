@@ -1,10 +1,11 @@
 import "./BachelorsProgramsTable.scss";
 import { useNavigate } from "react-router-dom";
-import {useGetAcademicSpecializationsBachelorQuery} from "../../api/AcademicSpecializationsApi.js";
+import { useGetAcademicSpecializationsBachelorQuery } from "../../api/AcademicSpecializationsApi.js";
 
 const BachelorsProgramsTable = () => {
   const navigate = useNavigate();
-  const {data: bachelorSpecializations = []} = useGetAcademicSpecializationsBachelorQuery("ro-RO");
+  const { data: bachelorSpecializations = [] } =
+    useGetAcademicSpecializationsBachelorQuery("ro-RO");
 
   return (
     <table className="table">
@@ -20,31 +21,22 @@ const BachelorsProgramsTable = () => {
           return (
             <tr key={specialization.academic_specialization_id}>
               <td>{specialization.name}</td>
-              <td
-                onClick={() => {
-                  navigate("/group/ie3");
-                }}
-              >
-                {years.map((year, i) => (
-                  <a key={i} href="#">{`Anul ${year}`}</a>
-                ))}
-              </td>
-              {/* <td>
-                {years.map((year, i) => (
+              <td>
+                {years.map((groupYear) => (
                   <a
-                    key={i}
+                    key={`${specialization.academic_specialization_id}-${groupYear}`}
                     href="#"
                     onClick={(e) => {
                       e.preventDefault();
                       navigate(
-                        `/group/${specialization.academicSpecializationId}/${year}`
+                        `/group/${specialization.nameAbbreviated}/${groupYear}`
                       );
                     }}
                   >
-                    {`Anul ${year}`}
+                    {`Anul ${groupYear}`}
                   </a>
                 ))}
-              </td> */}
+              </td>
             </tr>
           );
         })}
