@@ -1,8 +1,13 @@
 import { useState } from "react";
 import "./GroupsSchedule.scss";
-import GroupsScheduleTabelar from "../../components/groupsSchedule/GroupsScheduleTabelar";
-import GroupsScheduleGrafic from "../../components/groupsSchedule/GroupsScheduleGrafic";
-import Layout from "../../components/layout/Layout";
+import GroupsScheduleTabelar from "../../../components/groupsSchedule/GroupsScheduleTabelar";
+import GroupsScheduleGrafic from "../../../components/groupsSchedule/GroupsScheduleGrafic";
+import Layout from "../../../components/layout/Layout";
+import { useParams } from "react-router-dom";
+import { useGetIdForAcademicSpecializationAbbreviationQuery } from "../../../api/AcademicSpecializationsApi";
+import { useGetAllGroupsWithAcademicSpecializationIdAndYearQuery } from "../../../api/GroupsApi";
+import { useEffect } from "react";
+import { useLazyGetClassesForGroupQuery } from "../../../api/ClassesApi";
 
 const scheduleForGroup931 = [
   {
@@ -74,15 +79,128 @@ const schedules = [
   { group: 931, scheduleData: scheduleForGroup931 },
   { group: 932, scheduleData: scheduleForGroup932 },
 ];
+
+const dayOrder = {
+  Luni: 1,
+  Marti: 2,
+  Miercuri: 3,
+  Joi: 4,
+  Vineri: 5,
+  Sambata: 6,
+  Duminica: 7,
+};
+
 const GroupsSchedule = () => {
   const [view, setView] = useState("tabelar");
+  const { abbreviation, groupYear } = useParams();
+  const [groupSchedules, setGroupSchedules] = useState([]);
+  const [academicSpecializationId, setAcademicSpecializationId] = useState(0);
+  const [year, setYear] = useState(1);
+  const [groupsList, setGroupsList] = useState(null);
 
-//   const { academicSpecializationId, year } = useParams();
-//   const { data: groups } =
-//     useGetAllGroupsWithAcademicSpecializationIdAndYearQuery(
-//       academicSpecializationId,
-//       year
-//     );
+  const { data: academicSpecId } =
+    useGetIdForAcademicSpecializationAbbreviationQuery(abbreviation);
+
+  useEffect(() => {
+    if (academicSpecId) {
+      setAcademicSpecializationId(academicSpecId);
+    }
+    if (groupYear) {
+      setYear(parseInt(groupYear, 10));
+    }
+  }, [academicSpecId, groupYear]);
+
+  const isParamsReady = academicSpecializationId && year;
+  const {
+    data: groupsData,
+    error,
+    isLoading,
+  } = useGetAllGroupsWithAcademicSpecializationIdAndYearQuery({
+    academicSpecializationId: academicSpecializationId,
+    year: year,
+  });
+
+  useEffect(() => {
+    if (groupsData && groupsData.groups.length > 0) {
+      const updatedGroupsList = groupsData.groups.map((group) =>
+        group.replace("/", "-")
+      );
+      setGroupsList(updatedGroupsList);
+    }
+  }, [groupsData]);
+
+  const [fetchGroupSchedule] = useLazyGetClassesForGroupQuery();
+
+  useEffect(() => {
+    console.log("groupsList", groupsList);
+    if (groupsList && groupsList.length > 0) {
+      const fetchSchedules = async () => {
+        try {
+          const filteredGroupsList = groupsList.filter((group) =>
+            group.includes("-")
+          );
+
+          const schedules = await Promise.all(
+            filteredGroupsList.map(async (group) => {
+              const scheduleResponse = await fetchGroupSchedule({
+                groupCode: group,
+                language: "ro-RO",
+              }).unwrap();
+
+              const sortedScheduleData = [...scheduleResponse].sort((a, b) => {
+                const dayComparison =
+                  dayOrder[a.classDay] - dayOrder[b.classDay];
+
+                if (dayComparison === 0) {
+                  return a.startHour - b.startHour;
+                }
+
+                return dayComparison;
+              });
+
+              return { group: group, scheduleData: sortedScheduleData };
+            })
+          );
+
+          //combine schedules for groups with the same prefix
+          const combinedSchedules = schedules.reduce(
+            (acc, { group, scheduleData }) => {
+              const prefix = group.split("/")[0]; // Extract the prefix (e.g., "935" from "935/1")
+              if (!acc[prefix]) {
+                acc[prefix] = [];
+              }
+              acc[prefix] = [...acc[prefix], ...scheduleData];
+              return acc;
+            },
+            {}
+          );
+
+          const formattedSchedules = Object.entries(combinedSchedules).map(
+            ([group, scheduleData]) => ({
+              group,
+              scheduleData: scheduleData.sort((a, b) => {
+                const dayComparison =
+                  dayOrder[a.classDay] - dayOrder[b.classDay];
+                return dayComparison === 0
+                  ? a.startHour - b.startHour
+                  : dayComparison;
+              }),
+            })
+          );
+
+          setGroupSchedules(
+            [...formattedSchedules].sort((a, b) =>
+              a.group.localeCompare(b.group)
+            )
+          );
+        } catch (error) {
+          console.error("Error fetching schedules:", error);
+        }
+      };
+
+      fetchSchedules();
+    }
+  }, [groupsList, fetchGroupSchedule]);
 
   const handleViewToggle = () => {
     setView((prevView) => (prevView === "tabelar" ? "grafic" : "tabelar"));
@@ -102,20 +220,25 @@ const GroupsSchedule = () => {
           </label>
           <p>{view === "tabelar" ? "Format Tabelar" : "Format Grafic"}</p>
         </div>
-        {schedules.map((schedule) =>
-          view === "tabelar" ? (
-            <GroupsScheduleTabelar
-              key={schedule.group}
-              scheduleData={schedule.scheduleData}
-              group={schedule.group}
-            />
-          ) : (
-            <GroupsScheduleGrafic
-              key={schedule.group}
-              scheduleData={schedule.scheduleData}
-              group={schedule.group}
-            />
-          )
+        {groupSchedules.length > 0 ? (
+          (console.log(groupSchedules),
+          groupSchedules.map((schedule) =>
+            view === "tabelar" ? (
+              <GroupsScheduleTabelar
+                key={schedule.group}
+                scheduleData={schedule.scheduleData}
+                group={schedule.group}
+              />
+            ) : (
+              <GroupsScheduleGrafic
+                key={schedule.group}
+                scheduleData={schedule.scheduleData}
+                group={schedule.group}
+              />
+            )
+          ))
+        ) : (
+          <p>Loading schedules...</p>
         )}
       </div>
     </Layout>
