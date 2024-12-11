@@ -18,13 +18,13 @@
 }
 
 .card-title {
-    font-size: 13px;
+    font-size: clamp(1rem, 2vw, 1.4rem);
     margin: 0;
     font-weight: 500;
 }
 
 .card-subtitle {
-    font-size: 12px;
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
     margin-top: 5px;
     margin-bottom: 0px;
 }
@@ -32,12 +32,9 @@
 .card:hover {
     transform: scale(1.05);
 }
-
 .cards-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    /* Cards will adjust based on screen size */
     gap: 10px;
     margin-top: 20px;
-    /* Ensure that each card gets enough space but remains flexible */
 }
