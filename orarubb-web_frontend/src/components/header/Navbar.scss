@@ -124,27 +124,6 @@
 
   }
 
-  &__language {
-    width: 1.8rem;
-    height: 1.8rem;
-    // do not cut off the image
-    background-size: contain;
-    // do not repeat the image
-    background-repeat: no-repeat;
-    // do not shrink the image
-    flex-shrink: 0;
-    margin-right: 1rem;
-    cursor: pointer;
-  }
-
-  &__romanian-lang {
-    background-image: url("../../assets/romanian-lang-icon.png");
-  }
-
-  &__english_lang {
-    background-image: url("../../assets/english-lang-icon.png");
-  }
-
   &__icon {
     width: 1.5rem;
     height: 1.5rem;
@@ -172,4 +151,10 @@
 
 button:focus {
   outline: none;
+}
+
+.home-icon {
+  background-image: url("https://static-00.iconduck.com/assets.00/home-icon-944x1024-aa5inwqr.png");
+  height: 1.2rem;
+  margin-right: 2rem;
 }
