@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./GroupsSchedule.scss";
-import GroupsScheduleTabelar from "../../../components/groupsSchedule/GroupsScheduleTabelar";
-import GroupsScheduleGrafic from "../../../components/groupsSchedule/GroupsScheduleGrafic";
-import Layout from "../../../components/layout/Layout";
+import GroupsScheduleTabelar from "../../components/groupsSchedule/GroupsScheduleTabelar";
+import GroupsScheduleGrafic from "../../components/groupsSchedule/GroupsScheduleGrafic";
+import Layout from "../../components/layout/Layout";
 import { useParams } from "react-router-dom";
-import { useGetIdForAcademicSpecializationAbbreviationQuery } from "../../../api/AcademicSpecializationsApi";
-import { useGetAllGroupsWithAcademicSpecializationIdAndYearQuery } from "../../../api/GroupsApi";
+import { useGetIdForAcademicSpecializationAbbreviationQuery } from "../../api/AcademicSpecializationsApi";
+import { useGetAllGroupsWithAcademicSpecializationIdAndYearQuery } from "../../api/GroupsApi";
 import { useEffect } from "react";
-import { useLazyGetClassesForGroupQuery } from "../../../api/ClassesApi";
+import { useLazyGetClassesForGroupQuery } from "../../api/ClassesApi";
 
 const scheduleForGroup931 = [
   {
