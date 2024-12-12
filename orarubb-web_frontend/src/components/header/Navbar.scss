@@ -20,59 +20,30 @@
   }
 
   &__right {
-    width: 18%;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: flex-end;
     gap: 1rem;
     height: auto;
     padding-right: 3rem;
-
-
-    @media (max-width: 1200px) {
-      padding-right: 3rem;
-    }
-
-    @media (max-width: 992px) {
-      padding-right: 3rem;
-    }
-
-    @media (max-width: 768px) {
-      padding-right: 3rem;
-    }
-
-    @media (max-width: 576px) {
-
-      padding-right: 3rem;
-    }
   }
 
   &__logo {
-    position: fixed;
-    top: 3rem;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    flex: 1;
     background-image: url("../../assets/Logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 5rem;
+    height: 5rem;
     cursor: pointer;
-    z-index: 2;
-    @media (max-width: 1200px) {
-      width: 5.3rem;
-      height: 5.3rem;
-    }
-
-    @media (max-width: 576px) {
-      width: 4.8rem;
-      height: 4.8rem;
-    }
   }
 
   &__link {
     display: flex;
+    align-items: center;
     font-size: 1.2rem;
     cursor: pointer;
     padding: 0;
@@ -98,34 +69,11 @@
       font-size: 0.8rem;
     }
 
-  }
-
-  &__language {
-    width: 1.8rem;
-    height: 1.8rem;
-    background-size: contain;
-    background-repeat: no-repeat;
-    flex-shrink: 0;
-    margin-right: 1rem;
-    cursor: pointer;
-
-    @media (max-width: 1200px) {
-      width: 1.5rem;
-      height: 1.5rem;
+    @media (max-width: 500px) {
+      span {
+        display: none; 
+      }
     }
-
-    @media (max-width: 576px) {
-      width: 1.3rem;
-      height: 1.3rem;
-    }
-  }
-
-  &__romanian-lang {
-    background-image: url("../../assets/romanian-lang-icon.png");
-  }
-
-  &__english_lang {
-    background-image: url("../../assets/english-lang-icon.png");
   }
 
   &__icon {
@@ -136,6 +84,11 @@
     background-position: center;
     margin-left: 0.5rem;
     flex-shrink: 0;
+
+    @media (max-width: 576px) {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
   }
 
   .login-icon {
@@ -171,14 +124,14 @@
       height: 1.3rem;
     }
   }
-}
 
-button:focus {
-  outline: none;
-}
+  button:focus {
+    outline: none;
+  }
 
-.home-icon {
-  background-image: url("https://static-00.iconduck.com/assets.00/home-icon-944x1024-aa5inwqr.png");
-  height: 1.2rem;
-  margin-right: 2rem;
+  .home-icon {
+    background-image: url("https://static-00.iconduck.com/assets.00/home-icon-944x1024-aa5inwqr.png");
+    height: 1.2rem;
+    margin-right: 2rem;
+  }
 }
