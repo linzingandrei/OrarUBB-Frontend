@@ -1,0 +1,50 @@
+.profG-table-container {
+    margin-left: 90px;
+    margin-bottom: 60px;
+  }
+  
+  .profG-table-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .profG-schedular-table  {
+    width: 90%;
+    border-collapse: collapse;
+  }
+
+  .profG-schedular-table th,
+  .profG-schedular-table  td  {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+    vertical-align: top;
+  }
+
+  .profG-schedular-table  th {
+    background-color: #f4f4f4;
+  }
+
+ .profG-scheduler-cell {
+  text-align: center;
+  vertical-align: top;
+}
+
+.profG-class-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.profG-class-card {
+  background-color: #E1F0FF;
+  padding: 5px;
+  border-radius: 5px;
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+  

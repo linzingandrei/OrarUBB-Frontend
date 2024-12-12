@@ -6,22 +6,21 @@
   align-items: center;
   padding-top: 11rem;
   gap: 10px;
-  font-family: 'Montserrat', sans-serif; // Apply Montserrat font
 
   @media (max-height: 1200px) {
-    padding-top: 10rem;
+    padding-top: 9rem;
   }
 
   @media (max-height: 900px) {
-    padding-top: 6rem;
+    padding-top: 9rem;
   }
 
   @media (max-height: 812px) {
-    padding-top: 5rem;
+    padding-top: 8.5rem;
   }
 
   @media(max-height: 667px) {
-    padding-top: 4rem;
+    padding-top: 8rem;
   }
   
   .view-toggle {
