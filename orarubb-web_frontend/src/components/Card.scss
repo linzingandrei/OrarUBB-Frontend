@@ -1,4 +1,11 @@
 @use '../utils/colors.scss';
+.cards-list {
+    display: inline-block;
+    gap: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .card {
     background-color: colors.$primary-dark-blue;
     color: colors.$text-white;
@@ -8,17 +15,13 @@
     cursor: pointer;
     transition: transform 0.1s;
     text-decoration: none;
-    width: 50%;
-    max-width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
+    width: fit-content;
     box-sizing: border-box;
 }
 
 .card-title {
-    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
     margin: 0;
     font-weight: 500;
 }
@@ -31,10 +34,5 @@
 
 .card:hover {
     transform: scale(1.05);
-}
-.cards-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-    margin-top: 20px;
+    color: white;
 }
