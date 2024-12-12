@@ -13,12 +13,13 @@ const Navbar = () => {
     return (
         <div>
             <nav className="navbar">
-                <div className="navbar__logo" title="Faculty Logo" onClick={() => navigate("/")}></div>
                 <div className="navbar__left">
                     <div className="navbar__language navbar__romanian-lang" title="Romanian Lang Icon"></div>
                     <div className="navbar__language navbar__english_lang" title="English Lang Icon"></div>
                 </div>
-
+                <div className='navbar_center'>
+                    <div className="navbar__logo" title="Faculty Logo" onClick={() => navigate("/")}></div>
+                </div>
                 <div className="navbar__right">
                     {isLoggedIn ? (
                         <>

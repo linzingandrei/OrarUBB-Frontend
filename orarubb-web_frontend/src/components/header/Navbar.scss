@@ -10,7 +10,6 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #1a4977;
   user-select: none;
-  z-index: 1;
 
   &__left {
     display: flex;
@@ -20,40 +19,28 @@
   }
 
   &__right {
-    width: 18%;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: flex-end;
     gap: 1rem;
     height: auto;
     padding-right: 3rem;
   }
 
+  &__center{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+
   &__logo {
-    position: fixed;
-    top: 3rem;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-image: url("../../assets/Logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
     cursor: pointer;
-    z-index: 2;
-
-    @media (max-width: 1200px) {
-      top: 2.5rem;
-      width: 5rem;
-      height: 5rem;
-    }
-
-    @media (max-width: 576px) {
-      top: 2.4rem;
-      width: 4.5rem;
-      height: 4.5rem;
-    }
   }
 
   &__link {
