@@ -10,7 +10,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #1a4977;
   user-select: none;
-
+  z-index: 1;
   &__left {
     display: flex;
     align-items: center;
