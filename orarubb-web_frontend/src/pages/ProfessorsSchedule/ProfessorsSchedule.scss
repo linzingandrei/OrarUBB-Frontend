@@ -40,7 +40,7 @@
   }
 }
 
-.table {
+.table-profesori {
   width: 100%;
   max-width: 960px;
   border-collapse: collapse;
@@ -80,16 +80,37 @@
   }
 
   @media (max-width: 768px) {
-    font-size: 0.9rem;
-
-    thead th {
-      font-size: 1rem;
-      padding: 12px;
-    }
-
-    tbody td {
-      padding: 6px;
-    }
+    font-size: 0.8rem;
+    
+      thead {
+        display: none;
+        /* Hide table header */
+      }
+    
+      tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        /* Add spacing between rows */
+        border: 1px solid #ddd;
+        padding: 0.5rem;
+      }
+    
+      tbody td {
+        display: block;
+        text-align: left;
+        padding: 4px;
+        border: none;
+        font-size: 0.9rem;
+    
+        &:before {
+          content: attr(data-label);
+          /* Add the column name as a label */
+          font-weight: bold;
+          margin-right: 0.5rem;
+          display: inline-block;
+          width: 40%;
+        }
+      }
   }
 
   @media (max-width: 480px) {

@@ -8,7 +8,7 @@ const ProfessorSchedule = ({ scheduleData, professor }) => {
         <span className="professor-name">{professor}</span>
       </h2>
 
-      <table className="table">
+      <table className="table-profesori">
         <thead>
           <tr>
             <th>Ziua</th>
