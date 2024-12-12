@@ -4,12 +4,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 21rem;
+  padding-top: 6rem;
   gap: 10px;
   font-family: 'Montserrat', sans-serif; // Apply Montserrat font
 
   @media (max-height: 1200px) {
-    padding-top: 10rem;
+    padding-top: 6em;
   }
 
   @media (max-height: 900px) {
@@ -17,7 +17,7 @@
   }
 
   @media (max-height: 812px) {
-    padding-top: 5rem;
+    padding-top: 6rem;
   }
   
   .view-toggle {
