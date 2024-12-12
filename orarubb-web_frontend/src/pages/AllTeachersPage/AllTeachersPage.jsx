@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Card from "../../components/Card";
 import "../AllCoursesPage/CardsPage.scss";
 import "./AllTeachersPage.scss";
@@ -7,10 +7,11 @@ import orderIcon from "../../assets/order_alph.svg";
 import Layout from "../../components/layout/Layout";
 import { useGetTeachersByLanguageQuery } from "../../api/TeachersApi";
 
+const gradeOrder = ["Prof.", "Conf.", "Lect.", "Asist.", "Drd.", "C.d.asociat"];
+
 const AllTeachersPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
-  //const [mockTeachers, setMockTeachers] = useState([]);
   const { data: teachers = [], isLoading } =
     useGetTeachersByLanguageQuery("ro-RO");
 
@@ -19,13 +20,23 @@ const AllTeachersPage = () => {
       teacher.name.toLowerCase().includes(searchTerm.toLowerCase())
     )
     .sort((a, b) => {
-      const nameA = a.name.split(" ")[1];
-      const nameB = b.name.split(" ")[1];
+      const [gradeA, ...nameA] = a.name.split(" ");
+      const [gradeB, ...nameB] = b.name.split(" ");
+
+      const gradeIndexA = gradeOrder.indexOf(gradeA);
+      const gradeIndexB = gradeOrder.indexOf(gradeB);
+
+      if (gradeIndexA !== gradeIndexB) {
+        return gradeIndexA - gradeIndexB;
+      }
+
+      const lastNameA = nameA.join(" ");
+      const lastNameB = nameB.join(" ");
 
       if (sortOrder === "asc") {
-        return nameA.localeCompare(nameB);
+        return lastNameA.localeCompare(lastNameB);
       } else {
-        return nameB.localeCompare(nameA);
+        return lastNameB.localeCompare(lastNameA);
       }
     });
 
