@@ -178,7 +178,7 @@ const GroupsSchedule = () => {
 
   return (
     <Layout>
-      <div className="page-container">
+      <div className="page-container-gt">
         <div className="view-toggle">
           <label className="switch">
             <input
