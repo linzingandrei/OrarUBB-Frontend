@@ -122,10 +122,10 @@ const GroupsSchedule = () => {
 
   useEffect(() => {
     if (groupsData && groupsData.groups.length > 0) {
-      const updatedGroupsList = groupsData.groups.map((group) =>
-        group.replace("/", "-")
-      );
-      setGroupsList(updatedGroupsList);
+      // const updatedGroupsList = groupsData.groups.map((group) =>
+      //   group.replace("/", "-")
+      // );
+      setGroupsList(groupsData.groups);
     }
   }, [groupsData]);
 
@@ -136,12 +136,8 @@ const GroupsSchedule = () => {
     if (groupsList && groupsList.length > 0) {
       const fetchSchedules = async () => {
         try {
-          const filteredGroupsList = groupsList.filter((group) =>
-            group.includes("-")
-          );
-
           const schedules = await Promise.all(
-            filteredGroupsList.map(async (group) => {
+            groupsList.map(async (group) => {
               const scheduleResponse = await fetchGroupSchedule({
                 groupCode: group,
                 language: "ro-RO",
@@ -158,40 +154,14 @@ const GroupsSchedule = () => {
                 return dayComparison;
               });
 
+              console.log("sorted", sortedScheduleData);
+
               return { group: group, scheduleData: sortedScheduleData };
             })
           );
 
-          //combine schedules for groups with the same prefix
-          const combinedSchedules = schedules.reduce(
-            (acc, { group, scheduleData }) => {
-              const prefix = group.split("/")[0]; // Extract the prefix (e.g., "935" from "935/1")
-              if (!acc[prefix]) {
-                acc[prefix] = [];
-              }
-              acc[prefix] = [...acc[prefix], ...scheduleData];
-              return acc;
-            },
-            {}
-          );
-
-          const formattedSchedules = Object.entries(combinedSchedules).map(
-            ([group, scheduleData]) => ({
-              group,
-              scheduleData: scheduleData.sort((a, b) => {
-                const dayComparison =
-                  dayOrder[a.classDay] - dayOrder[b.classDay];
-                return dayComparison === 0
-                  ? a.startHour - b.startHour
-                  : dayComparison;
-              }),
-            })
-          );
-
           setGroupSchedules(
-            [...formattedSchedules].sort((a, b) =>
-              a.group.localeCompare(b.group)
-            )
+            [...schedules].sort((a, b) => a.group.localeCompare(b.group))
           );
         } catch (error) {
           console.error("Error fetching schedules:", error);
