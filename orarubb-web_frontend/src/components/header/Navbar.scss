@@ -11,21 +11,7 @@
   color: #1a4977;
   user-select: none;
   z-index: 1;
-  @media (max-width: 1200px) {
-    height: 3.5rem; 
-  }
 
-  @media (max-width: 992px) {
-    height: 3rem; 
-  }
-
-  @media (max-width: 768px) {
-    height: 2.5rem;
-  }
-
-  @media (max-width: 576px) {
-    height: 2rem; 
-  }
   &__left {
     display: flex;
     align-items: center;
@@ -34,41 +20,55 @@
   }
 
   &__right {
+    width: 15%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 1rem;
     height: auto;
     padding-right: 3rem;
+
+    @media (max-width: 1200px) {
+        padding-right: 3rem;
+      }
+    
+      @media (max-width: 992px) {
+        padding-right: 3rem;
+      }
+    
+      @media (max-width: 768px) {
+        padding-right: 3rem;
+      }
+    
+      @media (max-width: 576px) {
+    
+        padding-right: 3rem;
+      }
   }
 
   &__logo {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    background-image: url("../../assets/Logo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 5.8rem;
-    height: 5.8rem;
-    cursor: pointer;
+    position: fixed;
+      top: 3rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: url("../../assets/Logo.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 5.5rem;
+      height: 5.5rem;
+      cursor: pointer;
+      z-index: 2;
+    
       @media (max-width: 1200px) {
-          height: 5.2rem;
-          width: 5.2rem;
-        }
-      
-        @media (max-width: 992px) {
-          height: 4.8rem;width:4.8rem;
-        }
-      
-        @media (max-width: 768px) {
-          height: 4.2rem;width: 4.2rem;
-        }
-      
-        @media (max-width: 576px) {
-          height: 3.8rem;width: 3.8rem;
-        }
+        width: 5.3rem;
+        height: 5.3rem;
+      }
+    
+      @media (max-width: 576px) {
+        width: 4.8rem;
+        height: 4.8rem;
+      }
   }
 
   &__link {

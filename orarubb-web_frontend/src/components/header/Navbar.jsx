@@ -7,11 +7,8 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const handleLoginClick = () => {
-        // This will toggle the login state for demonstration, we will replace it with real logic when available
         setIsLoggedIn(!isLoggedIn);
     };
-
-
 
     return (
         <div>
