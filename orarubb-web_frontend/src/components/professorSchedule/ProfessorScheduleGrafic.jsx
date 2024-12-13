@@ -1,7 +1,8 @@
 import React from "react";
-import "./GroupsScheduleGrafic.scss";
+import './ProfessorScheduleGrafic.scss'
 
-const GroupsScheduleGrafic = ({ scheduleData, group }) => {
+
+const ProfessorScheduleGrafic = ({ scheduleData, professor }) => {
   const daysOfWeek = ["Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"];
   const timeSlots = Array.from({ length: 12 }, (_, i) => ({
     start: 8 + i,
@@ -28,20 +29,20 @@ const GroupsScheduleGrafic = ({ scheduleData, group }) => {
       return (
         <td
           key={`${day}-${timeSlot.start}`}
-          className="scheduler-cell"
+          className="profG-scheduler-cell"
           rowSpan={startingClasses[0].endHour - startingClasses[0].startHour}
         >
-          <div className="class-container">
+          <div className="profG-class-container">
             {startingClasses.map((entry, index) => (
               <div
                 key={`${entry.courseInstanceCode}-${index}`}
-                className="class-card"
+                className="profG-class-card"
               >
                 <strong>{entry.classType}</strong> <br />
                 {entry.courseInstanceName} <br />
-                Room: {entry.room} <br />
-                Teacher: {entry.teacher} <br />
-                Formation: {entry.formation} <br />
+                Sala: {entry.room} <br />
+                Formatia: {entry.formation} <br />
+                Anul: {entry.year} <br />
                 Frecventa:{" "}
                 {entry.frequency === 0
                   ? "Săptămânal"
@@ -54,15 +55,15 @@ const GroupsScheduleGrafic = ({ scheduleData, group }) => {
         </td>
       );
     } else if (ongoingClasses.length > 0) {
-      return;
+      return null;
     }
     return <td key={`${day}-${timeSlot.start}`}></td>;
   };
 
   return (
-    <div className="table-container">
-      <h2 className="table-title">Grupa {group}</h2>
-      <table className="scheduler-table">
+    <div className="profG-table-container">
+      <h2 className="profG-table-title">Orar {professor}</h2>
+      <table className="profG-schedular-table">
         <thead>
           <tr>
             <th>Ora/Ziua</th>
@@ -84,4 +85,4 @@ const GroupsScheduleGrafic = ({ scheduleData, group }) => {
   );
 };
 
-export default GroupsScheduleGrafic;
+export default ProfessorScheduleGrafic;

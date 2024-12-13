@@ -1,8 +1,9 @@
-import ProfessorSchedule from "../../components/professorSchedule/ProfessorSchedule";
+import { useState } from "react";
 import Layout from "../../components/layout/Layout";
+import ProfessorSchedule from "../../components/professorSchedule/ProfessorSchedule";
+import ProfessorScheduleGrafic from "../../components/professorSchedule/ProfessorScheduleGrafic";
 import { useParams } from "react-router-dom";
 import { useGetClassesForTeacherQuery } from "../../api/TeachersApi";
-
 
 const ProfessorsSchedule = () => {
   const teacherCode = useParams().teacherCode;
@@ -16,6 +17,12 @@ const ProfessorsSchedule = () => {
     language: "ro-RO",
   });
 
+  const [view, setView] = useState("tabelar");
+
+  const handleViewToggle = () => {
+    setView((prevView) => (prevView === "tabelar" ? "grafic" : "tabelar"));
+  };
+
   if (isLoading) {
     return <div>Loading teacher's schedule...</div>;
   }
@@ -26,12 +33,30 @@ const ProfessorsSchedule = () => {
 
   return (
     <Layout>
-      <div>
+      <div className="page-container">
+        <div className="view-toggle">
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={view === "grafic"}
+              onChange={handleViewToggle}
+            />
+            <span className="slider"></span>
+          </label>
+          <p>{view === "tabelar" ? "Format Tabelar" : "Format Grafic"}</p>
+        </div>
+
         <div>
-          <ProfessorSchedule
+          {view === "tabelar" ? (
+            <ProfessorSchedule
             scheduleData={scheduleDataForTeacher}
             professor={teacherCode}
           />
+          ) : (
+            <ProfessorScheduleGrafic scheduleData={scheduleDataForTeacher}
+            professor={teacherCode}
+            />
+          )}
         </div>
       </div>
     </Layout>
