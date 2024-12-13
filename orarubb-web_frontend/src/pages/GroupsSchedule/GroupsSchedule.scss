@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
-.page-container {
+.page-container-gt {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 11rem;
+  padding-top: 6rem;
   gap: 10px;
 
   @media (max-height: 1200px) {
-    padding-top: 9rem;
+    padding-top: 6em;
   }
 
   @media (max-height: 900px) {
@@ -16,11 +16,8 @@
   }
 
   @media (max-height: 812px) {
-    padding-top: 8.5rem;
-  }
+    padding-top: 6rem;
 
-  @media(max-height: 667px) {
-    padding-top: 8rem;
   }
   
   .view-toggle {
