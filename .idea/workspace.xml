@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2e6d11cb-6cdf-400a-8554-2157c5ee5ce7" name="Changes" comment="Routed StudyProgramsPage.jsx, GroupsSchedule.jsx and made them responsive (ish)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllTeachersPage/AllTeachersPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllTeachersPage/AllTeachersPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/services/teachersService.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/services/teachersService.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/ProfessorsSchedule/ProfessorsSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/ProfessorsSchedule/ProfessorsSchedule.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="sala-schedule-page" />
+        <entry key="$PROJECT_DIR$" value="format-grafic-profesori" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -126,6 +124,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Made navbar responsive, made LandingPage.jsx and InformatiiSali.jsx responsive w.r.t. navbar." />

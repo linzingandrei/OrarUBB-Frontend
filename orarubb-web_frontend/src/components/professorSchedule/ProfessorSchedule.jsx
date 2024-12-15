@@ -38,8 +38,8 @@ const ProfessorSchedule = ({ scheduleData, professor }) => {
                 </a>
               </td>
               <td>
-                <a href={`#${item.year}`} className="link">
-                  {item.year}
+                <a href={`#${item.formation}`} className="link">
+                  {item.formation}
                 </a>
               </td>
               <td>{item.formation}</td>
