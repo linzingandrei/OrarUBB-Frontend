@@ -7,6 +7,7 @@ const RoomsAvailability = ({ data, allRooms }) => {
 
     // Function to get the frequency symbol based on frequency value
     const getFrequencySymbol = (frequency) => {
+        // console.log(frequency)
         if (frequency === 2) return 'x';
         if (frequency === 1) return '-/x';
         if (frequency === 0) return 'x/-';
@@ -30,7 +31,7 @@ const RoomsAvailability = ({ data, allRooms }) => {
                                 <th className='room'>&nbsp;</th>
                                 {allRooms.map((room, roomIndex) => (
                                     <th className='room' key={roomIndex}>
-                                        <a href={`/room/${room.roomId}`}>{room.name}</a>
+                                        <a href={`/room/${room.name.replace(/\//g, '-')}`}>{room.name}</a>
                                     </th>
                                 ))}
                             </tr>
@@ -57,7 +58,7 @@ const RoomsAvailability = ({ data, allRooms }) => {
                                                     r => r.roomName === room.name
                                                 )?.frequency
                                                 : undefined;
-
+                                            
                                             return (
                                                 <td key={roomIndex}>
                                                     {frequency !== undefined
@@ -96,16 +97,19 @@ const RoomsAvailability = ({ data, allRooms }) => {
                                                     item.rooms.some(r => r.roomName === room.name)
                                             );
 
-                                            const frequency = roomData
-                                                ? roomData.rooms.find(
-                                                    r => r.roomName === room.name
-                                                )?.frequency
-                                                : undefined;
+                                            const frequencies = roomData
+                                                ? roomData.rooms
+                                                    .filter(r => r.roomName === room.name)
+                                                    .map(r => r.frequency)
+                                                : [];
+                                            
+                                            if (frequencies.length > 0)
+                                                console.log(frequencies);
 
                                             return (
                                                 <td key={roomIndex}>
-                                                    {frequency !== undefined
-                                                        ? getFrequencySymbol(frequency)
+                                                    {frequencies.length > 0
+                                                        ? getFrequencySymbol(frequencies)
                                                         : ''}
                                                 </td>
                                             );
