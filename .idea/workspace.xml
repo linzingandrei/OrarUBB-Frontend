@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e6d11cb-6cdf-400a-8554-2157c5ee5ce7" name="Changes" comment="Routed StudyProgramsPage.jsx, GroupsSchedule.jsx and made them responsive (ish)">
+    <list default="true" id="2e6d11cb-6cdf-400a-8554-2157c5ee5ce7" name="Changes" comment="Fixed professor schedule year and css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/professorSchedule/ProfessorSchedule.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/ProfessorsSchedule/ProfessorsSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/ProfessorsSchedule/ProfessorsSchedule.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/UserSchedule/CrudSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/UserSchedule/CrudSchedule.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/UserSchedule/UserSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/UserSchedule/UserSchedule.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="format-grafic-profesori" />
+        <entry key="$PROJECT_DIR$" value="login_and_pages_flow" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,24 +42,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.App.jsx.executor": "Run",
-    "Node.js.Navbar.jsx.executor": "Run",
-    "Node.js.main.jsx.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "/Users/Alex/Developer/orar/OrarUBB-Frontend/orarubb-web_frontend/src/components/header",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "ts.external.directory.path": "/Users/Alex/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.App.jsx.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.Navbar.jsx.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.main.jsx.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/Alex/Developer/orar/OrarUBB-Frontend/orarubb-web_frontend/src/components/header&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/Alex/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/orarubb-web_frontend/src/components/header" />
@@ -110,6 +109,7 @@
       <workItem from="1731543036248" duration="1786000" />
       <workItem from="1731669019588" duration="2611000" />
       <workItem from="1731779278296" duration="8086000" />
+      <workItem from="1734348542878" duration="3203000" />
     </task>
     <task id="LOCAL-00001" summary="Made navbar responsive, made LandingPage.jsx and InformatiiSali.jsx responsive w.r.t. navbar.">
       <option name="closed" value="true" />
@@ -139,6 +139,24 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Made navbar responsive, made LandingPage.jsx and InformatiiSali.jsx responsive w.r.t. navbar." />
     <MESSAGE value="Routed StudyProgramsPage.jsx, GroupsSchedule.jsx and made them responsive (ish)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Routed StudyProgramsPage.jsx, GroupsSchedule.jsx and made them responsive (ish)" />
+    <MESSAGE value="Fixed professor schedule year and css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed professor schedule year and css" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/orarubb-web_frontend/src/pages/UserSchedule/UserSchedule.jsx</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/orarubb-web_frontend/src/pages/UserSchedule/CrudSchedule.jsx</url>
+          <line>32</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
