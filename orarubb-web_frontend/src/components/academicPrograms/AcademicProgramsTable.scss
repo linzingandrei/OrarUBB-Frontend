@@ -1,60 +1,155 @@
-.table-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  .programs-table {
-    width: 80%; 
-    border-collapse: collapse;
-    color: #333;
-  
-    thead {
-      color: black;
-      th {
-        padding: 16px;
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-        background-color: transparent;
-      }
+@use '../../utils/colors.scss';
+
+.programs-table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: auto;
+}
+.btn-studyprograms{
+  margin: 5px;
+  color: #1A4977;
+  font-weight: 650;
+  background: transparent;
+
+}
+.programs-table {
+  margin-top: 100px;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 1200px;
+  color: #333;
+
+  thead {
+    color: black;
+
+    th {
+      text-align: center;
+      vertical-align: middle;
+      font-size: 32px;
+      font-weight: bold;
+      padding: 0.5rem;
     }
-  
-    tbody {
-      tr {
-        &:nth-child(even) {
-          background-color: #E1F0FF;
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: #E1F0FF;
+      }
+
+      &:nth-child(odd) {
+        background-color: #FFFFFF;
+      }
+
+      td {
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0.5rem;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+
+        .year-links {
+          display: inline-flex;
+          justify-content: center;
+          gap: 10px;
+          flex-wrap: nowrap;
+          padding: 0;
         }
-        &:nth-child(odd) {
-          background-color: #FFFFFF;
-        }
-  
-        &.highlight-background td {
+
+        a {
+          color: black;
+          text-decoration: underline;
           font-weight: bold;
-          text-align: center;
-          background-color: #A2D0FF;
-          font-size: 1.25rem;
-          padding: 12px;
-        }
-  
-        td {
-          padding: 8px;
-          border-bottom: 1px solid #ddd;
-          text-align: center;
-  
-          a {
-            color: black;
-            text-decoration: underline;
-            margin-right: 15px;
-            font-weight: bold;
-  
-            &:hover {
-              text-decoration: underline;
-            }
+          font-size: clamp(0.8rem, 1.8vw, 1rem);
+          white-space: nowrap;
+
+          &:hover {
+            text-decoration: none;
           }
         }
       }
     }
   }
-  
+}
+
+@media (max-width: 1123px) {
+  .table {
+    font-size: 0.9rem;
+  }
+
+  thead th {
+    font-size: 1rem;
+  }
+
+  tbody td {
+    padding: 0.5rem;
+  }
+
+  tbody td .year-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 770px) {
+  .table-container {
+    margin-top: 20px;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+
+  thead th {
+    display: 1rem;
+  }
+.anul-head{
+  display: none !important;
+}
+  tbody td {
+    justify-content: center;
+      flex-direction: column;
+      display: flex;
+    display: flex;
+    border: none;
+    text-align: center;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  tbody td .year-links {
+    display: block;
+    text-align: left;
+    margin-top: 5px;
+    gap: 2px;
+  }
+
+  tbody td .year-links a {
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: left;
+  }
+
+  tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .table tbody tr td {
+    width: 80%;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.5rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
