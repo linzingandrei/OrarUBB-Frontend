@@ -16,7 +16,7 @@ const MastersProgramsTable = () => {
       <thead>
         <tr>
           <th>Studii Master</th>
-          <th>Anul</th>
+          <th className='anul-head'>Anul</th>
         </tr>
       </thead>
       <tbody>

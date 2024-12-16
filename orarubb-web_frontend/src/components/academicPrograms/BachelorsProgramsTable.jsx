@@ -8,11 +8,12 @@ const BachelorsProgramsTable = () => {
     useGetAcademicSpecializationsBachelorQuery("ro-RO");
 
   return (
+    <div className="programs-table-container">
     <table className="programs-table">
       <thead>
         <tr>
           <th>Studii Licenta</th>
-          <th>Anul</th>
+          <th className="anul-head">Anul</th>
         </tr>
       </thead>
       <tbody>
@@ -23,7 +24,7 @@ const BachelorsProgramsTable = () => {
               <td>{specialization.name}</td>
               <td>
                 {years.map((groupYear) => (
-                  <a
+                  <button className="btn-studyprograms"
                     key={`${specialization.academic_specialization_id}-${groupYear}`}
                     href="#"
                     onClick={(e) => {
@@ -34,14 +35,15 @@ const BachelorsProgramsTable = () => {
                     }}
                   >
                     {`Anul ${groupYear}`}
-                  </a>
+                  </button>
                 ))}
               </td>
             </tr>
           );
         })}
       </tbody>
-    </table>
+      </table>
+    </div>
   );
 };
 
