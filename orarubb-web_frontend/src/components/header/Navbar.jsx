@@ -1,14 +1,37 @@
-import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import {useEffect, useState} from 'react';
+import {useNavigate} from "react-router-dom";
 import './Navbar.scss';
+import {useMsal, useIsAuthenticated} from "@azure/msal-react";
 
 const Navbar = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const {instance, accounts} = useMsal();
+    const isAuthenticated = useIsAuthenticated();
+    const [userName, setUserName] = useState("");
     const navigate = useNavigate();
 
-    const handleLoginClick = () => {
-        setIsLoggedIn(!isLoggedIn);
+    const handleLoginClick = async () => {
+        try {
+            if (!isAuthenticated) {
+                const loginResponse = await instance.loginPopup({
+                    scopes: ["User.Read"],
+                });
+                console.log("Login response: ", loginResponse);
+                console.log(isAuthenticated);
+            } else {
+                instance.logoutPopup();
+            }
+        } catch (error) {
+            console.error("Login error: ", error);
+        }
     };
+
+    useEffect(() => {
+        if (isAuthenticated && accounts.length > 0) {
+            setUserName(accounts[0].name);
+        } else {
+            setUserName("");
+        }
+    }, [isAuthenticated, accounts]);
 
     return (
         <div>
@@ -26,10 +49,11 @@ const Navbar = () => {
                 </div>
                 <div className="navbar__logo" title="Faculty Logo" onClick={() => navigate("/")}></div>
                 <div className="navbar__right">
-                    {isLoggedIn ? (
+                    {isAuthenticated ? (
                         <>
+                            <span className="navbar__greeting">Hi, {userName}!</span>
                             <button className="navbar__link" onClick={() => navigate("/my-schedule")}>
-                                <span>Orarul meu</span>
+                                <span>My Schedule</span>
                             </button>
                             <button className="navbar__link" onClick={handleLoginClick}>
                                 <span>Log Out</span>
