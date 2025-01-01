@@ -165,3 +165,75 @@
     margin-right: 2rem;
   }
 }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal h2 {
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .modal .crud-form-group {
+    margin-bottom: 15px;
+  }
+  
+  .modal .crud-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .modal .crud-form-group input {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: black;
+  }
+
+  .modal .crud-form-group input:focus {
+    outline: none;
+    border-color: #1A4977;
+  }
+  
+  .submit-button,
+  .cancel-button {
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button {
+    background-color: #1A4977;
+    color: white;
+    width: 45%;
+  }
+  
+  .cancel-button {
+    background-color: #dc3545;
+    color: white;
+    width: 45%;
+  }
