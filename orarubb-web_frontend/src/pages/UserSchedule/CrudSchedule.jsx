@@ -76,6 +76,8 @@ const CrudSchedule = () => {
     classDay: "",
     startTime: "",
     endTime: "",
+    frequency: "",
+    formation: "",
     roomName: "",
     classType: "",
     courseInstanceName: "",
@@ -95,6 +97,8 @@ const CrudSchedule = () => {
       classDay: "",
       startTime: "",
       endTime: "",
+      frequency: "",
+      formation: "",
       roomName: "",
       classType: "",
       courseInstanceName: "",
@@ -121,7 +125,7 @@ const CrudSchedule = () => {
 
   const handleEditingOfSchedule = () => {
     console.log("FORM: ", form);
-    fetch(`http://192.168.0.109:8080/my-account/${unique_code}/personal_schedule`, {
+    fetch(`http://localhost:8080/my-account/${unique_code}/personal_schedule`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -188,7 +192,7 @@ const CrudSchedule = () => {
     const confirmDelete = window.confirm("Ești sigur că vrei să ștergi această intrare?");
     if (confirmDelete) {
       var schedule_to_delete = schedule[index];
-      // console.log(unique_code, schedule_to_delete);
+      console.log(unique_code, schedule_to_delete);
       fetch(`http://localhost:8080/my-account/${unique_code}/personal_schedule/${schedule_to_delete.scheduleId}`, {
         method: "DELETE",
         headers: {
@@ -280,11 +284,20 @@ const CrudSchedule = () => {
                 <div className="crud-form-group">
                   <label>Ziua</label>
                   <input
-                    type="text"
+                    list="days"
                     name="classDay"
                     value={form.classDay}
                     onChange={handleInputChange}
                   />
+                  <datalist id="days">
+                    <option value="Luni" />
+                    <option value="Marți" />
+                    <option value="Miercuri" />
+                    <option value="Joi" />
+                    <option value="Vineri" />
+                    <option value="Sâmbătă" />
+                    <option value="Duminică" />
+                  </datalist>
                 </div>
                 <div className="crud-form-group">
                   <label>Ora Început</label>
@@ -293,7 +306,7 @@ const CrudSchedule = () => {
                     name="startTime"
                     min="05:00"
                     max="23:00"
-                    value={form.startTime}
+                    value={form.startTime | "00:00"}
                     onChange={handleInputChange}
                   />
                 </div>
@@ -304,7 +317,25 @@ const CrudSchedule = () => {
                     name="endTime"
                     min="05:00"
                     max="23:00"
-                    value={form.endTime}
+                    value={form.endTime | "00:00"}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="crud-form-group">
+                  <label>Frecventa</label>
+                  <input
+                    type="number"
+                    name="frequency"
+                    value={form.frequency}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="crud-form-group">
+                  <label>Formatia</label>
+                  <input
+                    type="text"
+                    name="formation"
+                    value={form.formation}
                     onChange={handleInputChange}
                   />
                 </div>
