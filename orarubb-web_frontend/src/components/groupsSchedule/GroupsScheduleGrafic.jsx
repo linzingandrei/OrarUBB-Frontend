@@ -1,7 +1,7 @@
 import React from "react";
 import "./GroupsScheduleGrafic.scss";
 
-const GroupsScheduleGrafic = ({ scheduleData, group }) => {
+const GroupsScheduleGrafic = ({ scheduleData, group, showHeader }) => {
   const daysOfWeek = ["Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"];
   const timeSlots = Array.from({ length: 12 }, (_, i) => ({
     start: 8 + i,
@@ -61,7 +61,7 @@ const GroupsScheduleGrafic = ({ scheduleData, group }) => {
 
   return (
     <div className="table-container">
-      <h2 className="table-title">Grupa {group}</h2>
+      {showHeader ? (<h2 className="table-title-gt">{group === "Orarul tau" ? "Orarul tau" : "Grupa " + group}</h2>) : null}
       <table className="scheduler-table">
         <thead>
           <tr>

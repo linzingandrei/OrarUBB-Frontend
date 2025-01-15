@@ -16,6 +16,10 @@ import UserSchedule from "./pages/UserSchedule/UserSchedule";
 import CrudSchedule from "./pages/UserSchedule/CrudSchedule";
 import RoomsAvailabilityPage from "./pages/RoomsAvailabilityPage/RoomsAvailabilityPage";
 import LegendaSalilorPage from "./pages/LegendaSalilorPage/LegendaSalilorPage";
+import {AuthProvider} from "./utils/AuthContext.jsx";
+import {Provider} from "react-redux";
+import {store, persistor} from "./api/Persistence.js";
+import {PersistGate} from "redux-persist/integration/react";
 
 const AppContent = () => {
     return (
@@ -61,7 +65,13 @@ const AppContent = () => {
 function App() {
     return (
         <MsalProvider instance={msalInstance}>
-          <AppContent/>
+            <AuthProvider>
+                <Provider store={store}>
+                    <PersistGate loading={null} persistor={persistor}>
+                        <AppContent/>
+                    </PersistGate>
+                </Provider>
+            </AuthProvider>
         </MsalProvider>
     );
 }

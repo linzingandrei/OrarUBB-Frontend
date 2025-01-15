@@ -3,62 +3,14 @@ import "./CrudSchedule.scss";
 import Layout from "../../components/layout/Layout";
 import { useState } from "react";
 import CrudScheduleTable from "../../components/crudSchedule/CrudScheduleTable";
-
-const initialSchedule = [
-  {
-    class_id: "0842c56a-7c4a-4331-a0c4-4e432940e83b",
-    class_day: "Luni",
-    start_hour: 8,
-    end_hour: 10,
-    frequency: 0,
-    room: "2/I",
-    formation: "931",
-    class_type: "Seminar",
-    course_instance_code: "MLM0009",
-    teacher: "Lect. Darabant Sergiu-Adrian",
-},
-{
-    class_id: "0842c56a-7c4a-4331-a0c4-4e432940e83b",
-    class_day: "Luni",
-    start_hour: 8,
-    end_hour: 10,
-    frequency: 0,
-    room: "2/I",
-    formation: "931",
-    class_type: "Seminar",
-    course_instance_code: "MLM0009",
-    teacher: "Lect. Darabant Sergiu-Adrian",
-},
-{
-    class_id: "0842c56a-7c4a-4331-a0c4-4e432940e83b",
-    class_day: "Luni",
-    start_hour: 8,
-    end_hour: 10,
-    frequency: 0,
-    room: "2/I",
-    formation: "931",
-    class_type: "Seminar",
-    course_instance_code: "MLM0009",
-    teacher: "Lect. Darabant Sergiu-Adrian",
-},
-{
-  class_id: "0842c56a-7c4a-4331-a0c4-4e432940e83b",
-  class_day: "Luni",
-  start_hour: 8,
-  end_hour: 10,
-  frequency: 0,
-  room: "2/I",
-  formation: "931",
-  class_type: "Seminar",
-  course_instance_code: "MLM0009",
-  teacher: "Lect. Darabant Sergiu-Adrian",
-},
-
-];
+import {useAuth} from "../../utils/AuthContext.jsx";
+import {useEffect} from "react";
+import {useGetClassesForUserQuery} from "../../api/ClassesApi.js";
 
 const CrudSchedule = () => {
+  const {isAuthenticated, userId,  userName, instance, accounts} = useAuth();
   const navigate = useNavigate();
-  const [schedule, setSchedule] = useState(initialSchedule);
+  const [schedule, setSchedule] = useState([]);
   const [editingIndex, setEditingIndex] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [form, setForm] = useState({
@@ -71,6 +23,16 @@ const CrudSchedule = () => {
     teacher: "",
   });
 
+  const {
+    data: classesForUser,
+  } = useGetClassesForUserQuery({userCode: userId, language: "ro-RO"});
+
+  useEffect(() => {
+    if (schedule && schedule.length > 0) {
+      setSchedule(classesForUser)
+      console.log(classesForUser)
+    }
+  }, [schedule, classesForUser]);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -125,6 +87,7 @@ const CrudSchedule = () => {
     }
   };
 
+
   return (
     <Layout>
       <div className="crud-schedule-page">
@@ -137,7 +100,7 @@ const CrudSchedule = () => {
         </button>
         </div>
         <div className="crud-header">
-          <h1>Gestionează Orarul</h1>
+          <h1>Gestionează Orarul tau, {userName}</h1>
         </div>
         <button
             className="delete-all-button"
