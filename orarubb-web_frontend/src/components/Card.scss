@@ -30,6 +30,11 @@
     gap: 20px;
     margin-top: 20px;
     align-items: stretch;
+    padding: 0 4rem;
+    @media (max-width: 1024px) {
+
+        padding: 0 2rem;
+    }
 }
 
 .card-title {
