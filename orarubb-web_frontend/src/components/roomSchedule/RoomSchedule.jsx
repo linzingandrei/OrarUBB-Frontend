@@ -50,18 +50,4 @@ const RoomSchedule = ({ scheduleData, room }) => {
   );
 };
 
-/*
-"classId": "d821db2b-ad1a-5483-a9f5-3b0b6009f299",
-        "classDay": "Joi",
-        "startHour": 3,
-        "endHour": 5,
-        "frequency": 0,
-        "room": "7/I",
-        "formation": "MI3",
-        "classType": "Curs",
-        "courseInstanceCode": "MLR5015",
-        "courseInstanceName": "Programare Web",
-        "teacher": "Conf. BUFNEA Darius"
- */
-
 export default RoomSchedule;

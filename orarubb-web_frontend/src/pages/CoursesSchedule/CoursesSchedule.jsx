@@ -5,20 +5,24 @@ import ProfessorScheduleGrafic from "../../components/professorSchedule/Professo
 import { useParams } from "react-router-dom";
 import { useGetClassesForTeacherQuery } from "../../api/TeachersApi";
 import { LoadingComponent } from "../../components/LoadingComponent";
+import { useGetClassesForCourseQuery } from "../../api/CoursesApi";
+import CourseSchedule from "../../components/courseSchedule/CourseSchedule";
+import CourseScheduleGrafic from "../../components/courseSchedule/CourseScheduleGrafic";
 import { NoDataComponent } from "../../components/NoDataComponent";
 
-const ProfessorsSchedule = () => {
-  const teacherName = useParams().teacherName;
-  const teacherCode = useParams().teacherCode;
+const CoursesSchedule = () => {
+  const courseName = useParams().courseName;
+  const courseCode = useParams().courseCode;
 
   const {
-    data: scheduleDataForTeacher,
+    data: scheduleDataForCourse,
     isLoading,
     isError,
-  } = useGetClassesForTeacherQuery({
-    teacher_code: teacherCode,
+  } = useGetClassesForCourseQuery({
+    course_code: courseCode,
     language: "ro-RO",
   });
+  console.log(scheduleDataForCourse);
 
   const [view, setView] = useState("tabelar");
 
@@ -55,14 +59,14 @@ const ProfessorsSchedule = () => {
 
         <div>
           {view === "tabelar" ? (
-            <ProfessorSchedule
-              scheduleData={scheduleDataForTeacher}
-              professor={teacherName}
+            <CourseSchedule
+              scheduleData={scheduleDataForCourse}
+              course={courseName}
             />
           ) : (
-            <ProfessorScheduleGrafic
-              scheduleData={scheduleDataForTeacher}
-              professor={teacherName}
+            <CourseScheduleGrafic
+              scheduleData={scheduleDataForCourse}
+              course={courseName}
             />
           )}
         </div>
@@ -71,4 +75,4 @@ const ProfessorsSchedule = () => {
   );
 };
 
-export default ProfessorsSchedule;
+export default CoursesSchedule;
