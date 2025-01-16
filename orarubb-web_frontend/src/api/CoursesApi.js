@@ -14,6 +14,12 @@ export const coursesApi = apiSlice.injectEndpoints({
       providesTags: ["classesForCourseCache"],
       keepUnusedDataFor: 1000,
     }),
+
+    getCourseNameForCode: builder.query({
+      query: (course_code) => `/course-instances/course-name/${course_code}`,
+      providesTags: ["coursesCache"],
+      keepUnusedDataFor: 1000,
+    }),
   }),
 });
 

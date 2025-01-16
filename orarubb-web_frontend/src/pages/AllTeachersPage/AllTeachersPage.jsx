@@ -6,6 +6,7 @@ import searchIcon from "../../assets/search_icon.svg";
 import orderIcon from "../../assets/order_alph.svg";
 import Layout from "../../components/layout/Layout";
 import { useGetTeachersByLanguageQuery } from "../../api/TeachersApi";
+import { LoadingComponent } from "../../components/LoadingComponent";
 
 const gradeOrder = ["Prof.", "Conf.", "Lect.", "Asist.", "Drd.", "C.d.asociat"];
 
@@ -75,7 +76,11 @@ const AllTeachersPage = () => {
           </div>
         </div>
 
-        {isLoading && <div className="loading">Loading...</div>}
+        {isLoading && (
+          <div className="loading">
+            <LoadingComponent />
+          </div>
+        )}
 
         {!isLoading && (
           <div className="cards-list">
@@ -83,7 +88,7 @@ const AllTeachersPage = () => {
               <Card
                 key={teacher.teacherId}
                 title={teacher.name}
-                link={`/teacher/${teacher.codeName}`}
+                link={`/teacher/${teacher.name}/${teacher.codeName}`}
               />
             ))}
           </div>

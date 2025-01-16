@@ -20,7 +20,7 @@ const AllCoursesPage = () => {
               key={course.courseId}
               title={course.courseName}
               subtitle={`Cod: ${course.courseCode}`}
-              link={`/course/${course.courseId}`} // assuming for now the course schedule page is at `/course/:id`
+              link={`/course/${course.courseName}/${course.courseCode}`}
             />
           ))}
         </div>

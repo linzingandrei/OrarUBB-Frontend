@@ -10,6 +10,7 @@ import {useEffect} from "react";
 import {useGetClassesForGroupQuery, useLazyGetClassesForGroupQuery} from "../../api/ClassesApi";
 import {useMapGroupCoursesToUserMutation} from "../../api/UserClassesApi.js";
 import {useAuth} from "../../utils/AuthContext.jsx";
+import { LoadingComponent } from "../../components/LoadingComponent.jsx";
 
 const dayOrder = {
     Luni: 1, Marti: 2, Miercuri: 3, Joi: 4, Vineri: 5, Sambata: 6, Duminica: 7,
@@ -158,7 +159,7 @@ const GroupsSchedule = () => {
                         </div>)}
                     </div>);
                 })}
-            </>) : (<p>Loading schedules...</p>)}
+            </>) : (<LoadingComponent />)}
         </div>
     </Layout>);
 };

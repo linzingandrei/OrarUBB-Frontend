@@ -12,7 +12,7 @@ const ProfessorSchedule = ({ scheduleData, professor }) => {
             <th>Orele</th>
             <th>Frecventa</th>
             <th>Sala</th>
-            <th>Anul</th>
+            {/* <th>Anul</th> */}
             <th>Formatia</th>
             <th>Tipul</th>
             <th>Disciplina</th>
@@ -37,11 +37,11 @@ const ProfessorSchedule = ({ scheduleData, professor }) => {
                   {item.room}
                 </a>
               </td>
-              <td>
+              {/* <td>
                 <a href={`#${item.formation}`} className="link">
                   {item.formation}
                 </a>
-              </td>
+              </td> */}
               <td>{item.formation}</td>
               <td>{item.classType}</td>
               <td>

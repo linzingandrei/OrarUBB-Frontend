@@ -3,13 +3,18 @@ import "../AllCoursesPage/CardsPage.scss";
 import { getAllRooms } from "../../services/roomsService";
 import Layout from "../../components/layout/Layout";
 import { useGetAllRoomsQuery } from "../../api/RoomsApi";
+import { LoadingComponent } from "../../components/LoadingComponent";
 
 const AllRoomsPage = () => {
   //const mockRooms = getAllRooms();
   const { data: rooms = [], isLoading } = useGetAllRoomsQuery();
 
   {
-    isLoading && <div className="loading">Loading...</div>;
+    isLoading && (
+      <div className="loading">
+        <LoadingComponent />
+      </div>
+    );
   }
   return (
     <Layout>
@@ -20,7 +25,7 @@ const AllRoomsPage = () => {
             <Card
               key={room.roomId}
               title={room.name}
-              link={`/room/${room.name.replace(/\//g, '-')}`}
+              link={`/room/${room.name.replace(/\//g, "-")}`}
             />
           ))}
         </div>
