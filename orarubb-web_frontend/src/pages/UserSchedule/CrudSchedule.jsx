@@ -5,7 +5,7 @@ import { useState } from "react";
 import CrudScheduleTable from "../../components/crudSchedule/CrudScheduleTable";
 import {useAuth} from "../../utils/AuthContext.jsx";
 import {useEffect} from "react";
-import {useGetClassesForUserQuery} from "../../api/ClassesApi.js";
+import {useGetClassesForUserQuery} from "../../api/UserClassesApi.js";
 
 const CrudSchedule = () => {
   const {isAuthenticated, userId,  userName, instance, accounts} = useAuth();

@@ -8,12 +8,8 @@ export const classesApi = apiSlice.injectEndpoints({
       providesTags: ["classesCache"],
       keepUnusedDataFor: 1000,
     }),
-    getClassesForUser: builder.query({
-      query: ({ userCode, language }) => `/user/classes/${userCode}/${language}`,
-      providesTags: ["classesCache"],
-      keepUnusedDataFor: 1000,
-    })
+
   }),
 });
 
-export const { useGetClassesForGroupQuery, useLazyGetClassesForGroupQuery, useGetClassesForUserQuery } = classesApi;
+export const { useGetClassesForGroupQuery, useLazyGetClassesForGroupQuery } = classesApi;

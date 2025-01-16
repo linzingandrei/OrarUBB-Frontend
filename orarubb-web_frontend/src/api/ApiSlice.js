@@ -16,5 +16,6 @@ export const apiSlice = createApi({
     "academicSpecializationsBachelorCache",
     "academicSpecializationsMasterCache",
     "classesForCourseCache",
+    "userClassesCache",
   ],
 });

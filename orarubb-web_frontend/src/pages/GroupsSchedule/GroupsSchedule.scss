@@ -26,6 +26,9 @@
     width: 90%;
     max-width: 1800px;
 
+    @media (max-width: 782px) {
+      display: none;
+    }
     .switch {
       position: relative;
       display: inline-block;
@@ -76,6 +79,7 @@
       font-size: 1rem;
       margin-left: 10px;
     }
+
   }
 
   .table-container {
@@ -116,6 +120,7 @@
       font-weight: bold;
     }
 
+
     &:hover {
       background-color: #d6e7ff;
     }
@@ -131,6 +136,17 @@
     background-color: #fff;
     padding: 1rem;
     animation: slideDown 0.3s ease-out;
+  }
+  .mark-my-schedule-btn {
+    background-color: #1A4977;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 1rem;
+
+
   }
 }
 @keyframes slideDown {

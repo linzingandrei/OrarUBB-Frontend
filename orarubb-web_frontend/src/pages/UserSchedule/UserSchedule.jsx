@@ -5,8 +5,8 @@ import {useEffect, useState} from "react";
 import GroupsScheduleTabelar from "../../components/groupsSchedule/GroupsScheduleTabelar";
 import GroupsScheduleGrafic from "../../components/groupsSchedule/GroupsScheduleGrafic";
 import {useAuth} from "../../utils/AuthContext.jsx";
-import {useGetClassesForUserQuery} from "../../api/ClassesApi.js";
 import {skipToken} from "@reduxjs/toolkit/query";
+import {useGetClassesForUserQuery} from "../../api/UserClassesApi.js";
 
 const dayOrder = {
     Luni: 1,
