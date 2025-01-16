@@ -1,20 +1,29 @@
 @use '../utils/colors.scss';
 
 .card {
-    background-color: colors.$primary-dark-blue;
-    color: colors.$text-white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.1s;
-    text-decoration: none;
-    width: 180px;
-    
+    padding: 10px 6px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.1s;
+    width: 100%;
+    max-width: 250px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.cards-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .card-title {
@@ -27,8 +36,4 @@
     font-size: 17px;
     margin-top: 5px;
     margin-bottom: 0px;
-}
-
-.card:hover {
-    transform: scale(1.05);
 }
