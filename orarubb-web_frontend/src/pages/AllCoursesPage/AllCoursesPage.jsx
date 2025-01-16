@@ -1,5 +1,5 @@
 import Card from "../../components/Card";
-import "./CardsPage.scss";
+import "../../components/Card.scss";
 import { getCourses } from "../../services/courseService";
 import Layout from "../../components/layout/Layout";
 import { useGetAllCourseInstancesByLanguageQuery } from "../../api/CoursesApi";
