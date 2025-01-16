@@ -37,11 +37,6 @@ const ProfessorSchedule = ({ scheduleData, professor }) => {
                   {item.room}
                 </a>
               </td>
-              {/* <td>
-                <a href={`#${item.formation}`} className="link">
-                  {item.formation}
-                </a>
-              </td> */}
               <td>{item.formation}</td>
               <td>{item.classType}</td>
               <td>
