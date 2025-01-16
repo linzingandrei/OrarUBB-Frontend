@@ -4,6 +4,10 @@
     justify-content: center; 
     gap: 50px;   
     margin-bottom: 70px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding-top: 150px;
+    padding-left: 20px;
 }
 
 .search-container {

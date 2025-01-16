@@ -37,10 +37,6 @@ const UserSchedule = () => {
 
     useEffect(() => {
         if (classesForUser) {
-            // const transformedSchedule = ({
-            //     group: "Orarul tau",
-            //     scheduleData: [classesForUser],
-            // });
             const sortedScheduleData = [...classesForUser].sort((a, b) => {
                 const dayComparison =
                     dayOrder[a.classDay] - dayOrder[b.classDay];

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "../../components/Card";
-import "../AllCoursesPage/CardsPage.scss";
 import "./AllTeachersPage.scss";
+import "../../components/Card.scss"
 import searchIcon from "../../assets/search_icon.svg";
 import orderIcon from "../../assets/order_alph.svg";
 import Layout from "../../components/layout/Layout";

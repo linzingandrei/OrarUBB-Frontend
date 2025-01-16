@@ -3,6 +3,9 @@ import "../../components/Card.scss";
 import { getCourses } from "../../services/courseService";
 import Layout from "../../components/layout/Layout";
 import { useGetAllCourseInstancesByLanguageQuery } from "../../api/CoursesApi";
+import "../../components/Card.scss"
+import "../AllTeachersPage/AllTeachersPage.scss"
+import "./AllCoursesPage.scss"
 
 const AllCoursesPage = () => {
   const { data: courses = [], isLoading } =
@@ -13,17 +16,20 @@ const AllCoursesPage = () => {
   return (
     <Layout>
       <div className="page">
-        <h1>Orar discipline</h1>
-        <div className="cards-list">
-          {courses.map((course) => (
-            <Card
-              key={course.courseId}
-              title={course.courseName}
-              subtitle={`Cod: ${course.courseCode}`}
-              link={`/course/${course.courseName}/${course.courseCode}`}
-            />
-          ))}
-        </div>
+          <div className="header">
+              <h1>Orar discipline</h1>
+          </div>
+          <div className="cards-list">
+                  {courses.map((course) => (
+                      <Card
+                          key={course.courseId}
+                          title={course.courseName}
+                          subtitle={`Cod: ${course.courseCode}`}
+                          link={`/course/${course.courseName}/${course.courseCode}`}
+                      />
+                  ))}
+              </div>
+
       </div>
     </Layout>
   );

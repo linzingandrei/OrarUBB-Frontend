@@ -1,6 +1,6 @@
 import Card from "../../components/Card";
-import "../AllCoursesPage/CardsPage.scss";
 import { getAllRooms } from "../../services/roomsService";
+import "../../components/Card.scss"
 import Layout from "../../components/layout/Layout";
 import { useGetAllRoomsQuery } from "../../api/RoomsApi";
 import { LoadingComponent } from "../../components/LoadingComponent";
