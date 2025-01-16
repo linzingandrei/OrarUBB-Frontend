@@ -8,7 +8,8 @@ export const classesApi = apiSlice.injectEndpoints({
       providesTags: ["classesCache"],
       keepUnusedDataFor: 1000,
     }),
+
   }),
 });
 
-export const { useLazyGetClassesForGroupQuery } = classesApi;
+export const { useGetClassesForGroupQuery, useLazyGetClassesForGroupQuery } = classesApi;

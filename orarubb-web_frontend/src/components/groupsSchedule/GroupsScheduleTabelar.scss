@@ -34,13 +34,14 @@ body {
 }
 
 .table-gt {
-  min-width: 200px;
-  width: 100%;
-  max-width: 960px;
+  min-width: 180px;
+  width: 90%;
   border-collapse: collapse;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  overflow-x: auto;   /* Horizontal scroll if table is wider than container */
+  overflow-y: auto;
   color: #333;
-  overflow-x: auto;
 
   thead th {
     padding: 16px;
@@ -74,7 +75,7 @@ body {
     }
   }
 
-  @media (max-width: 920px) {
+  @media (max-width: 1000px) {
     font-size: 0.8rem;
 
     thead {

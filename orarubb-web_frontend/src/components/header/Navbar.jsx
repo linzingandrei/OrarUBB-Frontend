@@ -1,13 +1,26 @@
-import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+// Navbar.js
+import React from 'react';
+import {useNavigate} from "react-router-dom";
 import './Navbar.scss';
+import {useAuth} from '../../utils/AuthContext';
 
 const Navbar = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const {isAuthenticated, userName, instance, accounts} = useAuth();
     const navigate = useNavigate();
 
-    const handleLoginClick = () => {
-        setIsLoggedIn(!isLoggedIn);
+    const handleLoginClick = async () => {
+        try {
+            if (!isAuthenticated) {
+                const loginResponse = await instance.loginPopup({
+                    scopes: ["User.Read"],
+                });
+                console.log("Login response: ", loginResponse);
+            } else {
+                instance.logoutPopup();
+            }
+        } catch (error) {
+            console.error("Login error: ", error);
+        }
     };
 
     return (
@@ -22,11 +35,10 @@ const Navbar = () => {
                         <div className="navbar__icon home-icon" title="Home"></div>
                         <span>Home</span>
                     </button>
-
                 </div>
                 <div className="navbar__logo" title="Faculty Logo" onClick={() => navigate("/")}></div>
                 <div className="navbar__right">
-                    {isLoggedIn ? (
+                    {isAuthenticated ? (
                         <>
                             <button className="navbar__link" onClick={() => navigate("/my-schedule")}>
                                 <span>Orarul meu</span>
