@@ -63,6 +63,7 @@ const GroupsSchedule = () => {
                         const scheduleResponse = await fetchGroupSchedule({
                             groupCode: group, language: "ro-RO",
                         }).unwrap();
+                        console.log("scheduleResponse", scheduleResponse);
 
                         const sortedScheduleData = [...scheduleResponse].sort((a, b) => {
                             const dayComparison = dayOrder[a.classDay] - dayOrder[b.classDay];

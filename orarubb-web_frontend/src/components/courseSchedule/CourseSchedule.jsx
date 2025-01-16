@@ -2,6 +2,7 @@ import { NoDataComponent } from "../NoDataComponent";
 import "../professorSchedule/ProfessorSchedule.scss";
 
 const CourseSchedule = ({ scheduleData, course }) => {
+  console.log("Data", scheduleData);
   return (
     <div className="professor-schedule-table-container">
       <h2 className="professor-schedule-table-title">Orar {course}</h2>
@@ -48,7 +49,7 @@ const CourseSchedule = ({ scheduleData, course }) => {
                 <td>{item.formation}</td>
                 <td>{item.classType}</td>
                 <td>
-                  <a href={`#${item.courseInstanceCode}`} className="link">
+                  <a href={`/teacher/${item.teacherCode}`} className="link">
                     {item.teacher}
                   </a>
                 </td>

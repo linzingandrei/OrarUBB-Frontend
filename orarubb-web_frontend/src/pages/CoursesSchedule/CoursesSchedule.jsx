@@ -22,7 +22,6 @@ const CoursesSchedule = () => {
     course_code: courseCode,
     language: "ro-RO",
   });
-  console.log(scheduleDataForCourse);
 
   const [view, setView] = useState("tabelar");
 
