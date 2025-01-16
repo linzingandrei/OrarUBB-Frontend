@@ -88,7 +88,7 @@ const AllTeachersPage = () => {
               <Card
                 key={teacher.teacherId}
                 title={teacher.name}
-                link={`/teacher/${teacher.name}/${teacher.codeName}`}
+                link={`/teacher/${teacher.codeName}`}
               />
             ))}
           </div>

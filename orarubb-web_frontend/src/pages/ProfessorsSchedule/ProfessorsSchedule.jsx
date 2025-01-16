@@ -6,15 +6,24 @@ import { useParams } from "react-router-dom";
 import { useGetClassesForTeacherQuery } from "../../api/TeachersApi";
 import { LoadingComponent } from "../../components/LoadingComponent";
 import { NoDataComponent } from "../../components/NoDataComponent";
+import { useGetTeacherByCodeNameQuery } from "../../api/TeachersApi";
 
 const ProfessorsSchedule = () => {
-  const teacherName = useParams().teacherName;
   const teacherCode = useParams().teacherCode;
 
   const {
+    data: teacherNameData,
+    isLoading: isLoadingTeacherName,
+    isError: isErrorTeacherName,
+  } = useGetTeacherByCodeNameQuery({
+    teacher_code_name: teacherCode,
+    language: "ro-RO",
+  });
+
+  const {
     data: scheduleDataForTeacher,
-    isLoading,
-    isError,
+    isLoading: isLoadingSchedule,
+    isError: isErrorSchedule,
   } = useGetClassesForTeacherQuery({
     teacher_code: teacherCode,
     language: "ro-RO",
@@ -26,7 +35,7 @@ const ProfessorsSchedule = () => {
     setView((prevView) => (prevView === "tabelar" ? "grafic" : "tabelar"));
   };
 
-  if (isLoading) {
+  if (isLoadingTeacherName || isLoadingSchedule) {
     return (
       <div>
         <LoadingComponent />
@@ -34,10 +43,12 @@ const ProfessorsSchedule = () => {
     );
   }
 
-  if (isError) {
+  if (isErrorTeacherName || isErrorSchedule) {
     return <NoDataComponent />;
   }
 
+  const teacherName = teacherNameData?.name; // Adjust based on the actual structure of the data
+  console.log(teacherName);
   return (
     <Layout>
       <div className="page-container-gt">

@@ -13,8 +13,18 @@ export const teachersApi = apiSlice.injectEndpoints({
       providesTags: ["classesForTeacherCache"],
       keepUnusedDataFor: 1000,
     }),
+
+    getTeacherByCodeName: builder.query({
+      query: ({ teacher_code_name, language }) =>
+        `/teachers/code/${teacher_code_name}/${language}`,
+      providesTags: ["teachersCache"],
+      keepUnusedDataFor: 1000,
+    }),
   }),
 });
 
-export const { useGetTeachersByLanguageQuery, useGetClassesForTeacherQuery } =
-  teachersApi;
+export const {
+  useGetTeachersByLanguageQuery,
+  useGetClassesForTeacherQuery,
+  useGetTeacherByCodeNameQuery,
+} = teachersApi;

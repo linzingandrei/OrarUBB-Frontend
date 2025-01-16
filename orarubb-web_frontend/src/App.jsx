@@ -38,11 +38,7 @@ const AppContent = () => {
         <Route path="/courses" element={<AllCoursesPage />} />
         <Route path="/teacher/:teacherCode" element={<ProfessorsSchedule />} />
         <Route
-          path="/teacher/:teacherName/:teacherCode"
-          element={<ProfessorsSchedule />}
-        />
-        <Route
-          path="/course/:courseName/:courseCode"
+          path="/course/:courseCode"
           element={<CoursesSchedule></CoursesSchedule>}
         />
         <Route path="/" element={<MainPage />} />
@@ -52,8 +48,7 @@ const AppContent = () => {
           element={<GroupsSchedule />}
         />
         <Route path="/room/:roomName" element={<RoomsSchedule />} />
-        <Route path="/course/:courseName" element={<></>} />{" "}
-        {/* TODO - there is no course page yet afaik */}
+
         <Route path="/crud-schedule" element={<CrudSchedule />} />
         <Route path="/my-schedule" element={<UserSchedule />} />
         <Route
