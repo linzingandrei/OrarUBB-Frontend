@@ -11,7 +11,6 @@ import CourseScheduleGrafic from "../../components/courseSchedule/CourseSchedule
 import { NoDataComponent } from "../../components/NoDataComponent";
 
 const CoursesSchedule = () => {
-  const courseName = useParams().courseName;
   const courseCode = useParams().courseCode;
 
   const {
@@ -22,6 +21,8 @@ const CoursesSchedule = () => {
     course_code: courseCode,
     language: "ro-RO",
   });
+
+  console.log(scheduleDataForCourse);
 
   const [view, setView] = useState("tabelar");
 
@@ -37,7 +38,7 @@ const CoursesSchedule = () => {
     );
   }
 
-  if (isError) {
+  if (isError || scheduleDataForCourse.length === 0) {
     return <NoDataComponent />;
   }
 
@@ -60,12 +61,12 @@ const CoursesSchedule = () => {
           {view === "tabelar" ? (
             <CourseSchedule
               scheduleData={scheduleDataForCourse}
-              course={courseName}
+              course={courseCode}
             />
           ) : (
             <CourseScheduleGrafic
               scheduleData={scheduleDataForCourse}
-              course={courseName}
+              course={courseCode}
             />
           )}
         </div>
