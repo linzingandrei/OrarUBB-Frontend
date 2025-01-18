@@ -3,8 +3,8 @@ import "./RoomSchedule.scss";
 const RoomSchedule = ({ scheduleData, room }) => {
   return (
     <div className="room-schedule-table-container">
-      <h2 className="table-title">Orar: Sala {room}</h2>
-      <table className="table">
+      <h2 className="room-schedule-table-title">Orar: Sala {room}</h2>
+      <table className="room-schedule-table">
         <thead>
           <tr>
             <th>Ziua</th>
@@ -19,9 +19,9 @@ const RoomSchedule = ({ scheduleData, room }) => {
         <tbody>
           {scheduleData.map((item, index) => (
             <tr key={index}>
-              <td>{item.class_day}</td>
+              <td>{item.classDay}</td>
               <td>
-                {item.start_hour} - {item.end_hour}
+                {item.startHour} - {item.endHour}
               </td>
               <td>
                 {item.frequency === 0
@@ -31,15 +31,15 @@ const RoomSchedule = ({ scheduleData, room }) => {
                   : "Săptămâna pară"}
               </td>
               <td>{item.formation}</td>
-              <td>{item.class_type}</td>
+              <td>{item.classType}</td>
               <td>
-                <a href={`#${item.course_name}`} className="link">
-                  {item.course_name}
+                <a href={`/course/${item.courseInstanceCode}`} className="link">
+                  {item.courseInstanceName}
                 </a>
               </td>
               <td>
-                <a href={`#${item.professor}`} className="link">
-                  {item.professor}
+                <a href={`/teacher/${item.teacherCode}`} className="link">
+                  {item.teacher}
                 </a>
               </td>
             </tr>

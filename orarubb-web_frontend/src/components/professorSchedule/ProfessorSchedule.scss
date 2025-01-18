@@ -8,25 +8,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (max-height: 1200px) {
-    padding-top: 10rem;
-  }
-
-  @media (max-height: 900px) {
-    padding-top: 10rem;
-  }
-
-  @media (max-height: 812px) {
-    padding-top: 9rem;
-  }
-
-  @media (max-height: 667px) {
-    padding-top: 8rem;
-  }
 }
 
-.table-title {
+.professor-schedule-table-title {
   font-size: 2rem;
   font-weight: bold;
   color: #333;
@@ -34,18 +18,15 @@
   text-align: center;
 }
 
-.table {
-  width: 60%;
+.professor-schedule-table {
+  width: 100%;
   border-collapse: collapse;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
   color: #333;
-
   thead {
     color: black;
-
     th {
-      padding: 16px;
+      padding: 20px;
       text-align: center;
       font-size: 1.5rem;
       font-weight: bold;
@@ -64,7 +45,7 @@
       }
 
       td {
-        padding: 8px;
+        padding: 15px;
         border-bottom: 1px solid #ddd;
         text-align: center;
 

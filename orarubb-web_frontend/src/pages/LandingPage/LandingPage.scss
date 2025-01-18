@@ -8,30 +8,15 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-}
+  overflow: auto;
+} 
 
 .main-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-top: 10rem;
+  padding-top: clamp(8rem, 10vh, 10rem);
   align-items: center;
-
-  @media (max-height: 1200px) {
-    padding-top: 10rem;
-  }
-
-  @media (max-height: 900px) {
-    padding-top: 10rem;
-  }
-
-  @media (max-height: 812px) {
-    padding-top: 9rem;
-  }
-
-  @media(max-height: 667px) {
-    padding-top: 8rem;
-  }
 
 }
 
@@ -39,7 +24,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  gap: clamp(0.8rem, 1.5vw, 1.2rem);
 }
 
 .title {

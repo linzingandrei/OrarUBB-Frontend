@@ -1,47 +1,90 @@
 .table-container {
-    margin: 20px;
-  }
-  
-  .table-title {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .scheduler-table {
-    width: 90%;
-    border-collapse: collapse;
-  }
-  
-  .scheduler-table th,
-  .scheduler-table td {
+  margin: 20px;
+}
+
+.table-title-gt {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Ensure table can scroll horizontally if it's too wide */
+.responsive-table-wrapper {
+  width: 100%;        /* Occupy full parent width */
+  overflow-x: auto;   /* Horizontal scroll if table is wider than container */
+  overflow-y: auto; /* Optional: hide vertical scroll if not needed */
+  max-width: 100%;
+}
+
+.scheduler-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  table-layout: auto;
+  th,
+  td {
     border: 1px solid #ccc;
+    padding: 8px 12px;
     text-align: center;
-    padding: 10px;
     vertical-align: top;
   }
-  
-  .scheduler-table th {
+
+  th {
     background-color: #f4f4f4;
   }
- .scheduler-cell {
+}
+
+.time-slot-cell {
+  position: sticky;
+  left: 0;
+  background-color: #fff;
+  z-index: 0;
+}
+.scheduler-cell {
+  height: 100%;
   text-align: center;
   vertical-align: top;
 }
 
 .class-container {
   display: flex;
+  height: 100%;
   flex-direction: row;
+  align-items: stretch;
   gap: 5px;
 }
 
 .class-card {
   background-color: #E1F0FF;
+  flex: 1;               /* or align-self: stretch */
+  display: table-row;
+  flex-direction: column;
+  justify-content: center;
+  /* If you need the entire background to fill the cell: */
+  height: 100%;
   padding: 5px;
-  border-radius: 5px;
-  flex: 1 1 auto;
-  text-align: center;
+  //border-radius: 5px;
+
+
+  .class-card-table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+
+    td {
+      padding: 2px 4px;
+      border:none;
+    }
+
+    td[colspan="2"] {
+      text-align: center;
+      padding-bottom: 8px;
+    }
+  }
+}
+.time-slot-header {
+  font-weight: bold;
 }
 
-  
-  
-  
+.day-header {
+  font-weight: bold;
+}

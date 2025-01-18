@@ -1,28 +1,38 @@
-import Card from '../../components/Card';
-import './CardsPage.scss'
-import { getCourses } from '../../services/courseService';
-import Layout from '../../components/layout/Layout';
+import Card from "../../components/Card";
+import "../../components/Card.scss";
+import { getCourses } from "../../services/courseService";
+import Layout from "../../components/layout/Layout";
+import { useGetAllCourseInstancesByLanguageQuery } from "../../api/CoursesApi";
+import "../../components/Card.scss"
+import "../AllTeachersPage/AllTeachersPage.scss"
+import "./AllCoursesPage.scss"
 
 const AllCoursesPage = () => {
-    const mockCourses = getCourses();
+  const { data: courses = [], isLoading } =
+    useGetAllCourseInstancesByLanguageQuery("ro-RO");
 
-    return (
-        <Layout>
-            <div className="page">
-                <h1>Orar discipline</h1>
-                <div className="cards-list">
-                    {mockCourses.map((course) => (
-                        <Card
-                            key={course.course_id}
-                            title={course.course_name}
-                            subtitle={`Cod: ${course.course_code}`}
-                            link={`/course/${course.course_id}`}  // assuming for now the course schedule page is at `/course/:id`
-                        />
-                    ))}
-                </div>
-            </div>
-        </Layout>
-    );
+  //const mockCourses = getCourses();
+
+  return (
+    <Layout>
+      <div className="page">
+          <div className="header">
+              <h1>Orar discipline</h1>
+          </div>
+          <div className="cards-list">
+                  {courses.map((course) => (
+                      <Card
+                          key={course.courseId}
+                          title={course.courseName}
+                          subtitle={`Cod: ${course.courseCode}`}
+                          link={`/course/${course.courseCode}`}
+                      />
+                  ))}
+              </div>
+
+      </div>
+    </Layout>
+  );
 };
 
 export default AllCoursesPage;

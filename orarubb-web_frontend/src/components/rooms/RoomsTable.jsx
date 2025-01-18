@@ -1,15 +1,14 @@
 import './RoomsTable.scss';
-import { useNavigate } from "react-router-dom";
-import { getAllRooms } from '../../services/roomsService';
+import {useGetAllRoomsQuery} from "../../api/RoomsApi.js";
 
 const RoomsTable = () => {
-    const navigate = useNavigate();
-    const rooms = getAllRooms();
+    // const rooms = getAllRooms();
+    const {data: rooms = []  } = useGetAllRoomsQuery();
 
     return (
         <div className="rooms-table-container">
-            <h2 className='table-title'>Legenda Salilor</h2>
-            <table className="table">
+            <h2 className='rooms-table-title'>Legenda Salilor</h2>
+            <table className="rooms-table">
             <thead>
                 <tr>
                     <th>Sala</th>

@@ -1,27 +1,41 @@
-import Card from '../../components/Card';
-import '../AllCoursesPage/CardsPage.scss'
-import { getAllRooms } from '../../services/roomsService';
-import Layout from '../../components/layout/Layout';
+import Card from "../../components/Card";
+import { getAllRooms } from "../../services/roomsService";
+import "../../components/Card.scss";
+import Layout from "../../components/layout/Layout";
+import { useGetAllRoomsQuery } from "../../api/RoomsApi";
+import { LoadingComponent } from "../../components/LoadingComponent";
+import "../../components/Card.scss";
+import "../AllTeachersPage/AllTeachersPage.scss";
 
 const AllRoomsPage = () => {
-    const mockRooms = getAllRooms();
+  //const mockRooms = getAllRooms();
+  const { data: rooms = [], isLoading } = useGetAllRoomsQuery();
 
-    return (
-        <Layout>
-            <div className="page">
-                <h1>Orar sali</h1>
-                <div className="cards-list">
-                    {mockRooms.map((room) => (
-                        <Card
-                            key={room.room_id}
-                            title={room.name}
-                            link={`/room/${room.room_id}`}  // assuming for now the room schedule page is at `/room/:id`
-                        />
-                    ))}
-                </div>
-            </div>
-        </Layout>
+  {
+    isLoading && (
+      <div className="loading">
+        <LoadingComponent />
+      </div>
     );
+  }
+  return (
+    <Layout>
+      <div className="page">
+        <div className="header">
+          <h1>Orar sali</h1>
+        </div>
+        <div className="cards-list">
+          {rooms.map((room) => (
+            <Card
+              key={room.roomId}
+              title={room.name}
+              link={`/room/${room.name.replace(/\//g, "-")}`}
+            />
+          ))}
+        </div>
+      </div>
+    </Layout>
+  );
 };
 
 export default AllRoomsPage;

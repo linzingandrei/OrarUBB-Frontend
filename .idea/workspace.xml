@@ -4,23 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e6d11cb-6cdf-400a-8554-2157c5ee5ce7" name="Changes" comment="Routed StudyProgramsPage.jsx, GroupsSchedule.jsx and made them responsive (ish)">
+    <list default="true" id="2e6d11cb-6cdf-400a-8554-2157c5ee5ce7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllCoursesPage/AllCoursesPage.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/Card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/crudSchedule/CrudScheduleTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/crudSchedule/CrudScheduleTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllCoursesPage/AllCoursesPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllCoursesPage/AllCoursesPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllRoomsPage/AllRoomsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllRoomsPage/AllRoomsPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllTeachersPage/AllTeachersPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllTeachersPage/AllTeachersPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/services/teachersService.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/services/teachersService.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllTeachersPage/AllTeachersPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllTeachersPage/AllTeachersPage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/UserSchedule/CrudSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/UserSchedule/CrudSchedule.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/UserSchedule/UserSchedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/UserSchedule/UserSchedule.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JSX File" />
+        <option value="JavaScript File" />
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="sala-schedule-page" />
+        <entry key="$PROJECT_DIR$" value="login_and_pages_flow" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,14 +66,20 @@
     "Node.js.Navbar.jsx.executor": "Run",
     "Node.js.main.jsx.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "oauth-microsoft-login",
+    "javascript.nodejs.core.library.configured.version": "23.3.0",
+    "javascript.nodejs.core.library.typings.version": "22.10.5",
     "last_opened_file_path": "/Users/Alex/Developer/orar/OrarUBB-Frontend/orarubb-web_frontend/src/components/header",
+    "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.dev.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/Users/Alex/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -86,16 +107,13 @@
       <list>
         <item itemvalue="npm.dev" />
         <item itemvalue="Node.js.Navbar.jsx" />
-        <item itemvalue="npm.dev" />
-        <item itemvalue="Node.js.Navbar.jsx" />
-        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
       </set>
     </attachedChunks>
   </component>
@@ -112,6 +130,13 @@
       <workItem from="1731543036248" duration="1786000" />
       <workItem from="1731669019588" duration="2611000" />
       <workItem from="1731779278296" duration="8086000" />
+      <workItem from="1734348542878" duration="3203000" />
+      <workItem from="1734369622953" duration="7580000" />
+      <workItem from="1734437713748" duration="6000" />
+      <workItem from="1736783773114" duration="5710000" />
+      <workItem from="1736847652392" duration="7796000" />
+      <workItem from="1736936672530" duration="9694000" />
+      <workItem from="1736951738331" duration="28214000" />
     </task>
     <task id="LOCAL-00001" summary="Made navbar responsive, made LandingPage.jsx and InformatiiSali.jsx responsive w.r.t. navbar.">
       <option name="closed" value="true" />
@@ -127,9 +152,24 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Made navbar responsive, made LandingPage.jsx and InformatiiSali.jsx responsive w.r.t. navbar." />
     <MESSAGE value="Routed StudyProgramsPage.jsx, GroupsSchedule.jsx and made them responsive (ish)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Routed StudyProgramsPage.jsx, GroupsSchedule.jsx and made them responsive (ish)" />
+    <MESSAGE value="Fixed professor schedule year and css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed professor schedule year and css" />
   </component>
 </project>
