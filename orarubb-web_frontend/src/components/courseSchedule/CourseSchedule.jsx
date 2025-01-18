@@ -5,7 +5,9 @@ const CourseSchedule = ({ scheduleData, course }) => {
   console.log("Data", scheduleData);
   return (
     <div className="professor-schedule-table-container">
-      <h2 className="professor-schedule-table-title">Orar {course}</h2>
+      <h2 className="professor-schedule-table-title">
+        Orar {scheduleData[0].courseInstanceName}
+      </h2>
       {scheduleData.length === 0 ? (
         <NoDataComponent />
       ) : (

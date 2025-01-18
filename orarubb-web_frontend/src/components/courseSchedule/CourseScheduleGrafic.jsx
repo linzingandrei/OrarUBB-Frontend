@@ -62,7 +62,9 @@ export const CourseScheduleGrafic = ({ scheduleData, course }) => {
 
   return (
     <div className="profG-table-container">
-      <h2 className="profG-table-title">Orar {course}</h2>
+      <h2 className="profG-table-title">
+        Orar {scheduleData[0].courseInstanceName}
+      </h2>
       <table className="profG-schedular-table">
         <thead>
           <tr>

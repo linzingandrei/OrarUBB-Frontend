@@ -1,9 +1,11 @@
 import Card from "../../components/Card";
 import { getAllRooms } from "../../services/roomsService";
-import "../../components/Card.scss"
+import "../../components/Card.scss";
 import Layout from "../../components/layout/Layout";
 import { useGetAllRoomsQuery } from "../../api/RoomsApi";
 import { LoadingComponent } from "../../components/LoadingComponent";
+import "../../components/Card.scss";
+import "../AllTeachersPage/AllTeachersPage.scss";
 
 const AllRoomsPage = () => {
   //const mockRooms = getAllRooms();
@@ -19,7 +21,9 @@ const AllRoomsPage = () => {
   return (
     <Layout>
       <div className="page">
-        <h1>Orar sali</h1>
+        <div className="header">
+          <h1>Orar sali</h1>
+        </div>
         <div className="cards-list">
           {rooms.map((room) => (
             <Card
