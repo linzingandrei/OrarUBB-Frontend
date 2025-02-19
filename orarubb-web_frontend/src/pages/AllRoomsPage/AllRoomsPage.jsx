@@ -5,7 +5,6 @@ import Layout from "../../components/layout/Layout";
 import { useGetAllRoomsQuery } from "../../api/RoomsApi";
 import { LoadingComponent } from "../../components/LoadingComponent";
 import "../../components/Card.scss";
-import "../AllTeachersPage/AllTeachersPage.scss";
 
 const AllRoomsPage = () => {
   //const mockRooms = getAllRooms();

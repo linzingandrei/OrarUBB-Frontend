@@ -4,7 +4,6 @@ import { getCourses } from "../../services/courseService";
 import Layout from "../../components/layout/Layout";
 import { useGetAllCourseInstancesByLanguageQuery } from "../../api/CoursesApi";
 import "../../components/Card.scss"
-import "../AllTeachersPage/AllTeachersPage.scss"
 import "./AllCoursesPage.scss"
 
 const AllCoursesPage = () => {
@@ -16,7 +15,7 @@ const AllCoursesPage = () => {
   return (
     <Layout>
       <div className="page">
-          <div className="header">
+          <div className="all-courses-header">
               <h1>Orar discipline</h1>
           </div>
           <div className="cards-list">
