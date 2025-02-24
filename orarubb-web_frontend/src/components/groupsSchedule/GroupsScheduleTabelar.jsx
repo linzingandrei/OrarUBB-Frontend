@@ -1,9 +1,8 @@
-import React from "react";
 import "./GroupsScheduleTabelar.scss";
-import { Link } from "react-router-dom";
+import {Link, ScrollRestoration} from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const GroupsScheduleTabelar = ({ scheduleData, group, showHeader }) => {
+const GroupsScheduleTabelar = ({ scheduleData, identity, showHeader, tableType }) => {
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 920);
   useEffect(() => {
     const handleResize = () => {
@@ -20,7 +19,10 @@ const GroupsScheduleTabelar = ({ scheduleData, group, showHeader }) => {
     <div className="table-container-gt">
       {showHeader ? (
         <h2 className="table-title-gt">
-          {group === "Orarul tau" ? "Orarul tau" : "Grupa " + group}
+          {tableType === "personal" ? "Orarul tau" : null}
+          {tableType === "teacher" ? "Orar " + identity : null}
+          {tableType === "group" ? "Grupa " + identity : null}
+
         </h2>
       ) : null}
       <table className="table-gt">
@@ -39,7 +41,11 @@ const GroupsScheduleTabelar = ({ scheduleData, group, showHeader }) => {
             <th>Formatia</th>
             <th>Tipul</th>
             <th>Disciplina</th>
-            <th>Cadrul didactic</th>
+            {
+              tableType !== "teacher" ? (
+                  <th>Cadrul didactic</th>
+              ) : null
+            }
           </tr>
         </thead>
         <tbody>
@@ -82,16 +88,22 @@ const GroupsScheduleTabelar = ({ scheduleData, group, showHeader }) => {
                   {item.courseInstanceName}
                 </Link>
               </td>
-              <td data-label="Profesor">
-                <Link to={`/teacher/${item.teacherCode}`} className="link-gt">
-                  {item.teacher}
-                </Link>
-              </td>
+              {
+                tableType !== "teacher" ? (
+                    <td data-label="Profesor">
+                      <Link to={`/teacher/${item.teacherCode}`} className="link-gt">
+                        {item.teacher}
+                      </Link>
+                    </td>
+                ) : null
+              }
+
             </tr>
           ))}
         </tbody>
       </table>
     </div>
+
   );
 };
 

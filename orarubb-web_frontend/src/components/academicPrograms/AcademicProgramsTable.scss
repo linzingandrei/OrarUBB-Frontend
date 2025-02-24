@@ -4,23 +4,37 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 0.1rem;
   width: 100%;
   overflow-x: auto;
 }
-.btn-studyprograms{
+
+.btn-studyprograms {
   margin: 5px;
   color: #1A4977;
   font-weight: 650;
   background: transparent;
 
+  font-size: 1rem;
 }
+
 .programs-table {
-  margin-top: 100px;
+  margin-top: 1rem;
   border-collapse: collapse;
   width: 100%;
   max-width: 1200px;
   color: #333;
+  @media (max-width: 1200px) {
+
+    margin: 0 6rem;
+  }
+
+  @media (max-width: 840px) {
+    margin: 0 2rem;
+  }
+
+  @media (max-width: 576px) {
+  }
 
   thead {
     color: black;
@@ -106,13 +120,12 @@
   thead th {
     display: 1rem;
   }
-.anul-head{
-  display: none !important;
-}
+  .anul-head {
+    display: none !important;
+  }
   tbody td {
     justify-content: center;
-      flex-direction: column;
-      display: flex;
+    flex-direction: column;
     display: flex;
     border: none;
     text-align: center;

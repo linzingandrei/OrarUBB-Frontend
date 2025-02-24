@@ -4,13 +4,26 @@
   align-items: center;
   position: fixed;
   height: 4rem;
-  width: 100%;
+  width: 100vw;  // Change from 100% to 100vw to ensure it spans the full viewport width
+  max-width: 100%;  // Prevent any overflow issues
   background-color: white;
   padding: 1rem 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #1a4977;
   user-select: none;
   z-index: 1;
+
+  @media (max-width: 1200px) {
+    height: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    height: 2rem;
+  }
+
+  @media (max-width: 576px) {
+    padding-left: 1.2rem;
+  }
 
   &__left {
     display: flex;
@@ -20,55 +33,57 @@
   }
 
   &__right {
-    width: 15%;
+    width: 25%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 1rem;
     height: auto;
-    padding-right: 3rem;
+    padding-right: 4rem;
 
     @media (max-width: 1200px) {
-        padding-right: 3rem;
-      }
-    
-      @media (max-width: 992px) {
-        padding-right: 3rem;
-      }
-    
-      @media (max-width: 768px) {
-        padding-right: 3rem;
-      }
-    
-      @media (max-width: 576px) {
-    
-        padding-right: 3rem;
-      }
+      padding-right: 4rem;
+    }
+
+    @media (max-width: 992px) {
+      padding-right: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      padding-right: 4rem;
+    }
+
+    @media (max-width: 576px) {
+
+      padding-right: 3rem;
+    }
   }
 
   &__logo {
     position: fixed;
-      top: 3rem;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-image: url("../../assets/Logo.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      width: 5.5rem;
-      height: 5.5rem;
-      cursor: pointer;
-      z-index: 2;
-    
-      @media (max-width: 1200px) {
-        width: 5.3rem;
-        height: 5.3rem;
-      }
-    
-      @media (max-width: 576px) {
-        width: 4.8rem;
-        height: 4.8rem;
-      }
+    top: 3rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("../../assets/Logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 5.5rem;
+    height: 5.5rem;
+    cursor: pointer;
+    z-index: 2;
+
+    @media (max-width: 1200px) {
+      width: 4rem;
+      top: 2.5rem;
+      height: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      width: 3rem;
+      top: 2rem;
+      height: 3rem;
+    }
   }
 
   &__link {
@@ -152,6 +167,23 @@
     @media (max-width: 576px) {
       width: 1.3rem;
       height: 1.3rem;
+    }
+  }
+
+  .schedule-icon {
+    background-image: url("../../assets/schedule.png");
+    width: 2rem;
+    height: 2rem;
+    padding-right: 0;
+
+    @media (max-width: 1200px) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    @media (max-width: 576px) {
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 

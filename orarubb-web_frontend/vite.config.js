@@ -1,12 +1,21 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import fs from 'fs';
 
-// https://vite.dev/config/
 export default defineConfig({
+  base: '/apps/orar',
   plugins: [react()],
   server: {
     host: '0.0.0.0',
-    port: 5173,
+    port: 4173,
+    strictPort: true,
+    allowedHosts: ['www.cs.ubbcluj.ro'],
+  },
+  preview: {
+    host: '0.0.0.0',
+    port: 4173,
+    strictPort: true,
+    allowedHosts: ['www.cs.ubbcluj.ro'],
   },
   // appType: 'mpa',
   // server: {

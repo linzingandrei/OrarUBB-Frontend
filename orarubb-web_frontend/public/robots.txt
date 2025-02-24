@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /my-schedule/
+Allow: /
+Sitemap: https://www.cs.ubbcluj.ro/apps/orar/sitemap.xml
+

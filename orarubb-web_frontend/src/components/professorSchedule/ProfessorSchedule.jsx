@@ -3,7 +3,7 @@ import "./ProfessorSchedule.scss";
 const ProfessorSchedule = ({ scheduleData, professor }) => {
   console.log("Data", scheduleData);
   return (
-    <div className="professor-schedule-table-container">
+    <div className="table-container-gt">
       <h2 className="professor-schedule-table-title">Orar {professor}</h2>
       <table className="professor-schedule-table">
         <thead>

@@ -1,13 +1,18 @@
 .header {
     display: flex;
-    align-items: center;  
-    justify-content: center; 
-    gap: 50px;   
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
     margin-bottom: 70px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
-    padding-top: 150px;
-    padding-left: 20px;
+    padding-top: 8rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding-top: 6rem;
+        gap: 1rem;
+    }
 }
 
 .search-container {
@@ -15,6 +20,10 @@
     align-items: center;
     position: relative;
     width: 800px;
+
+    @media (max-width: 768px) {
+        width: 90%;
+    }
 }
 
 .search-icon {
@@ -22,22 +31,36 @@
     left: 10px;
     width: 35px;
     height: 35px;
+
+    @media (max-width: 768px) {
+        width: 28px;
+        height: 28px;
+    }
 }
 
 .search-input {
     width: 100%;
     height: 30px;
-    padding: 8px 8px 8px 45px; 
+    padding: 8px 8px 8px 45px;
     background: #ECECEC;
     border: none;
     border-radius: 5px;
     font-size: 19px;
     font-family: "Montserrat", sans-serif;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        padding: 6px 6px 6px 40px;
+    }
 }
 
 .order-icon {
     width: 32px;
     height: 32px;
     cursor: pointer;
-}
 
+    @media (max-width: 768px) {
+        width: 28px;
+        height: 28px;
+    }
+}

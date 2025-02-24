@@ -26,15 +26,15 @@ const dayOrder = {
  * based on classDay first, then startHour.
  */
 function sortScheduleData(data) {
-  return data.sort((a, b) => {
-    // Might be undefined if day not in dayOrder, so we default to 0
+  return [...data].sort((a, b) => {
     const dayComparison =
-        (dayOrder[a.classDay] || 0) - (dayOrder[b.classDay] || 0);
-    if (dayComparison !== 0) {
-      return dayComparison;
+        dayOrder[a.classDay] - dayOrder[b.classDay];
+
+    if (dayComparison === 0) {
+      return a.startHour - b.startHour;
     }
-    // If same day, compare startHour
-    return a.startHour - b.startHour;
+
+    return dayComparison;
   });
 }
 
@@ -192,29 +192,29 @@ const CrudSchedule = () => {
             <button className="back-button" onClick={() => navigate(-1)}>
               Înapoi
             </button>
-            <button className="add-button" onClick={() => setIsModalOpen(true)}>
-              Adaugă
-            </button>
+            {/*<button className="add-button" onClick={() => setIsModalOpen(true)}>*/}
+            {/*  Adaugă*/}
+            {/*</button>*/}
           </div>
 
           <div className="crud-header">
             <h1>Gestionează Orarul tău, {userName}</h1>
           </div>
 
-          <button
-              className="delete-all-button"
-              onClick={handleDeleteAll}
-              disabled={classesForUser.length === 0}
-          >
-            Șterge Tot
-          </button>
+          {/*<button*/}
+          {/*    className="delete-all-button"*/}
+          {/*    onClick={handleDeleteAll}*/}
+          {/*    disabled={classesForUser.length === 0}*/}
+          {/*>*/}
+          {/*  Șterge Tot*/}
+          {/*</button>*/}
 
           {/*
           6. The table reads directly from classesForUser,
              which is the same array we modify in updateQueryData
         */}
           <CrudScheduleTable
-              scheduleData={classesForUser}
+              scheduleData={sortScheduleData(classesForUser)}
               onEdit={(index) => handleEdit(index, classesForUser[index])}
               onDelete={handleDelete}
           />

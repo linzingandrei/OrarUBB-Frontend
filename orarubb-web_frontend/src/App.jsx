@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {BrowserRouter, Route, Routes, ScrollRestoration, useLocation} from "react-router-dom";
 import { MsalProvider } from "@azure/msal-react";
 import { msalInstance } from "./utils/authenticationConfig.js";
 import "./App.scss";
@@ -21,10 +21,22 @@ import { Provider } from "react-redux";
 import { store, persistor } from "./api/Persistence.js";
 import { PersistGate } from "redux-persist/integration/react";
 import CoursesSchedule from "./pages/CoursesSchedule/CoursesSchedule.jsx";
+import {useEffect} from "react";
+
+const ScrollToTop = (props) => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return <>{props.children}</>
+};
+
 
 const AppContent = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/apps/orar">
+      <ScrollToTop>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<LandingPage />} />
@@ -56,6 +68,7 @@ const AppContent = () => {
           element={<RoomsAvailabilityPage />}
         />
       </Routes>
+      </ScrollToTop>
     </BrowserRouter>
   );
 };
@@ -66,7 +79,8 @@ function App() {
       <AuthProvider>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
-            <AppContent />
+
+              <AppContent />
           </PersistGate>
         </Provider>
       </AuthProvider>

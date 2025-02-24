@@ -151,7 +151,8 @@ const GroupsSchedule = () => {
 
                             {view === "tabelar" ? (<GroupsScheduleTabelar
                                 scheduleData={schedule.scheduleData}
-                                group={schedule.group}
+                                identity={schedule.group}
+                                tableType={"group"}
                                 showHeader={false}
                             />) : (<GroupsScheduleGrafic
                                 scheduleData={schedule.scheduleData}

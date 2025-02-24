@@ -14,7 +14,6 @@ const Navbar = () => {
                 const loginResponse = await instance.loginPopup({
                     scopes: ["User.Read"],
                 });
-                console.log("Login response: ", loginResponse);
             } else {
                 instance.logoutPopup();
             }
@@ -42,6 +41,9 @@ const Navbar = () => {
                         <>
                             <button className="navbar__link" onClick={() => navigate("/my-schedule")}>
                                 <span>Orarul meu</span>
+
+
+                                <div className="navbar__icon schedule-icon" title="Log Out"></div>
                             </button>
                             <button className="navbar__link" onClick={handleLoginClick}>
                                 <span>Log Out</span>
