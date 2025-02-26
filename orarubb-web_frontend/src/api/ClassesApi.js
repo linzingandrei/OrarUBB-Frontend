@@ -6,7 +6,7 @@ export const classesApi = apiSlice.injectEndpoints({
       query: ({ groupCode, language }) =>
         `/classes/group/${groupCode}/${language}`,
       providesTags: ["classesCache"],
-      keepUnusedDataFor: 1000,
+      keepUnusedDataFor: 1,
     }),
 
   }),

@@ -7,7 +7,6 @@ const RoomsAvailability = ({ data, allRooms }) => {
 
     // Function to get the frequency symbol based on frequency value
     const getFrequencySymbol = (frequency) => {
-        // console.log(frequency)
         if (frequency === 2) return 'x';
         if (frequency === 1) return '-/x';
         if (frequency === 0) return 'x/-';
@@ -20,8 +19,9 @@ const RoomsAvailability = ({ data, allRooms }) => {
                 <tbody>
                 {days.map((day, dayIndex) => {
                     // Filter data for the current day
-                    console.log(data);
+                    // console.log(data);
                     const dayData = data.filter(item => item.classDay === day);
+                    // console.log(dayData)
 
                     return (
                         <React.Fragment key={dayIndex}>
@@ -97,19 +97,16 @@ const RoomsAvailability = ({ data, allRooms }) => {
                                                     item.rooms.some(r => r.roomName === room.name)
                                             );
 
-                                            const frequencies = roomData
-                                                ? roomData.rooms
-                                                    .filter(r => r.roomName === room.name)
-                                                    .map(r => r.frequency)
-                                                : [];
-                                            
-                                            if (frequencies.length > 0)
-                                                console.log(frequencies);
+                                            const frequency = roomData
+                                                ? roomData.rooms.find(
+                                                    r => r.roomName === room.name
+                                                )?.frequency
+                                                : undefined;
 
                                             return (
                                                 <td key={roomIndex}>
-                                                    {frequencies.length > 0
-                                                        ? getFrequencySymbol(frequencies)
+                                                    {frequency !== undefined
+                                                        ? getFrequencySymbol(frequency)
                                                         : ''}
                                                 </td>
                                             );

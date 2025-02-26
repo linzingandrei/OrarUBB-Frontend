@@ -79,8 +79,9 @@ const UserSchedule = () => {
                         view === "tabelar" ? (
                             <GroupsScheduleTabelar
                                 scheduleData={schedule}
-                                group={"Orarul tau"}
+                                identity={"Orarul tau"}
                                 showHeader={true}
+                                tableType={"personal"}
                             />
                         ) : (
                             <GroupsScheduleGrafic

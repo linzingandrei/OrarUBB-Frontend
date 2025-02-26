@@ -15,6 +15,6 @@ const styles = {
     alignItems: "flex-start",
     height: "100vh",
     width: "100%",
-    paddingTop: "10%",
+    paddingTop: "6rem",
   },
 };

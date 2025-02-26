@@ -40,6 +40,18 @@ $colors: (
   font-size: 1.3rem;
   padding: 0.8rem 0.5rem;
   width: 20rem;
+  font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+
+
+  @media (max-width: 576px) {
+    font-size: 1.2rem;
+    width: 17rem;
+    height: 3.5rem;
+  }
 }
 
 .large {
@@ -75,4 +87,6 @@ button {
       @include button-color($name);
     }
   }
+
+
 }

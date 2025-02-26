@@ -3,7 +3,44 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 1rem;
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+  @media (max-width: 1200px) {
+    padding-top: 6rem;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 5rem;
+  }
+}
+
+.menu-buttons-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: #1a4977;
+  cursor: pointer;
+  font-weight: normal;
+  outline: none;
+}
+
+.menu-button.active {
+  font-weight: bold;
+  border-bottom: 2px solid #1a4977;
+}
+
+.delimitator-line {
+  width: 1px;
+  height: 24px;
+  background-color: #ccc;
+  margin: 0 1rem;
 }
 
 .study-programs-table-container {

@@ -1,90 +1,168 @@
 .table-container {
-  margin: 20px;
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 1200px;
 }
 
+/* Title styling */
 .table-title-gt {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-/* Ensure table can scroll horizontally if it's too wide */
-.responsive-table-wrapper {
-  width: 100%;        /* Occupy full parent width */
-  overflow-x: auto;   /* Horizontal scroll if table is wider than container */
-  overflow-y: auto; /* Optional: hide vertical scroll if not needed */
-  max-width: 100%;
+/* ---------- Desktop (Table) Styles ---------- */
+.desktop-view {
+  display: block;
 }
+
+.responsive-table-wrapper {
+  width: 100%;
+  /* Use a fixed height to always enable vertical scrolling */
+  height: calc(100vh - 150px);
+  overflow-y: auto;
+  overflow-x: auto; /* Keep horizontal scrolling if needed */
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
 
 .scheduler-table {
   width: 100%;
-  min-width: 900px;
   border-collapse: collapse;
   table-layout: auto;
-  th,
-  td {
-    border: 1px solid #ccc;
-    padding: 8px 12px;
-    text-align: center;
-    vertical-align: top;
-  }
+}
 
-  th {
-    background-color: #f4f4f4;
-  }
+.scheduler-table th,
+.scheduler-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  vertical-align: top;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.table-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto; /* if you need vertical scrolling as well */
+}
+
+
+.scheduler-table th {
+  background-color: #f4f4f4;
 }
 
 .time-slot-cell {
   position: sticky;
   left: 0;
   background-color: #fff;
-  z-index: 0;
+  z-index: 2;
 }
+
+.empty-cell {
+  min-height: 50px;
+}
+
 .scheduler-cell {
-  height: 100%;
-  text-align: center;
-  vertical-align: top;
+  /* Additional desktop cell styling if needed */
 }
 
 .class-container {
+  width: 100%;
   display: flex;
-  height: 100%;
-  flex-direction: row;
-  align-items: stretch;
-  gap: 5px;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 .class-card {
-  background-color: #E1F0FF;
-  flex: 1;               /* or align-self: stretch */
-  display: table-row;
-  flex-direction: column;
-  justify-content: center;
-  /* If you need the entire background to fill the cell: */
-  height: 100%;
+  width: 100%;
   padding: 5px;
-  //border-radius: 5px;
+  box-sizing: border-box;
+}
 
+.class-card-table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-  .class-card-table {
-    border-collapse: collapse;
-    width: 100%;
-    height: 100%;
+.class-card-table td {
+  border: none;
+  padding: 2px 4px;
+}
 
-    td {
-      padding: 2px 4px;
-      border:none;
-    }
+/* Background colors based on class type */
+.curs-bg {
+  background-color: #E1F0FF; /* Light blue */
+}
 
-    td[colspan="2"] {
-      text-align: center;
-      padding-bottom: 8px;
-    }
+.seminar-bg {
+  background-color: #FFCCCC; /* Light red */
+}
+
+.laborator-bg {
+  background-color: #FFFFCC; /* Light yellow */
+}
+
+/* ---------- Mobile (Vertical Time Block) Styles ---------- */
+.mobile-view {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .desktop-view {
+    display: none;
+  }
+  .mobile-view {
+    display: block;
+    margin: 0 auto;
+    padding: 0 10px;
+    overflow-x: auto;
   }
 }
-.time-slot-header {
-  font-weight: bold;
+
+.mobile-day-section {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  overflow: hidden;
 }
 
-.day-header {
+.mobile-day-header {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.mobile-day-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-class-card {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.mobile-class-time {
   font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.mobile-class-content {
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.mobile-class-content div {
+  margin-bottom: 4px;
 }

@@ -7,6 +7,7 @@ import { useGetClassesForTeacherQuery } from "../../api/TeachersApi";
 import { LoadingComponent } from "../../components/LoadingComponent";
 import { NoDataComponent } from "../../components/NoDataComponent";
 import { useGetTeacherByCodeNameQuery } from "../../api/TeachersApi";
+import GroupsScheduleTabelar from "../../components/groupsSchedule/GroupsScheduleTabelar.jsx";
 
 const ProfessorsSchedule = () => {
   const teacherCode = useParams().teacherCode;
@@ -66,9 +67,11 @@ const ProfessorsSchedule = () => {
 
         <div>
           {view === "tabelar" ? (
-            <ProfessorSchedule
+            <GroupsScheduleTabelar
+                showHeader={true}
               scheduleData={scheduleDataForTeacher}
-              professor={teacherName}
+              identity={teacherName}
+              tableType={"teacher"}
             />
           ) : (
             <ProfessorScheduleGrafic

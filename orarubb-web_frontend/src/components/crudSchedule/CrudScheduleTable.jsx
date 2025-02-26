@@ -40,15 +40,7 @@ const CrudScheduleTable = ({ scheduleData, onEdit, onDelete }) => {
                 <td>{item.formation}</td>
                 <td>{item.classType}</td>
                 <td>
-                  <a href={`/${item.courseInstanceCode}`} className="link">
-                    {item.courseInstanceCode}
-                  </a>
-                  {/*
-                  If you also want to show the full course name,
-                  you can add `item.courseInstanceName` if desired:
-                  <br />
                   <span>{item.courseInstanceName}</span>
-                */}
                 </td>
                 <td>
                   <a href={`/${item.teacher}`} className="link">
@@ -56,12 +48,12 @@ const CrudScheduleTable = ({ scheduleData, onEdit, onDelete }) => {
                   </a>
                 </td>
                 <td>
-                  <button
-                      className="edit-button"
-                      onClick={() => onEdit(index)}
-                  >
-                    Editează
-                  </button>
+                  {/*<button*/}
+                  {/*    className="edit-button"*/}
+                  {/*    onClick={() => onEdit(index)}*/}
+                  {/*>*/}
+                  {/*  Editează*/}
+                  {/*</button>*/}
                   <button
                       className="delete-button"
                       onClick={() => onDelete(index)}
