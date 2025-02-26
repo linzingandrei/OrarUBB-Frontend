@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "production:": "vite build && vite preview"
   },
   "dependencies": {
     "@azure/msal-browser": "^3.28.0",

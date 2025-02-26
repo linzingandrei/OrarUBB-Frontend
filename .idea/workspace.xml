@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2e6d11cb-6cdf-400a-8554-2157c5ee5ce7" name="Changes" comment="Fixed professor schedule year and css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/api/ApiSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/api/ApiSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/header/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/header/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/utils/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/utils/AuthContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +64,7 @@
     "git-widget-placeholder": "dev",
     "javascript.nodejs.core.library.configured.version": "23.3.0",
     "javascript.nodejs.core.library.typings.version": "22.10.5",
-    "last_opened_file_path": "/Users/Alex/Developer/orar/OrarUBB-Frontend/orarubb-web_frontend/src/components/header",
+    "last_opened_file_path": "/Users/Alex/Developer/orar/OrarUBB-Frontend/orarubb-web_frontend/src/assets",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -79,20 +75,28 @@
     "npm.dev.executor": "Run",
     "npm.preview.executor": "Run",
     "npm.production.executor": "Run",
+    "npm.production:.executor": "Run",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/Users/Alex/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/orarubb-web_frontend/src/assets" />
       <recent name="$PROJECT_DIR$/orarubb-web_frontend/src/components/header" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.production">
-    <configuration name="Navbar.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/orarubb-web_frontend/src/components/header/Navbar.jsx" working-dir="$PROJECT_DIR$/orarubb-web_frontend/src/components/header">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/orarubb-web_frontend/package.json" />
       <command value="run" />
@@ -133,13 +137,23 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="production:" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/orarubb-web_frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="production:" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.production" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.production:" />
+        <item itemvalue="npm.production" />
         <item itemvalue="npm.preview" />
         <item itemvalue="npm.build" />
-        <item itemvalue="Node.js.Navbar.jsx" />
       </list>
     </recent_temporary>
   </component>
@@ -174,6 +188,7 @@
       <workItem from="1737378587069" duration="711000" />
       <workItem from="1738754015359" duration="17000" />
       <workItem from="1740406372661" duration="12022000" />
+      <workItem from="1740571510704" duration="4937000" />
     </task>
     <task id="LOCAL-00001" summary="Made navbar responsive, made LandingPage.jsx and InformatiiSali.jsx responsive w.r.t. navbar.">
       <option name="closed" value="true" />

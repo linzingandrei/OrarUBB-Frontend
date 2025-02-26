@@ -21,16 +21,6 @@ import { Provider } from "react-redux";
 import { store, persistor } from "./api/Persistence.js";
 import { PersistGate } from "redux-persist/integration/react";
 import CoursesSchedule from "./pages/CoursesSchedule/CoursesSchedule.jsx";
-import {useEffect} from "react";
-
-const ScrollToTop = (props) => {
-  const location = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
-
-  return <>{props.children}</>
-};
 
 
 const AppContent = () => {
@@ -73,7 +63,6 @@ const AppContent = () => {
           element={<RoomsAvailabilityPage />}
         />
       </Routes>
-      </ScrollToTop>
     </BrowserRouter>
   );
 };
