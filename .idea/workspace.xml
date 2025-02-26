@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e6d11cb-6cdf-400a-8554-2157c5ee5ce7" name="Changes" comment="">
+    <list default="true" id="2e6d11cb-6cdf-400a-8554-2157c5ee5ce7" name="Changes" comment="Fixed professor schedule year and css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/Card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllCoursesPage/AllCoursesPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllCoursesPage/AllCoursesPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllCoursesPage/AllCoursesPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllCoursesPage/AllCoursesPage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllRoomsPage/AllRoomsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/pages/AllRoomsPage/AllRoomsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/api/ApiSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/api/ApiSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/components/header/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/components/header/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/src/utils/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/src/utils/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orarubb-web_frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/orarubb-web_frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +35,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -53,37 +57,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.App.jsx.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.Navbar.jsx.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.main.jsx.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;23.3.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;22.10.5&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/Alex/Developer/orar/OrarUBB-Frontend/orarubb-web_frontend/src/components/header&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/Alex/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.App.jsx.executor": "Run",
+    "Node.js.Navbar.jsx.executor": "Run",
+    "Node.js.main.jsx.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "dev",
+    "javascript.nodejs.core.library.configured.version": "23.3.0",
+    "javascript.nodejs.core.library.typings.version": "22.10.5",
+    "last_opened_file_path": "/Users/Alex/Developer/orar/OrarUBB-Frontend/orarubb-web_frontend/src/components/header",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.preview.executor": "Run",
+    "npm.production.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/Alex/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/orarubb-web_frontend/src/components/header" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.production">
     <configuration name="Navbar.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/orarubb-web_frontend/src/components/header/Navbar.jsx" working-dir="$PROJECT_DIR$/orarubb-web_frontend/src/components/header">
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/orarubb-web_frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -96,9 +113,32 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="preview" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/orarubb-web_frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="preview" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="production" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/orarubb-web_frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="production" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.production" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.preview" />
+        <item itemvalue="npm.build" />
         <item itemvalue="Node.js.Navbar.jsx" />
       </list>
     </recent_temporary>
@@ -133,6 +173,7 @@
       <workItem from="1737257489345" duration="3894000" />
       <workItem from="1737378587069" duration="711000" />
       <workItem from="1738754015359" duration="17000" />
+      <workItem from="1740406372661" duration="12022000" />
     </task>
     <task id="LOCAL-00001" summary="Made navbar responsive, made LandingPage.jsx and InformatiiSali.jsx responsive w.r.t. navbar.">
       <option name="closed" value="true" />

@@ -24,7 +24,13 @@ import CoursesSchedule from "./pages/CoursesSchedule/CoursesSchedule.jsx";
 
 const AppContent = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true
+        }}
+        basename="/apps/orar">
+
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<LandingPage />} />

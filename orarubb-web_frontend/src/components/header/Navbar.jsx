@@ -5,21 +5,18 @@ import './Navbar.scss';
 import {useAuth} from '../../utils/AuthContext';
 
 const Navbar = () => {
-    const {isAuthenticated, userName, instance, accounts} = useAuth();
+    const {isAuthenticated, login, logout} = useAuth();
     const navigate = useNavigate();
 
     const handleLoginClick = async () => {
         try {
             if (!isAuthenticated) {
-                const loginResponse = await instance.loginPopup({
-                    scopes: ["User.Read"],
-                });
-                console.log("Login response: ", loginResponse);
+                await login();
             } else {
-                instance.logoutPopup();
+                await logout();
             }
         } catch (error) {
-            console.error("Login error: ", error);
+            console.error("Authentication error:", error);
         }
     };
 
@@ -42,6 +39,9 @@ const Navbar = () => {
                         <>
                             <button className="navbar__link" onClick={() => navigate("/my-schedule")}>
                                 <span>Orarul meu</span>
+
+
+                                <div className="navbar__icon schedule-icon" title="Log Out"></div>
                             </button>
                             <button className="navbar__link" onClick={handleLoginClick}>
                                 <span>Log Out</span>
