@@ -5,20 +5,18 @@ import './Navbar.scss';
 import {useAuth} from '../../utils/AuthContext';
 
 const Navbar = () => {
-    const {isAuthenticated, userName, instance, accounts} = useAuth();
+    const {isAuthenticated, login, logout} = useAuth();
     const navigate = useNavigate();
 
     const handleLoginClick = async () => {
         try {
             if (!isAuthenticated) {
-                const loginResponse = await instance.loginPopup({
-                    scopes: ["User.Read"],
-                });
+                await login();
             } else {
-                instance.logoutPopup();
+                await logout();
             }
         } catch (error) {
-            console.error("Login error: ", error);
+            console.error("Authentication error:", error);
         }
     };
 
